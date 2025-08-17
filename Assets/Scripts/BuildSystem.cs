@@ -47,5 +47,6 @@ public class BuildSystem : MonoBehaviour
         
     public void CreateElement(BuildElementData buildElementData, Cell cell)
     {
-        }
+        cell.AddBuildElement(buildElementData);
+    }
 }

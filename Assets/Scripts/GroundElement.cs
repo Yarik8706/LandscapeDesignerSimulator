@@ -8,10 +8,11 @@ namespace DefaultNamespace
         
         public GroundElementData GroundElementData { get; private set; }
         
-        public void SetData(GroundElementData groundElementData)
+        public void SetData(GroundElementData groundElementData, int layerIndex = -1)
         {
             this.GroundElementData = groundElementData;
             _spriteRenderer.sprite = groundElementData.icon;
+            _spriteRenderer.sortingOrder = layerIndex;
         }
     }
 }

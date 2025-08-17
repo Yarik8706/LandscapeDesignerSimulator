@@ -1,4 +1,5 @@
 ﻿using System;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -20,13 +21,14 @@ namespace DefaultNamespace
         private void Start()
         {
             data.ground = _objectContext.groundElements[(int)_terrainType];
-            data.ground.soils = _soilsStrength;
+            data.soils = _soilsStrength;
         }
 
         private void OnValidate()
         {
             data.x = (int)transform.position.x;
             data.y = (int)transform.position.y;
+            AddGroundElement(_objectContext.groundElements[(int)_terrainType], true);
         }
 
         public void AddBuildElement(BuildElementData buildElementData)
@@ -34,7 +36,7 @@ namespace DefaultNamespace
             var newElement = Instantiate(_buildElementPrefab, 
                 transform.position, 
                 Quaternion.identity, transform.parent);
-            newElement.SetData(buildElementData);
+            newElement.SetData(buildElementData, -(int)transform.position.y);
             
             data.decorations[(int)buildElementData.category] = newElement.BuildElementData;
             _buildElements[(int)buildElementData.category] = newElement;
@@ -49,23 +51,45 @@ namespace DefaultNamespace
             _buildElements[(int)category] = null;
         }
         
-        public void AddGroundElement(GroundElementData groundElementData)
+        public void AddGroundElement(GroundElementData groundElementData, bool isEditor = false)
         {
-            var newElement = Instantiate(_groundElementPrefab, 
-                transform.position, 
-                Quaternion.identity, transform.parent);
-            newElement.SetData(groundElementData);
+            if(_groundElement != null && _groundElement.GroundElementData.id == groundElementData.id) return;
+            if (_groundElement != null)
+            {
+                if (!isEditor) Destroy(_groundElement.gameObject);
+            }
+            GroundElement newElement = null;
+            if (!isEditor)
+            {
+                newElement = Instantiate(_groundElementPrefab, 
+                                transform.position, 
+                                Quaternion.identity, transform.parent);
+            }
+            else
+            {
+                newElement = PrefabUtility.InstantiatePrefab(_groundElementPrefab, transform) 
+                    as GroundElement;
+                if(newElement == null) return;
+            }
+            
+            newElement.SetData(groundElementData, -(int)transform.position.y);
             data.ground = newElement.GroundElementData;
             _groundElement = newElement;
         }
         
-        public void RemoveGroundElement()
+        public void ChangeGroundElementState(bool state)
         {
-            var groundElementData = data.ground;
-            if (groundElementData == null) return;
-            Destroy(_groundElement.gameObject);
-            data.ground = null;
-            _groundElement = null;
+            _groundElement.gameObject.SetActive(state);
+        }
+        
+        [ContextMenu(nameof(UpdateGroundElement))]
+        public void UpdateGroundElement()
+        {
+            for (int i = transform.childCount - 1; i >= 0; i--)
+            {
+                DestroyImmediate(transform.GetChild(i).gameObject);
+            }
+            AddGroundElement(_objectContext.groundElements[(int)_terrainType], true);
         }
 
         public void OnPointerClick(PointerEventData eventData)
@@ -83,6 +107,7 @@ namespace DefaultNamespace
         public GroundElementData ground;
         public bool hasGround;
         public BuildElementData[] decorations;
+        public SoilStrength[] soils;
 
         public CellData()
         {

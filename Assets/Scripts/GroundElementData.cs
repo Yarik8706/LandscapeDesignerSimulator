@@ -2,12 +2,12 @@
 
 namespace DefaultNamespace
 {
+    [CreateAssetMenu(fileName = "New Ground Element", menuName = "Ground Element")]
     public class GroundElementData : ScriptableObject
     {
         public string displayName;
         public Sprite icon;
         public TerrainType id;
-        public SoilStrength[] soils;
         
         public int replaceCost;
         public int replaceTime;

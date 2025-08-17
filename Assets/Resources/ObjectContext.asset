@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 716a47aa91e548ad84eb46508278e06d, type: 3}
+  m_Name: ObjectContext
+  m_EditorClassIdentifier: 
+  constructionObjects: []
+  soilStrengthDescriptions: []
+  groundElements:
+  - {fileID: 11400000, guid: 0fbb0ee18d8af71458dd177ac9d8b282, type: 2}
+  - {fileID: 11400000, guid: 5fc8d44f6e868104890f23985e850bbd, type: 2}
+  - {fileID: 11400000, guid: 21ad56b8fd6c2044babab3e0c5a7d9fc, type: 2}
+  - {fileID: 11400000, guid: c0e2f8393db3eab41ad30f9a22f1899f, type: 2}
+  - {fileID: 11400000, guid: 5842a93bfef078145a4e68fb2f10fd4e, type: 2}

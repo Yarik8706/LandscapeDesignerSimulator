@@ -8,10 +8,11 @@ namespace DefaultNamespace
         
         public BuildElementData BuildElementData { get; private set; }
         
-        public void SetData(BuildElementData buildElementData)
+        public void SetData(BuildElementData buildElementData, int layerIndex = -1)
         {
             this.BuildElementData = buildElementData;
             _spriteRenderer.sprite = buildElementData.icon;
+            _spriteRenderer.sortingOrder = layerIndex;
         }
     }
 }

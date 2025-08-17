@@ -44,7 +44,8 @@ public enum TerrainType {
     Forest, 
     Steppe, 
     Mountain,
-    All 
+    All,
+    None
 }
 public enum AuraShape { None, Circle, Square }
 public enum TerraformMode { Replace, Overlay }
