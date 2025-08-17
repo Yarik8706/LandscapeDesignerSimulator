@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "122323266669",
+    "project_id": "landscapedesignersimulator",
+    "storage_bucket": "landscapedesignersimulator.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:122323266669:android:8a4d2520405b0f4afb6364",
+        "android_client_info": {
+          "package_name": "com.yarikno.landscapedesignersimulator"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCqynxz7VhD9rl5Uee_IWL1j-710B5Xb-I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
