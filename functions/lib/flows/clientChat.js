@@ -13,7 +13,17 @@ export const clientChatFlow = ai.flow("clientChat", {
     }),
     outputSchema: z.object({
         reply: z.string(),
-        lowConfidence: z.boolean().optional()
+        lowConfidence: z.boolean().optional(),
+        progress: z.object({
+            budget: z.boolean().default(false),
+            deadline: z.boolean().default(false),
+            weights: z.boolean().default(false),
+            must: z.boolean().default(false),
+            bans: z.boolean().default(false),
+            climate: z.boolean().default(false),
+            risks: z.boolean().default(false),
+            bonus: z.boolean().default(false)
+        })
     })
 }, async ({ input, llm }) => {
     const sess = await loadSession(input.sessionId);
@@ -26,6 +36,8 @@ export const clientChatFlow = ai.flow("clientChat", {
 Факты, которые следует учитывать и подтверждать в разговоре: бюджет, срок, must/nice/bans, приоритеты F/A/S, климат/риски, бонусы.
 Если игрок указывает объективные риски участка, допускай пересмотр.
 Оффтоп мягко перенаправляй. При токсичности/злоупотреблении — прекращай сделку.
+Требование: верни JSON с полями reply, confidence (0..1) и progress (булевы флаги тем: budget, deadline, weights, must, bans, climate, risks, bonus).
+Ставь флаг true только если тема ОДНОЗНАЧНО подтверждена фактами из истории (summary + последние реплики) и текущего сообщения.
 Твои предпочтения и требования:
 ${input.clientBrief}
 Используй историю (summary) и последние реплики для контекста.`;
@@ -43,9 +55,23 @@ ${input.clientBrief}
             type: "object",
             properties: {
                 reply: { type: "string" },
-                confidence: { type: "number" }
+                confidence: { type: "number" },
+                progress: {
+                    type: "object",
+                    properties: {
+                        budget: { type: "boolean" },
+                        deadline: { type: "boolean" },
+                        weights: { type: "boolean" },
+                        must: { type: "boolean" },
+                        bans: { type: "boolean" },
+                        climate: { type: "boolean" },
+                        risks: { type: "boolean" },
+                        bonus: { type: "boolean" }
+                    },
+                    required: ["budget", "deadline", "weights", "must", "bans", "climate", "risks", "bonus"]
+                }
             },
-            required: ["reply"]
+            required: ["reply", "progress"]
         }
     });
     const key = { m: "lite", msgs: msgs.map(m => ({ r: m.role, c: typeof m.content === "string" ? m.content : "" })) };
@@ -71,5 +97,5 @@ ${input.clientBrief}
         summary = sum.summary;
     }
     await saveSession(input.sessionId, summary, trimmed, turns);
-    return { reply: final.reply, lowConfidence: low };
+    return { reply: final.reply, lowConfidence: low, progress: final.progress };
 });
