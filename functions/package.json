@@ -1,0 +1,22 @@
+{
+  "name": "ld-functions",
+  "private": true,
+  "type": "module",
+  "engines": { "node": "20" },
+  "scripts": {
+    "build": "tsc",
+    "serve": "firebase emulators:start",
+    "deploy": "firebase deploy --only functions"
+  },
+  "dependencies": {
+    "firebase-admin": "^12.6.0",
+    "firebase-functions": "^5.0.0",
+    "@genkit-ai/core": "^0.16.0",
+    "@genkit-ai/googleai": "^0.16.0",
+    "@genkit-ai/firebase": "^0.16.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.3"
+  }
+}
