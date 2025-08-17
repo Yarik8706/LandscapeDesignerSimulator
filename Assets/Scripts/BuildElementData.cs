@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using DefaultNamespace;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "BuildElement", menuName = "LD/Build Element", order = 0)]
@@ -9,6 +10,7 @@ public class BuildElementData : ScriptableObject
     public int id;                         
     public string displayName;                 // имя для UI
     public Category category = Category.Decoration;
+    public BuildElement prefab;
     
     [Header("Visuals")]
     public Sprite icon;

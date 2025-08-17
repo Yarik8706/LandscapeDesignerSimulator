@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64f8789ef01c436292df106296e9af31, type: 3}
+  m_Name: 2_Gravel-Sand Fill
+  m_EditorClassIdentifier: 
+  id: 2
+  displayName: Gravel-Sand Fill
+  category: 0
+  prefab: {fileID: 2411561901339605259, guid: ec6d983d84a48614a860177e363eb81c, type: 3}
+  icon: {fileID: -162905484, guid: f14bcdc4621956d4aab5fa2ff003de05, type: 3}
+  cost: 10
+  buildTime: 0.25
+  delta:
+    F: 0
+    A: 0
+    S: 2
+  stability:
+    tolerance:
+      temp: 2
+      wind: 1
+      hum: 1
+    failMod: 0.9
+    aura:
+      radius: 0
+      shape: 2
+      effects:
+      - key: s_local
+        value: 3
+  constraints:
+    terrainAllowed: 05000000
+    climate:
+      temp:
+        min: -25
+        max: 45
+      hum:
+        min: 0
+        max: 95
+      windMax: 25
+    proximity:
+      need: []
+      avoid: []
+    allowedBase: []
+  adjacency: []
+  terraform:
+    overlayOn: 

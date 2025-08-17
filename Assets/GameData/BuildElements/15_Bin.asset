@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64f8789ef01c436292df106296e9af31, type: 3}
+  m_Name: 15_Bin
+  m_EditorClassIdentifier: 
+  id: 15
+  displayName: Bin
+  category: 1
+  prefab: {fileID: 6045757440126743824, guid: 6bcc8dca23a058340814e860663c4322, type: 3}
+  icon: {fileID: -225350661, guid: f14bcdc4621956d4aab5fa2ff003de05, type: 3}
+  cost: 5
+  buildTime: 0.1
+  delta:
+    F: 1
+    A: 0
+    S: 0
+  stability:
+    tolerance:
+      temp: 0
+      wind: 0
+      hum: 0
+    failMod: 0.95
+    aura:
+      radius: 0
+      shape: 0
+      effects: []
+  constraints:
+    terrainAllowed: 05000000
+    climate:
+      temp:
+        min: -25
+        max: 45
+      hum:
+        min: 0
+        max: 95
+      windMax: 25
+    proximity:
+      need: []
+      avoid: []
+    allowedBase:
+    - {fileID: 11400000, guid: ff7d87177ee46ea4e9b14cbae2bdc149, type: 2}
+    - {fileID: 11400000, guid: b6e1e0eb3cd92ed41a98eee7293231e9, type: 2}
+    - {fileID: 11400000, guid: 845633d9045ba2b46b64c6f5767ee48a, type: 2}
+  adjacency: []
+  terraform:
+    overlayOn: 

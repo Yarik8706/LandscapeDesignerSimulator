@@ -26,13 +26,14 @@ public class Cell : MonoBehaviour, IPointerClickHandler
             Destroy(transform.GetChild(i).gameObject);
         }
         AddGroundElement(_objectContext.groundElements[(int)_terrainType]);
+        data.x = (int)transform.position.x;
+        data.y = (int)transform.position.y;
     }
 
     private void OnValidate()
     {
         data.x = (int)transform.position.x;
         data.y = (int)transform.position.y;
-        AddGroundElementInEditor(_objectContext.groundElements[(int)_terrainType]);
     }
 
     public void AddBuildElement(BuildElementData buildElementData)
@@ -57,7 +58,8 @@ public class Cell : MonoBehaviour, IPointerClickHandler
         
     public void AddGroundElement(GroundElementData groundElementData)
     {
-        if(_groundElement != null && _groundElement.GroundElementData.id == groundElementData.id) return;
+        if(_groundElement != null && _groundElement.GroundElementData != null
+               && _groundElement.GroundElementData.id == groundElementData.id) return;
         if (_groundElement != null)
         {
             Destroy(_groundElement.gameObject);

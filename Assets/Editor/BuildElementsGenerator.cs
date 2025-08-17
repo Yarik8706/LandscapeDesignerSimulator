@@ -47,7 +47,7 @@ public static class BuildElementsGenerator
 
         foreach (var spec in specs)
         {
-            var assetPath = $"{path}/{spec.id}.asset";
+            var assetPath = $"{path}/{spec.id}_{spec.name}.asset";
             var data = AssetDatabase.LoadAssetAtPath<BuildElementData>(assetPath);
             if (data == null)
             {

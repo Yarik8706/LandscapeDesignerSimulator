@@ -1517,7 +1517,7 @@ TextureImporter:
         width: 8
         height: 11
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1525,6 +1525,132 @@ TextureImporter:
       bones: []
       spriteID: dd7cc2186bc8592469ca489a90275211
       internalID: -1299610536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: maintextures_0
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 1008
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04dc27d6d675749438c3875e3fbd4605
+      internalID: 655520049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: maintextures_1
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 992
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d35f915a19462d24fa81adf1fe9be4b6
+      internalID: -162905484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: maintextures_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 973
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e23af6c43452b4840a2642180ac24f23
+      internalID: 986027610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: maintextures_3
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 992
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75ea347926f03f94bb196f597d228d90
+      internalID: -2024361055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: maintextures_4
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 976
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8664d61011241aa4c962e892eb5fa747
+      internalID: -225350661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: maintextures_5
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 975
+        width: 16
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8673032b96cc2244976b884fa1d43e2
+      internalID: -792310273
       vertices: []
       indices: 
       edges: []
@@ -1566,13 +1692,19 @@ TextureImporter:
       h1: -501844274
       h2: -194266881
       h3: 822502109
+      maintextures_0: 655520049
+      maintextures_1: -162905484
+      maintextures_2: 986027610
       maintextures_21: -2034510359
       maintextures_22: -784446509
       maintextures_23: 380932243
+      maintextures_3: -2024361055
+      maintextures_4: -225350661
       maintextures_46: -2128553509
       maintextures_47: 2109692929
       maintextures_48: -1287837934
       maintextures_49: 845552255
+      maintextures_5: -792310273
       maintextures_50: -918425900
       maintextures_51: 876493557
       maintextures_52: -1191412365

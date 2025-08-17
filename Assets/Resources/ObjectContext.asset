@@ -12,8 +12,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 716a47aa91e548ad84eb46508278e06d, type: 3}
   m_Name: ObjectContext
   m_EditorClassIdentifier: 
-  constructionObjects: []
-  soilStrengthDescriptions: []
+  buildElement:
+  - {fileID: 11400000, guid: 1d519ee7cfd9f3142a729924f9c7b6c7, type: 2}
+  - {fileID: 11400000, guid: d65a5e4785156ef4f858662800e12847, type: 2}
+  - {fileID: 11400000, guid: ff7d87177ee46ea4e9b14cbae2bdc149, type: 2}
+  - {fileID: 11400000, guid: cec2e05e3a51b3146bd1b00729a414ae, type: 2}
+  - {fileID: 11400000, guid: b6e1e0eb3cd92ed41a98eee7293231e9, type: 2}
+  - {fileID: 11400000, guid: 845633d9045ba2b46b64c6f5767ee48a, type: 2}
+  - {fileID: 11400000, guid: 545caf23be6ca5e40a784d4d6be72bda, type: 2}
+  - {fileID: 11400000, guid: c81d81cc5d0b431409f39e73991da8f4, type: 2}
+  - {fileID: 11400000, guid: 173788948ef331b4b971449965419ad8, type: 2}
+  - {fileID: 11400000, guid: 465e77d97539b264c981477c297cee78, type: 2}
+  - {fileID: 11400000, guid: f3eaa8b3d4f13bc4a8983cbc622b0e37, type: 2}
+  - {fileID: 11400000, guid: b9b24c5ce3097fc4c8c1c789ebd4a588, type: 2}
+  - {fileID: 11400000, guid: 4875d908bf1aeca4c96827e5ec0cd3e6, type: 2}
+  - {fileID: 11400000, guid: 85a5ab7d9da3c224b9fedd87dac84013, type: 2}
+  - {fileID: 11400000, guid: 80b722fc628aedc46abf4d6b5483e95e, type: 2}
+  - {fileID: 11400000, guid: 410858c171751c649ab383bede8c5905, type: 2}
+  - {fileID: 11400000, guid: 905d83f7f31485d45a0e1864afed51d0, type: 2}
+  - {fileID: 11400000, guid: 801d5df1762fb7340a1fbe636fd55089, type: 2}
+  - {fileID: 11400000, guid: 0a05ceeddeae3704e95c854ad639f81f, type: 2}
+  - {fileID: 11400000, guid: 694e8df736b39f749af3e25c534cd309, type: 2}
+  - {fileID: 11400000, guid: 1716223deaa9ad843b67e43273d68431, type: 2}
+  soilStrengthDescriptions:
+  - strength: 0
+    description: 
+  - strength: 0
+    description: 
   groundElements:
   - {fileID: 11400000, guid: 0fbb0ee18d8af71458dd177ac9d8b282, type: 2}
   - {fileID: 11400000, guid: 5fc8d44f6e868104890f23985e850bbd, type: 2}

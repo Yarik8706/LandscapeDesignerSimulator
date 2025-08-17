@@ -6,7 +6,7 @@ namespace DefaultNamespace
     {
         [SerializeField] private SpriteRenderer _spriteRenderer;
         
-        public GroundElementData GroundElementData { get; private set; }
+        [field: SerializeField] public GroundElementData GroundElementData { get; private set; }
         
         public void SetData(GroundElementData groundElementData, int layerIndex = -1)
         {

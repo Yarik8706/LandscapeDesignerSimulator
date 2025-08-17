@@ -1,28 +1,21 @@
 ﻿using DefaultNamespace;
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class BuildElementUI : MonoBehaviour
+public class BuildElementUI : MonoBehaviour, IPointerClickHandler
 {
     [SerializeField] private Image _icon;
     [SerializeField] private TMP_Text _name;
-    [SerializeField] private Button _button;
-    [SerializeField] private Button _showDetailsButton;
         
     private BuildElementData _buildElementData;
-
-    private void Awake()
-    {
-        _button.onClick.AddListener(OnClick);
-        _showDetailsButton.onClick.AddListener(ShowDetails);
-    }
 
     public void SetData(BuildElementData buildElementData)
     {
         _name.text = buildElementData.displayName;
         _buildElementData = buildElementData;
-        _icon.sprite = ObjectManager.Instance.objectContext.constructionObjects[buildElementData.id].sprite;
+        _icon.sprite = buildElementData.icon;
     }
         
     private void ShowDetails()
@@ -36,4 +29,17 @@ public class BuildElementUI : MonoBehaviour
             return;
         BuildSystem.Instance.SelectObject(_buildElementData);
     }
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        if (eventData.button == PointerEventData.InputButton.Right)
+        {
+            ShowDetails();
+        }
+        else
+        {
+            OnClick();
+        }
+    }
+    
 }

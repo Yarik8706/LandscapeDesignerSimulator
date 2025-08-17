@@ -16,14 +16,6 @@ namespace DefaultNamespace
     }
 
     [Serializable]
-    public class ConstructionObject
-    {
-        public int id;
-        public Sprite sprite;
-        public GameObject prefab;
-    }
-
-    [Serializable]
     public class SoilStrengthDescription
     {
         public SoilStrength strength;
