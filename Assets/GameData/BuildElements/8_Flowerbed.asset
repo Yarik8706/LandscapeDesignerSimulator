@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 8
   displayName: Flowerbed
+  description: "Стоимость 8, время строительства 0.2, вклад: Ф0/Э2/У0"
   category: 1
   prefab: {fileID: 7139589034567307363, guid: ccee3822093c3e44dbba7697166604d5, type: 3}
   icon: {fileID: -1988888114, guid: f14bcdc4621956d4aab5fa2ff003de05, type: 3}
@@ -51,3 +52,4 @@ MonoBehaviour:
   adjacency: []
   terraform:
     overlayOn: 
+

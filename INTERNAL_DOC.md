@@ -6,12 +6,12 @@
 - `withCache`: caches LLM responses in Firestore with TTL.
 - `loadSession` / `saveSession`: manage session summaries and recent turns in Firestore.
 - `rateLimit`: simple per-user hourly quota using Firestore.
-- `BuildElementsGenerator.Generate`: editor menu that creates or updates `BuildElementData` assets in `Assets/GameData/BuildElements`.
+- `BuildElementsGenerator.Generate`: editor menu that creates or updates `BuildElementData` assets in `Assets/GameData/BuildElements` and автоматом формирует поле описания.
 
 ## Types
 - `Turn`: `{ role: "user" | "assistant"; text: string }` stored in session documents.
 - `Progress`: `{budget,deadline,weights,must,bans,climate,risks,bonus}` booleans returned each turn.
-- `BuildElementData`: ScriptableObject defining id, category, cost, build time, scoring delta, stability (tolerance, failMod, aura), placement constraints (terrain, climate, proximity, allowedBase), adjacency bonuses, and terraform overlay rules.
+- `BuildElementData`: ScriptableObject defining id, display name, description, category, cost, build time, scoring delta, stability (tolerance, failMod, aura), placement constraints (terrain, climate, proximity, allowedBase), adjacency bonuses, and terraform overlay rules.
 
 ## Data Flow
 1. Client calls `chatWithClient` with `{sessionId,userId,message,persona,clientBrief}`.
@@ -42,7 +42,7 @@
 
 * Класс `BuildElementData` с полями:
 
-    * `id:int`, `displayName:string`, `category:Category`, `icon:Sprite`.
+* `id:int`, `displayName:string`, `description:string`, `category:Category`, `icon:Sprite`.
     * `cost:int`, `buildTime:float`.
     * `delta:F/A/S` (вклады в функциональность/эстетику/устойчивость зоны).
     * `stability` (tolerance по climate, failMod, aura).
@@ -260,3 +260,4 @@ static void Generate() {
 
 * Если движок пока не применяет бонус `s_local` от Embankment к стоящему сверху объекту, оставить как задел (не ломает текущую логику).
 * При желании можно добавить дополнительные покрытия (например, "Road"), но в рамках данной задачи ограничиться перечисленными 22 элементами.
+

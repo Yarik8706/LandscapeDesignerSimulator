@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 3
   displayName: Paver Tile
+  description: "Стоимость 12, время строительства 0.4, вклад: Ф1/Э1/У1"
   category: 1
   prefab: {fileID: 6945748028387086665, guid: 0b77b2502ea5bf849aae8068839c6be0, type: 3}
   icon: {fileID: -442253117, guid: f14bcdc4621956d4aab5fa2ff003de05, type: 3}
@@ -52,3 +53,4 @@ MonoBehaviour:
   adjacency: []
   terraform:
     overlayOn: 
+

@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 4
   displayName: Gravel Path
+  description: "Стоимость 6, время строительства 0.2, вклад: Ф1/Э0/У1"
   category: 1
   prefab: {fileID: 3641692421218156242, guid: 37799aef7ef8cdd42907f395823b2c1d, type: 3}
   icon: {fileID: 1320248032, guid: f14bcdc4621956d4aab5fa2ff003de05, type: 3}
@@ -51,3 +52,4 @@ MonoBehaviour:
   adjacency: []
   terraform:
     overlayOn: 0300000001000000
+
