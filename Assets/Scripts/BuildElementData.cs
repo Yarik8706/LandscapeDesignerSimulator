@@ -7,8 +7,10 @@ using UnityEngine;
 public class BuildElementData : ScriptableObject
 {
     [Header("Identity")]
-    public int id;                         
+    public int id;
     public string displayName;                 // имя для UI
+    [TextArea]
+    public string description;                 // описание
     public Category category = Category.Decoration;
     public BuildElement prefab;
     
@@ -183,3 +185,4 @@ public class Terraform
     [Tooltip("Поверхности, поверх которых можно класть объект без удаления (Overlay)")]
     public List<TerrainType> overlayOn = new List<TerrainType>(){TerrainType.All};
 }
+

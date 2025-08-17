@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 20
   displayName: Gazebo
+  description: "Стоимость 70, время строительства 1.6, вклад: Ф2/Э2/У1"
   category: 1
   prefab: {fileID: 6044950322830626680, guid: e5da707587e2b2d47804356c81a7524e, type: 3}
   icon: {fileID: -792310273, guid: f14bcdc4621956d4aab5fa2ff003de05, type: 3}
@@ -52,3 +53,4 @@ MonoBehaviour:
   adjacency: []
   terraform:
     overlayOn: 
+

@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 2
   displayName: Gravel-Sand Fill
+  description: "Стоимость 10, время строительства 0.25, вклад: Ф0/Э0/У2"
   category: 0
   prefab: {fileID: 2411561901339605259, guid: ec6d983d84a48614a860177e363eb81c, type: 3}
   icon: {fileID: -162905484, guid: f14bcdc4621956d4aab5fa2ff003de05, type: 3}
@@ -52,3 +53,4 @@ MonoBehaviour:
   adjacency: []
   terraform:
     overlayOn: 
+

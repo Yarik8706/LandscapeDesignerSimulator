@@ -57,6 +57,7 @@ public static class BuildElementsGenerator
 
             data.id = spec.id;
             data.displayName = spec.name;
+            data.description = BuildDescription(spec);
             data.category = spec.category;
             data.cost = spec.cost;
             data.buildTime = spec.buildTime;
@@ -104,6 +105,11 @@ public static class BuildElementsGenerator
 
         AssetDatabase.SaveAssets();
         AssetDatabase.Refresh();
+    }
+
+    private static string BuildDescription(ElementSpec spec)
+    {
+        return $"Стоимость {spec.cost}, время строительства {spec.buildTime}, вклад: Ф{spec.delta.F}/Э{spec.delta.A}/У{spec.delta.S}";
     }
 
     private static List<ElementSpec> GetSpecs()
@@ -468,3 +474,4 @@ public static class BuildElementsGenerator
         return all;
     }
 }
+

@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 17
   displayName: Playground
+  description: "Стоимость 80, время строительства 2, вклад: Ф3/Э1/У1"
   category: 1
   prefab: {fileID: 3484506051159402401, guid: 9ca23e7be2f96c64497f946430f193b3, type: 3}
   icon: {fileID: 1878108290, guid: f14bcdc4621956d4aab5fa2ff003de05, type: 3}
@@ -52,3 +53,4 @@ MonoBehaviour:
   adjacency: []
   terraform:
     overlayOn: 
+
