@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject:
+    fileID: 0
+  m_PrefabInstance:
+    fileID: 0
+  m_PrefabAsset:
+    fileID: 0
+  m_GameObject:
+    fileID: 0
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script:
+    fileID: 11500000
+    guid: 64f8789ef01c436292df106296e9af31
+    type: 3
+  m_Name: Asphalt
+  m_EditorClassIdentifier: ''
+  id: 6
+  displayName: Asphalt
+  category: 1
+  icon:
+    fileID: 0
+  cost: 15
+  buildTime: 0.5
+  delta:
+    F: 2
+    A: 0
+    S: 1
+  stability:
+    tolerance:
+      temp: 0
+      wind: 0
+      hum: 0
+    failMod: 0.95
+    aura:
+      radius: 0
+      shape: 0
+      effects: []
+  constraints:
+    terrainAllowed:
+    - 5
+    climate:
+      temp:
+        min: -25
+        max: 45
+      hum:
+        min: 0
+        max: 95
+      windMax: 25
+    proximity:
+      need: []
+      avoid: []
+    allowedBase:
+    - fileID: 11400000
+      guid: 8745ce939be54fe8944a4a2a76f555bc
+      type: 2
+  adjacency: []
+  terraform:
+    overlayOn: []
