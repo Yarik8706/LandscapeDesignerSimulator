@@ -14,7 +14,7 @@ public class BuildElementData : ScriptableObject
     public Sprite icon;
     
     [Header("Economy")]
-    public int cost = 100;                    // базовая стоимость
+    public int cost = 25;                    // базовая стоимость
     public float buildTime = 1f;              // базовое время постройки (игровые единицы)
 
     [Header("Scoring Delta")]
@@ -48,7 +48,6 @@ public enum TerrainType {
     None
 }
 public enum AuraShape { None, Circle, Square }
-public enum TerraformMode { Replace, Overlay }
 
 /* ==== DATA BLOCKS ==== */
 
@@ -103,10 +102,7 @@ public class Constraints
 {
     [Tooltip("Разрешённые базовые типы террейна")]
     public List<TerrainType> terrainAllowed = new List<TerrainType> {  };
-
-    [Tooltip("Диапазон освещённости (0..100)")]
-    public MinMaxInt sunlight = new MinMaxInt(0, 100);
-
+    
     [Tooltip("Климатические окна допустимости")]
     public ClimateWindow climate = new ClimateWindow
     {
@@ -117,6 +113,9 @@ public class Constraints
 
     [Tooltip("Требуемая близость к объектам и запрещённые соседства")]
     public Proximity proximity = new Proximity();
+    
+    [Tooltip("Допустимые объекты поверх которых разметить этот объект")]
+    public List<BuildElementData> allowedBase = new List<BuildElementData> {  };
 }
 
 [Serializable]
@@ -179,56 +178,6 @@ public class AdjacencyRule
 [Serializable]
 public class Terraform
 {
-    public TerraformMode mode = TerraformMode.Replace;
-
-    [Tooltip("Допустимые базовые террейны для AutoFlatten/Replace")]
-    public List<TerrainType> allowedBase = new List<TerrainType> { TerrainType.All };
-
-    [Tooltip("Базы, поверх которых можно класть объект без удаления (Overlay)")]
-    public List<TerrainType> overlayOn = new List<TerrainType>();
+    [Tooltip("Поверхности, поверх которых можно класть объект без удаления (Overlay)")]
+    public List<TerrainType> overlayOn = new List<TerrainType>(){TerrainType.All};
 }
-
-
-
-/* ==== ПРИМЕРЫ АССЕТОВ (заполнять в инспекторе) ====
-
--- Bench (лавка) --
-id = "bench"
-category = Decor
-size = (1,1)
-cost = 100
-buildTime = 1
-delta = {F=3, A=1, S=0}
-stability.tolerance = {temp=4, wind=2, hum=3}
-stability.failMod = 0.8f
-stability.aura.shape = None
-constraints.terrainAllowed = [Pavement, Deck]
-constraints.slopeMaxDeg = 3
-constraints.sunlight = [10..100]
-constraints.climate = temp[-25..45], hum[0..95], windMax=25
-constraints.proximity.need = [{id:"path", radius:1}]
-constraints.proximity.avoid = [{id:"bbq", radius:2}]
-adjacency = [{needId:"path", radius:1, bonus:{F=2,A=0,S=0}}]
-maintenance = {costPerSeason=2, timePerSeason=0.1}
-terraform.mode = AutoFlatten
-terraform.allowedBase = [Ground, Pavement, Deck]
-terraform.cost.flattenPerTile = 2
-
--- Bridge (мостик) --
-id = "bridge_small"
-category = Functional
-size = (2,3) // или параметризуемо
-cost = 300
-buildTime = 3
-delta = {F=4, A=2, S=2}
-stability.tolerance = {temp=6, wind=4, hum=2}
-stability.aura.shape = AlongPath
-constraints.terrainAllowed = [Water, Ground] // если нужен вход с берега
-constraints.climate = temp[-30..45], hum[0..100], windMax=20
-terraform.mode = Overlay
-terraform.overlayOn = [Water]
-terraform.foundation = true
-terraform.cost.overlayPerTile = 3
-terraform.rules = {minWaterDepth=1, requireBanks=true, keepBaseTerrain=true}
-
-*/

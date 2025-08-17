@@ -1445,6 +1445,90 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: c_panel_select
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 1003
+        width: 11
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 1, y: 0, z: 1, w: 1}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4dd36c314b15d5d499c5aabc86d604fe
+      internalID: 1134223869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: c_element
+      rect:
+        serializedVersion: 2
+        x: 427
+        y: 1003
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 1, y: 1, z: 1, w: 1}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1f7b91762b4603468b030d8f59c7e07
+      internalID: 1354641812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui15+
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 984
+        width: 16
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 3, y: 0, z: 3, w: 3}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 803ece6e96bb42745a02eccecbf15982
+      internalID: -618312524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: about
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 992
+        width: 8
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd7cc2186bc8592469ca489a90275211
+      internalID: -1299610536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -1466,12 +1550,15 @@ TextureImporter:
       Steppes: -1444482256
       Swamps: -728429853
       Tiles: -442253117
+      about: -1299610536
       b1: 2110952126
       b2: -568902958
       b3: 1919095039
       bbg: 1316093726
       bridge1: 1506352080
       bridge2: -1767770732
+      c_element: 1354641812
+      c_panel_select: 1134223869
       cancel: 1382806724
       flowers: -1988888114
       grass: -272679171
@@ -1514,6 +1601,7 @@ TextureImporter:
       ui14: -1733533723
       ui14+: 701648303
       ui15: -1078810399
+      ui15+: -618312524
       ui16: -59037227
       ui17: -1817818413
       ui18: -1996894290
