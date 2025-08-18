@@ -8,7 +8,8 @@ public class ChatService {
   }
 
   public Task<ChatResponse> Send(ChatRequest req) {
-    return RetryPolicy.Execute(() => client.Chat(req));
+    // return RetryPolicy.Execute(() => client.Chat(req));
+    return client.Chat(req);
   }
 }
 

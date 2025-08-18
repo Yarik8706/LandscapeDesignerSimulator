@@ -1,19 +1,14 @@
 import * as admin from "firebase-admin";
-import * as functions from "firebase-functions";
-import { onCallGenkit } from "firebase-functions/genkit";
-import { ai } from "./llm";
-import { clientChatFlow } from "./flows/clientChat";
-import { summarizeFlow } from "./flows/summarize";
-import { rateLimit } from "./services/ratelimit";
+import { onCallGenkit } from "firebase-functions/https";
+import { aiCall as aiCallFlow } from "./flows/aiCall";
+import {defineSecret} from "firebase-functions/params";
+
+export const apiKey = defineSecret("GOOGLE_GENAI_API_KEY");
 
 admin.initializeApp();
 
-export const chatWithClient = onCallGenkit(clientChatFlow, {
-  before: [ async (ctx) => {
-    const uid = ctx.auth?.uid || "anon";
-    await rateLimit(uid, 120);
-  }]
-});
-
-export const summarizeSession = onCallGenkit(summarizeFlow);
-
+export const aiCall = onCallGenkit({
+        secrets: [apiKey],
+    },
+    aiCallFlow,
+);

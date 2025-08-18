@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Firebase.Functions;
+using Google.MiniJSON;
 using UnityEngine;
 
 public class FunctionsClient {
@@ -22,7 +23,9 @@ public class FunctionsClient {
       {"clientBrief", req.clientBrief}
     };
     var result = await callable.CallAsync(data);
-    return JsonUtility.FromJson<ChatResponse>(result.Data.ToString());
+
+    string json = Json.Serialize(result.Data);
+    return JsonUtility.FromJson<ChatResponse>(json);
   }
 }
 
