@@ -33,18 +33,18 @@ var __importStar = (this && this.__importStar) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.aiCall = void 0;
+exports.clientCall = exports.aiCall = exports.apiKey = void 0;
 const admin = __importStar(require("firebase-admin"));
 const https_1 = require("firebase-functions/https");
-// import { clientChatFlow } from "./flows/clientChat";
-// import { summarizeFlow } from "./flows/summarize";
-const aiCall_1 = require("./flows/aiCall");
-const llm_1 = require("./llm");
+const aiCallFlow_1 = require("./flows/aiCallFlow");
+const clientCallFlow_1 = require("./flows/clientCallFlow");
+const params_1 = require("firebase-functions/params");
+exports.apiKey = (0, params_1.defineSecret)("GOOGLE_GENAI_API_KEY");
 admin.initializeApp();
-// export const chatWithClient = onCallGenkit({}, 
-//     clientChatFlow);
-// export const summarizeSession = onCallGenkit(summarizeFlow);
 exports.aiCall = (0, https_1.onCallGenkit)({
-    secrets: [llm_1.apiKey],
-}, aiCall_1.aiCall);
+    secrets: [exports.apiKey],
+}, aiCallFlow_1.aiCallFlow);
+exports.clientCall = (0, https_1.onCallGenkit)({
+    secrets: [exports.apiKey],
+}, clientCallFlow_1.clientCallFlow);
 //# sourceMappingURL=index.js.map

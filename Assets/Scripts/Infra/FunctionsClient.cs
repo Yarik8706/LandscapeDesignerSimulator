@@ -4,7 +4,7 @@ using Firebase.Functions;
 using Google.MiniJSON;
 using UnityEngine;
 
-public class FunctionsClient {
+public class FunctionsClient<T> {
   private readonly FirebaseFunctions functions;
   private readonly string functionName;
 
@@ -13,19 +13,12 @@ public class FunctionsClient {
     this.functionName = functionName;
   }
 
-  public async Task<ChatResponse> Chat(ChatRequest req) {
+  public async Task<T> Chat(string req) {
     var callable = functions.GetHttpsCallable(functionName);
-    var data = new Dictionary<string, object> {
-      {"sessionId", req.sessionId},
-      {"userId", req.userId},
-      {"message", req.message},
-      {"persona", req.persona},
-      {"clientBrief", req.clientBrief}
-    };
-    var result = await callable.CallAsync(data);
+    var result = await callable.CallAsync(req);
 
     string json = Json.Serialize(result.Data);
-    return JsonUtility.FromJson<ChatResponse>(json);
+    return JsonUtility.FromJson<T>(json);
   }
 }
 
