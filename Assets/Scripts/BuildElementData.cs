@@ -150,10 +150,10 @@ public class ClimateWindow
 public class Proximity
 {
     [Tooltip("Нужно наличие указанных объектов в радиусе")]
-    public List<ProximityNeed> need = new List<ProximityNeed>();
+    public List<BuildElementData> need = new();
     
     [Tooltip("Запрещено наличие указанных объектов в радиусе")]
-    public List<ProximityAvoid> avoid = new List<ProximityAvoid>();
+    public List<BuildElementData> avoid = new ();
 }
 
 [Serializable]

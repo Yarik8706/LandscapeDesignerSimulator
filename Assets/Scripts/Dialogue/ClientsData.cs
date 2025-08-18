@@ -10,6 +10,8 @@ namespace Infra
         [TextArea] public string generalContext;
         [TextArea] public string[] personas;
         [TextArea] public string[] clientsBriefs;
+        public string[] clientsNames;
+        public Sprite[] clientsAvatars;
 
         [TextArea] public string firstSystemMessage = "Поприветствуй игрока и изложи, что ты хочешь заказать для своей территории (по профилю клиента и варианту требований).";
         [TextArea] public string playerProgressQuestion = "Выведи игроку, сколько пунктов он уже узнал из требований и сколько всего нужно выяснить. Формат: «X / Y».";

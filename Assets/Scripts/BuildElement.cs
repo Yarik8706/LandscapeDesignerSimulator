@@ -11,7 +11,6 @@ namespace DefaultNamespace
         public void SetData(BuildElementData buildElementData, int layerIndex = -1)
         {
             this.BuildElementData = buildElementData;
-            _spriteRenderer.sprite = buildElementData.icon;
             _spriteRenderer.sortingOrder = layerIndex;
         }
     }

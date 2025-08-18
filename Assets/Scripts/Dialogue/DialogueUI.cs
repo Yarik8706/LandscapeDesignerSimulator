@@ -12,6 +12,8 @@ public class DialogueUI : MonoBehaviour {
   [SerializeField] private Sprite[] loadSprites;
   [SerializeField] private Image loadImage;
   
+  [SerializeField] private TMP_Text clientName;
+  [SerializeField] private Image clientImage;
   [SerializeField] private TMP_Text tracker;
   [SerializeField] private TMP_Text gottenPlayerTasks;
   [SerializeField] private TMP_Text canAskCountText;
@@ -34,10 +36,14 @@ public class DialogueUI : MonoBehaviour {
   private void Awake()
   {
     GameDataManager.OnGameStageChanged.AddListener(OnGameStageChanged);
-    FirebaseInitializer.OnInitialized.AddListener(async () =>
+    FirebaseInitializer.OnInitialized.AddListener(() =>
     {
       _clientChatService = new ChatService<ChatResponse>("clientCall");
+      _clientChatService.testData = new ChatResponse() { reply = "Test reply message from server response", learnedSummary = "0/0", learnedText = "Test reply message from server response" };
       _simpleChatService = new ChatService<string>("aiCall");
+      _simpleChatService.testData = "Test reply message from server response";
+      ChatService<ChatResponse>.isDebug = true;
+      ChatService<string>.isDebug = true;
     });
   }
 
@@ -56,6 +62,8 @@ public class DialogueUI : MonoBehaviour {
     {
       _currentAskCount = _gameData.firstDialogQuestionCount;
       _currentDialogue = new DialogueData();
+      clientName.text = clientsData.clientsNames[_gameData.activeClientIndex]; 
+      clientImage.sprite = clientsData.clientsAvatars[_gameData.activeClientIndex];
       SetClientContext(clientsData.personas[_gameData.activeClientIndex]);
       SetClientContext(clientsData.clientsBriefs[_gameData.activeClientBrief]);
       SetClientContext(clientsData.generalContext);
@@ -145,7 +153,7 @@ public class DialogueUI : MonoBehaviour {
   }
   
   private void RecheckTracker(string req) {
-    tracker.text = "Требований клиент вам рассказал: " + req;
+    tracker.text = "Количество требований клиент вам рассказал: " + req;
   }
 
   private void RecheckGottenTasks(string req)

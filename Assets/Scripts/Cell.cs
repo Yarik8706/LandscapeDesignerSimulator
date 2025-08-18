@@ -14,7 +14,6 @@ public class Cell : MonoBehaviour, IPointerClickHandler
     [SerializeField] private SoilStrength[] _soilsStrength;
     [SerializeField] private TerrainType _terrainType;
     [SerializeField] private ObjectContext _objectContext;
-    [SerializeField] private BuildElement _buildElementPrefab;
     [SerializeField] private GroundElement _groundElementPrefab;
 
     private void Start()
@@ -35,18 +34,55 @@ public class Cell : MonoBehaviour, IPointerClickHandler
         data.x = (int)transform.position.x;
         data.y = (int)transform.position.y;
     }
+    
+    private int OppositeIndex(int index)
+    {
+        return index == 0 ? 1 : 0;
+    }
 
     public void AddBuildElement(BuildElementData buildElementData)
     {
-        var newElement = Instantiate(_buildElementPrefab, 
-            transform.position, 
+        var oppositeIndex = OppositeIndex((int)buildElementData.category);
+        if (data.decorations[oppositeIndex] != null && 
+            (data.decorations[oppositeIndex].constraints.proximity.avoid.Contains(buildElementData)
+             || buildElementData.constraints.proximity.avoid.Contains(data.decorations[oppositeIndex])))
+            return;
+        if (data.decorations[oppositeIndex] != null && 
+            (!data.decorations[oppositeIndex].constraints.proximity.need.Contains(buildElementData)
+             || !buildElementData.constraints.proximity.need.Contains(data.decorations[oppositeIndex])))
+            return;
+        var newElement = Instantiate(buildElementData.prefab,
+            transform.position,
             Quaternion.identity, transform.parent);
         newElement.SetData(buildElementData, -(int)transform.position.y);
-            
+        LandscapeProjectDetailsUI.Instance.AddValues(
+            buildElementData.delta.A,
+            buildElementData.delta.F,
+            buildElementData.cost,
+            buildElementData.buildTime);
+
         data.decorations[(int)buildElementData.category] = newElement.BuildElementData;
         _buildElements[(int)buildElementData.category] = newElement;
+        if (buildElementData.terraform.overlayOn.Contains(data.ground.id))
+        {
+            LandscapeProjectDetailsUI.Instance.AddValues(
+                0,
+                0,
+                data.ground.overlayCost,
+                data.ground.overlayTime);
+        }
+        else
+        {
+            LandscapeProjectDetailsUI.Instance.AddValues(
+                0,
+                0,
+                data.ground.replaceCost,
+                data.ground.replaceTime);
+        }
+
+        ChangeGroundElementState(false);
     }
-        
+
     public void RemoveBuildElement(Category category)
     {
         var buildElementData = data.decorations[(int)category];
@@ -54,6 +90,35 @@ public class Cell : MonoBehaviour, IPointerClickHandler
         Destroy(_buildElements[(int)category].gameObject);
         data.decorations[(int)category] = null;
         _buildElements[(int)category] = null;
+        LandscapeProjectDetailsUI.Instance.AddValues(
+            -buildElementData.delta.A, 
+            -buildElementData.delta.F,
+            -buildElementData.cost,
+            -buildElementData.buildTime);
+        if (data.decorations[OppositeIndex((int)category)] == null)
+        {
+            if (buildElementData.terraform.overlayOn.Contains(data.ground.id))
+            {
+                LandscapeProjectDetailsUI.Instance.AddValues(
+                    0, 
+                    0,
+                    -data.ground.overlayCost,
+                    -data.ground.overlayTime);
+            }
+            else
+            {
+                LandscapeProjectDetailsUI.Instance.AddValues(
+                    0, 
+                    0,
+                    -data.ground.replaceCost,
+                    -data.ground.replaceTime);
+            }
+        }
+        
+        if (_buildElements[0] == null && _buildElements[1] == null)
+        {
+            ChangeGroundElementState(true);
+        }
     }
         
     public void AddGroundElement(GroundElementData groundElementData)

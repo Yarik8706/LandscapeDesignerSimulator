@@ -16,7 +16,7 @@ public class FunctionsClient<T> {
   public async Task<T> Chat(string req) {
     var callable = functions.GetHttpsCallable(functionName);
     var result = await callable.CallAsync(req);
-
+    
     string json = Json.Serialize(result.Data);
     return JsonUtility.FromJson<T>(json);
   }
