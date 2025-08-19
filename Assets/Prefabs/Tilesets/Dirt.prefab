@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2255589703506646494}
   - component: {fileID: 1286147081548304701}
   - component: {fileID: 7360086648717536020}
+  - component: {fileID: 2593564496635592017}
   m_Layer: 0
   m_Name: Dirt
   m_TagString: Untagged
@@ -107,8 +108,54 @@ MonoBehaviour:
     - {fileID: 0}
     - {fileID: 0}
     soils: 
+  _groundElement: {fileID: 0}
+  _buildElements: []
   _soilsStrength: 
   _terrainType: 0
   _objectContext: {fileID: 11400000, guid: 7e2b2e07a3f4d3e4aa619cd99b4578d8, type: 2}
-  _buildElementPrefab: {fileID: -2373645137121982114, guid: 3ce14ee181388354a95058483cbc101a, type: 3}
   _groundElementPrefab: {fileID: 6675924654514131816, guid: 851a563b44ae8aa4db466c2f4bf9f452, type: 3}
+--- !u!61 &2593564496635592017
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8710713267849424693}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 0.25, y: 0.25}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0

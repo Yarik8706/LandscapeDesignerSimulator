@@ -18,13 +18,13 @@ public class ElementTransition : MonoBehaviour
     [ContextMenu("ShowElement")]
     public void ShowElement()
     {
-        ChangeActive(true);
+        ChangeActiveInstantly(true);
     }
     
     [ContextMenu("HideElement")]
     public void HideElement()
     {
-        ChangeActive(false);
+        ChangeActiveInstantly(false);
     }
 #endif
     

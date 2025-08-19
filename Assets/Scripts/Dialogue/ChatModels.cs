@@ -20,6 +20,7 @@ public class ChatResponse {
   public string reply;
   public string learnedSummary;
   public string learnedText;
+  public int incorrectMessages;
 }
 
 

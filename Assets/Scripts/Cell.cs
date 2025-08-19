@@ -4,7 +4,7 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class Cell : MonoBehaviour, IPointerClickHandler
+public class Cell : MonoBehaviour
 {
     public CellData data = new CellData();
 
@@ -51,9 +51,7 @@ public class Cell : MonoBehaviour, IPointerClickHandler
             (!data.decorations[oppositeIndex].constraints.proximity.need.Contains(buildElementData)
              || !buildElementData.constraints.proximity.need.Contains(data.decorations[oppositeIndex])))
             return;
-        var newElement = Instantiate(buildElementData.prefab,
-            transform.position,
-            Quaternion.identity, transform.parent);
+        var newElement = Instantiate(buildElementData.prefab, transform.position, Quaternion.identity, transform);
         newElement.SetData(buildElementData, -(int)transform.position.y);
         LandscapeProjectDetailsUI.Instance.AddValues(
             buildElementData.delta.A,
@@ -130,9 +128,7 @@ public class Cell : MonoBehaviour, IPointerClickHandler
             Destroy(_groundElement.gameObject);
         }
             
-        var newElement = Instantiate(_groundElementPrefab, 
-            transform.position, 
-            Quaternion.identity, transform.parent);
+        var newElement = Instantiate(_groundElementPrefab, transform.position, Quaternion.identity, transform);
             
         SetupGroundElement(newElement, groundElementData);
     }
@@ -175,8 +171,9 @@ public class Cell : MonoBehaviour, IPointerClickHandler
         AddGroundElementInEditor(_objectContext.groundElements[(int)_terrainType]);
     }
 
-    public void OnPointerClick(PointerEventData eventData)
+    private void OnMouseUp()
     {
+        Debug.Log("Click on cell");
         BuildSystem.Instance.ClickOnCell(this);
     }
 }

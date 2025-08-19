@@ -714,9 +714,9 @@ TextureImporter:
       name: ui1
       rect:
         serializedVersion: 2
-        x: 289
+        x: 288
         y: 1004
-        width: 63
+        width: 64
         height: 20
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -1739,6 +1739,153 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: s1
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 1005
+        width: 4
+        height: 3
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3eb3263249932044f9354123c90339b6
+      internalID: -573223980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: s2
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 1002
+        width: 4
+        height: 3
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72125f8cabbb7484c99413c0e2519488
+      internalID: -772397773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sb1
+      rect:
+        serializedVersion: 2
+        x: 281
+        y: 1005
+        width: 3
+        height: 3
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c327cffc1375b9469e1afad9da10908
+      internalID: 65688863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Money
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 976
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5bd47bd34b392554693a48c0951d1651
+      internalID: 2777522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: time
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 976
+        width: 14
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 964245a3d7e5a954ca58a9397553271b
+      internalID: -1305634429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: t1
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 942
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3344ec221ae469c4c9c4c6f23f7b13c9
+      internalID: -1055192631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: t2
+      rect:
+        serializedVersion: 2
+        x: 370
+        y: 942
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89b097ed6c722444d9bc2aa3dad3c7ce
+      internalID: 1503554962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -1755,6 +1902,7 @@ TextureImporter:
       Forests: 1701338736
       Gravel: 1320248032
       Lake: -16511627
+      Money: 2777522
       Mountains: 397096931
       Sports ground: -699005387
       Steppes: -1444482256
@@ -1806,11 +1954,17 @@ TextureImporter:
       pond: 697941671
       road1: 1563299182
       road2: -146789164
+      s1: -573223980
+      s2: -772397773
+      sb1: 65688863
       scroll_b: -180621019
       scroll_h: -473438945
       select: -1717654158
       select1: -1717654158
       shrub: 49780972
+      t1: -1055192631
+      t2: 1503554962
+      time: -1305634429
       tree1: 2004169644
       tree2: 2075668575
       ui1: -231778880

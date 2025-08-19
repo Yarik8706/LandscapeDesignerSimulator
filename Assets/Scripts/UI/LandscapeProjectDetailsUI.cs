@@ -1,16 +1,18 @@
 ﻿using System.Globalization;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace DefaultNamespace
 {
     public class LandscapeProjectDetailsUI : MonoBehaviour
     {
         // Текстовые поля с значениями эстетики, функциональности, стоимости и срокам
-        [SerializeField] private TextMeshProUGUI aestheticsText;
-        [SerializeField] private TextMeshProUGUI functionalityText;
         [SerializeField] private TextMeshProUGUI costText;
         [SerializeField] private TextMeshProUGUI timeText;
+        
+        [SerializeField] private Slider aestheticsSlider;
+        [SerializeField] private Slider functionalitySlider;
         
         // числа, которые нужно вставить в текст
         private int aesthetics;
@@ -32,10 +34,11 @@ namespace DefaultNamespace
             this.cost += cost;
             this.time += time;
             
-            aestheticsText.text = aesthetics.ToString();
-            functionalityText.text = functionality.ToString();
-            costText.text = cost.ToString();
-            timeText.text = time.ToString(CultureInfo.InvariantCulture);
+            aestheticsSlider.value = this.aesthetics/80f*100f;
+            functionalitySlider.value = this.functionality/80f*100f;
+            
+            costText.text = "Бюджет проекта: " + cost.ToString();
+            timeText.text = "Срок постройки: " + time.ToString(CultureInfo.InvariantCulture);
         }
         
         public void ClearValues()
@@ -45,10 +48,11 @@ namespace DefaultNamespace
             cost = 0;
             time = 0;
             
-            aestheticsText.text = aesthetics.ToString() + "/80";
-            functionalityText.text = functionality.ToString() + "/80";
-            costText.text = cost.ToString();
-            timeText.text = time.ToString(CultureInfo.InvariantCulture);
+            aestheticsSlider.value = 0;
+            functionalitySlider.value = 0;
+            
+            costText.text = "Бюджет проекта: " + cost.ToString();
+            timeText.text = "Срок постройки: " + time.ToString(CultureInfo.InvariantCulture);
         }
     }
 }

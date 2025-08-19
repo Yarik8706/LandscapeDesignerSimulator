@@ -7,13 +7,15 @@ namespace UI
     {
         public void NextStage()
         {
-            GameDataManager.OnGameStageChanged.Invoke();
+            
             if (GameDataManager.Instance.gameData.stage == GameStage.FinalDialog)
             {
                 GameDataManager.Instance.gameData.stage = GameStage.FirstDialog;
+                GameDataManager.OnGameStageChanged.Invoke();
                 return;
             };
             GameDataManager.Instance.gameData.stage++;
+            GameDataManager.OnGameStageChanged.Invoke();
         }
     }
 }

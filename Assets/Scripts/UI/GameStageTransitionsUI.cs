@@ -33,6 +33,7 @@ namespace UI
 
         private void OnStageChanged()
         {
+            Debug.Log("OnStageChanged " + GameDataManager.Instance.gameData.stage);
             foreach (var transition in _stages[(int)GameDataManager.Instance.gameData.stage].transitions)
             {
                 transition.elementTransition.ChangeActive(transition.state);

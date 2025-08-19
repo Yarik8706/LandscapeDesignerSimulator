@@ -6,12 +6,14 @@ export const ModelOutput = z.object({
     reply: z.string(),              // ответ ИИ игроку
     topics: z.array(z.string()).default([]) ,// произвольное число тем,
     allTopicsCount: z.number(),     // всего тем
+    incorrectMessages: z.number(),  
 });
 
 export const FlowOutput = z.object({
     reply: z.string(),
     learnedSummary: z.string(),     // "X/Y"
-    learnedText: z.string()        // готовая строка со списком подтверждённых пунктов
+    learnedText: z.string(),        // готовая строка со списком подтверждённых пунктов,
+    incorrectMessages: z.number(),
 });
 
 export const clientCallFlow = ai.defineFlow({
@@ -24,8 +26,9 @@ export const clientCallFlow = ai.defineFlow({
         prompt:
             message + `\n
 1) Дай ответ игроку в поле "reply".
-2) Верни массив "allTopicsCount": общее количество требований.
+2) Верни переменную "allTopicsCount": общее количество требований.
 3) Верни массив "topics": требования, которые ты выдал в диалоге, опиши их предложением.
+4) Верни переменную "incorrectMessages": количество сообщений игрока, которые не соответствуют теме ландшафтного дизайна.
 Не выдумывай.
 `,
         output: { schema: ModelOutput }
@@ -40,6 +43,7 @@ export const clientCallFlow = ai.defineFlow({
     return {
         reply: output.reply,
         learnedSummary,      
-        learnedText
+        learnedText,
+        incorrectMessages: output.incorrectMessages
     };
 });

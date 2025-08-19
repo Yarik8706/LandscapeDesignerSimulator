@@ -4,10 +4,12 @@ using UnityEngine.UI;
 
 public class BuildSystem : MonoBehaviour
 {
-    [SerializeField] private BuildElement _buildElementPrefab;
     [SerializeField] private GameObject _selectPoint;
     [SerializeField] private Button _resetCellButton;
+    [SerializeField] private Button _unselectButton;
     [SerializeField] private Sprite[] _resetCellButtonSprites;
+    [SerializeField] private Image _selectedElementImage;
+    [SerializeField] private Sprite _defaultElementImage;
         
     private BuildElementData _buildElementData;
     private bool _isResetCellMode;
@@ -19,10 +21,12 @@ public class BuildSystem : MonoBehaviour
         Instance = this;
         _resetCellButton.onClick.AddListener(() =>
             {
+                DeselectObject();
                 _isResetCellMode = !_isResetCellMode;
                 _resetCellButton.image.sprite = _isResetCellMode ? _resetCellButtonSprites[1] 
                     : _resetCellButtonSprites[0];
             });
+        _unselectButton.onClick.AddListener(DeselectObject);
     }
 
     private void Update()
@@ -40,7 +44,14 @@ public class BuildSystem : MonoBehaviour
 
     public void SelectObject(BuildElementData buildElementData)
     {
+        _selectedElementImage.sprite = buildElementData.icon;
         _buildElementData = buildElementData;
+    }
+    
+    public void DeselectObject()
+    {
+        _selectedElementImage.sprite = _defaultElementImage;
+        _buildElementData = null;
     }
         
     public void ClickOnCell(Cell cell)
@@ -61,7 +72,6 @@ public class BuildSystem : MonoBehaviour
            || !_buildElementData.terraform.overlayOn.Contains(cell.data.ground.id)
            ) return;
         CreateElement(_buildElementData, cell);
-        _buildElementData = null;
     }
     
     public void ResetCell(Cell cell)

@@ -58,6 +58,8 @@ public class DialogueUI : MonoBehaviour {
   private void OnGameStageChanged() {
     var stage = GameDataManager.Instance.gameData.stage;
 
+    tracker.gameObject.SetActive(true);
+    gottenPlayerTasks.gameObject.SetActive(true);
     if (stage == GameStage.FirstDialog)
     {
       _currentAskCount = _gameData.firstDialogQuestionCount;
@@ -68,6 +70,19 @@ public class DialogueUI : MonoBehaviour {
       SetClientContext(clientsData.clientsBriefs[_gameData.activeClientBrief]);
       SetClientContext(clientsData.generalContext);
       SystemSendMessage(clientsData.firstSystemMessage);
+    }
+    else if (stage == GameStage.SecondDialog)
+    {
+      
+    }
+    else if (stage == GameStage.FinalDialog)
+    {
+      
+    }
+    else
+    {
+      tracker.gameObject.SetActive(false);
+      gottenPlayerTasks.gameObject.SetActive(false);
     }
   }
 
