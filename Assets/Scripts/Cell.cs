@@ -12,7 +12,9 @@ public class Cell : MonoBehaviour
 
     [SerializeField] private GroundElement _groundElement;
     
-    [SerializeField] private SoilStrength[] _soilsStrength;
+    [field: SerializeField] public SoilStrength SoilStrength { get; private set; } = SoilStrength.Strong; 
+    [field: SerializeField] public DirtType DirtType { get; private set; } = DirtType.Good;
+    
     [SerializeField] private TerrainType _terrainType;
     [SerializeField] private ObjectContext _objectContext;
     [SerializeField] private GroundElement _groundElementPrefab;
@@ -21,12 +23,14 @@ public class Cell : MonoBehaviour
 
     private void Start()
     {
+        Debug.Log("dfagfada");
         data.ground = _objectContext.groundElements[(int)_terrainType];
-        data.soils = _soilsStrength;
         for (int i = transform.childCount - 1; i >= 0; i--)
         {
             Destroy(transform.GetChild(i).gameObject);
         }
+
+        Debug.Log("fadsaf");
         AddGroundElement(_objectContext.groundElements[(int)_terrainType]);
         data.x = (int)transform.position.x;
         data.y = (int)transform.position.y;
@@ -100,19 +104,30 @@ public class Cell : MonoBehaviour
         ChangeGroundElementState(false);
     }
 
-    public void RemoveBuildElement(Category category)
+    public void RemoveBuildElement(Category category, bool returnHalfCost = false)
     {
         var buildElementData = data.decorations[(int)category];
         if (buildElementData == null) return;
         Destroy(_buildElements[(int)category].gameObject);
         data.decorations[(int)category] = null;
         _buildElements[(int)category] = null;
-        LandscapeProjectDetailsUI.Instance.AddValues(
-            -buildElementData.delta.A, 
-            -buildElementData.delta.F,
-            -buildElementData.cost,
-            -buildElementData.buildTime);
-        if (data.decorations[OppositeIndex((int)category)] == null)
+        if (returnHalfCost)
+        {
+            LandscapeProjectDetailsUI.Instance.AddValues(
+                -buildElementData.delta.A, 
+                -buildElementData.delta.F,
+                -buildElementData.cost / 2,
+                -buildElementData.buildTime / 2);
+        }
+        else
+        {
+            LandscapeProjectDetailsUI.Instance.AddValues(
+                        -buildElementData.delta.A, 
+                        -buildElementData.delta.F,
+                        -buildElementData.cost,
+                        -buildElementData.buildTime);
+        }
+        if (data.decorations[OppositeIndex((int)category)] == null && !returnHalfCost)
         {
             if (buildElementData.terraform.overlayOn.Contains(data.ground.id))
             {
@@ -140,16 +155,21 @@ public class Cell : MonoBehaviour
         
     public void AddGroundElement(GroundElementData groundElementData)
     {
-        if(_groundElement != null && _groundElement.GroundElementData != null
-               && _groundElement.GroundElementData.id == groundElementData.id) return;
         if (_groundElement != null)
         {
             Destroy(_groundElement.gameObject);
         }
+
+        Debug.Log("ddfadsaf");
             
         var newElement = Instantiate(_groundElementPrefab, transform.position, Quaternion.identity, transform);
             
         SetupGroundElement(newElement, groundElementData);
+    }
+
+    public void BreakDecoration()
+    {
+        RemoveBuildElement(Category.Decoration, true);
     }
         
     public void AddGroundElementInEditor(GroundElementData groundElementData)
@@ -174,8 +194,8 @@ public class Cell : MonoBehaviour
         this.data.ground = element.GroundElementData;
         _groundElement = element;
     }
-        
-    public void ChangeGroundElementState(bool state)
+
+    private void ChangeGroundElementState(bool state)
     {
         _groundElement.gameObject.SetActive(state);
     }
@@ -201,6 +221,13 @@ public class Cell : MonoBehaviour
     {
         BuildSystem.Instance.ClickOnCell(this);
     }
+    
+    [ContextMenu(nameof(SetRandomSoilStrengthAndDirtType))]
+    public void SetRandomSoilStrengthAndDirtType()
+    {
+        SoilStrength = Random.Range(0, 4) == 0 ? SoilStrength.Weak : SoilStrength.Strong;
+        DirtType = Random.Range(0, 4) == 0 ? DirtType.Bad : DirtType.Good;
+    }
 }
     
 [Serializable]
@@ -208,11 +235,8 @@ public class CellData
 {
     public int x;
     public int y;
-    public int id;
     public GroundElementData ground;
-    public bool hasGround;
     public BuildElementData[] decorations;
-    public SoilStrength[] soils;
 
     public CellData()
     {

@@ -433,6 +433,10 @@ PrefabInstance:
       propertyPath: _groundElement
       value: 
       objectReference: {fileID: 2591276426883562361}
+    - target: {fileID: 7360086648717536020, guid: 9ea6c099d52f1074099d0216f7238a6c, type: 3}
+      propertyPath: <DirtType>k__BackingField
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8710713267849424693, guid: 9ea6c099d52f1074099d0216f7238a6c, type: 3}
       propertyPath: m_Name
       value: Dirt (40)
@@ -865,6 +869,14 @@ PrefabInstance:
       propertyPath: _groundElement
       value: 
       objectReference: {fileID: 7323458181027156525}
+    - target: {fileID: 7360086648717536020, guid: 9ea6c099d52f1074099d0216f7238a6c, type: 3}
+      propertyPath: <DirtType>k__BackingField
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7360086648717536020, guid: 9ea6c099d52f1074099d0216f7238a6c, type: 3}
+      propertyPath: <SoilStrength>k__BackingField
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8710713267849424693, guid: 9ea6c099d52f1074099d0216f7238a6c, type: 3}
       propertyPath: m_Name
       value: Dirt (48)
@@ -1061,6 +1073,14 @@ PrefabInstance:
       propertyPath: _groundElement
       value: 
       objectReference: {fileID: 8053379147032631470}
+    - target: {fileID: 7360086648717536020, guid: 9ea6c099d52f1074099d0216f7238a6c, type: 3}
+      propertyPath: <DirtType>k__BackingField
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7360086648717536020, guid: 9ea6c099d52f1074099d0216f7238a6c, type: 3}
+      propertyPath: <SoilStrength>k__BackingField
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8710713267849424693, guid: 9ea6c099d52f1074099d0216f7238a6c, type: 3}
       propertyPath: m_Name
       value: Dirt (27)
@@ -1242,6 +1262,10 @@ PrefabInstance:
       propertyPath: _groundElement
       value: 
       objectReference: {fileID: 2235788181367680873}
+    - target: {fileID: 7360086648717536020, guid: 9ea6c099d52f1074099d0216f7238a6c, type: 3}
+      propertyPath: <SoilStrength>k__BackingField
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8710713267849424693, guid: 9ea6c099d52f1074099d0216f7238a6c, type: 3}
       propertyPath: m_Name
       value: Dirt (14)
@@ -1342,6 +1366,10 @@ PrefabInstance:
       propertyPath: _groundElement
       value: 
       objectReference: {fileID: 8680821039880643521}
+    - target: {fileID: 7360086648717536020, guid: 9ea6c099d52f1074099d0216f7238a6c, type: 3}
+      propertyPath: <SoilStrength>k__BackingField
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8710713267849424693, guid: 9ea6c099d52f1074099d0216f7238a6c, type: 3}
       propertyPath: m_Name
       value: Dirt (11)
@@ -1442,6 +1470,14 @@ PrefabInstance:
       propertyPath: _groundElement
       value: 
       objectReference: {fileID: 7397926101279327602}
+    - target: {fileID: 7360086648717536020, guid: 9ea6c099d52f1074099d0216f7238a6c, type: 3}
+      propertyPath: <DirtType>k__BackingField
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7360086648717536020, guid: 9ea6c099d52f1074099d0216f7238a6c, type: 3}
+      propertyPath: <SoilStrength>k__BackingField
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8710713267849424693, guid: 9ea6c099d52f1074099d0216f7238a6c, type: 3}
       propertyPath: m_Name
       value: Dirt (15)
@@ -1619,6 +1655,14 @@ PrefabInstance:
       propertyPath: _groundElement
       value: 
       objectReference: {fileID: 947067458207126143}
+    - target: {fileID: 7360086648717536020, guid: 9ea6c099d52f1074099d0216f7238a6c, type: 3}
+      propertyPath: <DirtType>k__BackingField
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7360086648717536020, guid: 9ea6c099d52f1074099d0216f7238a6c, type: 3}
+      propertyPath: <SoilStrength>k__BackingField
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8710713267849424693, guid: 9ea6c099d52f1074099d0216f7238a6c, type: 3}
       propertyPath: m_Name
       value: Dirt (1)
@@ -1719,6 +1763,14 @@ PrefabInstance:
       propertyPath: _groundElement
       value: 
       objectReference: {fileID: 3169443381346098438}
+    - target: {fileID: 7360086648717536020, guid: 9ea6c099d52f1074099d0216f7238a6c, type: 3}
+      propertyPath: <DirtType>k__BackingField
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7360086648717536020, guid: 9ea6c099d52f1074099d0216f7238a6c, type: 3}
+      propertyPath: <SoilStrength>k__BackingField
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8710713267849424693, guid: 9ea6c099d52f1074099d0216f7238a6c, type: 3}
       propertyPath: m_Name
       value: Dirt (47)
@@ -1881,6 +1933,10 @@ PrefabInstance:
       propertyPath: _groundElement
       value: 
       objectReference: {fileID: 5675448629196039330}
+    - target: {fileID: 7360086648717536020, guid: 9ea6c099d52f1074099d0216f7238a6c, type: 3}
+      propertyPath: <DirtType>k__BackingField
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8710713267849424693, guid: 9ea6c099d52f1074099d0216f7238a6c, type: 3}
       propertyPath: m_Name
       value: Dirt (43)
@@ -1977,6 +2033,14 @@ PrefabInstance:
       propertyPath: _groundElement
       value: 
       objectReference: {fileID: 1190569237223930522}
+    - target: {fileID: 7360086648717536020, guid: 9ea6c099d52f1074099d0216f7238a6c, type: 3}
+      propertyPath: <DirtType>k__BackingField
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7360086648717536020, guid: 9ea6c099d52f1074099d0216f7238a6c, type: 3}
+      propertyPath: <SoilStrength>k__BackingField
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8710713267849424693, guid: 9ea6c099d52f1074099d0216f7238a6c, type: 3}
       propertyPath: m_Name
       value: Dirt (24)
@@ -2529,6 +2593,14 @@ PrefabInstance:
       propertyPath: _groundElement
       value: 
       objectReference: {fileID: 985753225531842266}
+    - target: {fileID: 7360086648717536020, guid: 9ea6c099d52f1074099d0216f7238a6c, type: 3}
+      propertyPath: <DirtType>k__BackingField
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7360086648717536020, guid: 9ea6c099d52f1074099d0216f7238a6c, type: 3}
+      propertyPath: <SoilStrength>k__BackingField
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8710713267849424693, guid: 9ea6c099d52f1074099d0216f7238a6c, type: 3}
       propertyPath: m_Name
       value: Dirt (8)
@@ -2938,6 +3010,14 @@ PrefabInstance:
       propertyPath: _groundElement
       value: 
       objectReference: {fileID: 5059481004426719126}
+    - target: {fileID: 7360086648717536020, guid: 9ea6c099d52f1074099d0216f7238a6c, type: 3}
+      propertyPath: <DirtType>k__BackingField
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7360086648717536020, guid: 9ea6c099d52f1074099d0216f7238a6c, type: 3}
+      propertyPath: <SoilStrength>k__BackingField
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8710713267849424693, guid: 9ea6c099d52f1074099d0216f7238a6c, type: 3}
       propertyPath: m_Name
       value: Dirt (36)
@@ -3436,6 +3516,10 @@ PrefabInstance:
       propertyPath: _groundElement
       value: 
       objectReference: {fileID: 7088970992824707696}
+    - target: {fileID: 7360086648717536020, guid: 9ea6c099d52f1074099d0216f7238a6c, type: 3}
+      propertyPath: <SoilStrength>k__BackingField
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8710713267849424693, guid: 9ea6c099d52f1074099d0216f7238a6c, type: 3}
       propertyPath: m_Name
       value: Dirt (17)
@@ -3745,6 +3829,14 @@ PrefabInstance:
       propertyPath: _groundElement
       value: 
       objectReference: {fileID: 5254998170160092184}
+    - target: {fileID: 7360086648717536020, guid: 9ea6c099d52f1074099d0216f7238a6c, type: 3}
+      propertyPath: <DirtType>k__BackingField
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7360086648717536020, guid: 9ea6c099d52f1074099d0216f7238a6c, type: 3}
+      propertyPath: <SoilStrength>k__BackingField
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8710713267849424693, guid: 9ea6c099d52f1074099d0216f7238a6c, type: 3}
       propertyPath: m_Name
       value: Dirt (6)
@@ -3841,6 +3933,10 @@ PrefabInstance:
       propertyPath: _groundElement
       value: 
       objectReference: {fileID: 6543955767309114794}
+    - target: {fileID: 7360086648717536020, guid: 9ea6c099d52f1074099d0216f7238a6c, type: 3}
+      propertyPath: <SoilStrength>k__BackingField
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8710713267849424693, guid: 9ea6c099d52f1074099d0216f7238a6c, type: 3}
       propertyPath: m_Name
       value: Dirt (29)
@@ -4022,6 +4118,14 @@ PrefabInstance:
       propertyPath: _groundElement
       value: 
       objectReference: {fileID: 1239954736203880795}
+    - target: {fileID: 7360086648717536020, guid: 9ea6c099d52f1074099d0216f7238a6c, type: 3}
+      propertyPath: <DirtType>k__BackingField
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7360086648717536020, guid: 9ea6c099d52f1074099d0216f7238a6c, type: 3}
+      propertyPath: <SoilStrength>k__BackingField
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8710713267849424693, guid: 9ea6c099d52f1074099d0216f7238a6c, type: 3}
       propertyPath: m_Name
       value: Dirt (39)
@@ -4122,6 +4226,10 @@ PrefabInstance:
       propertyPath: _groundElement
       value: 
       objectReference: {fileID: 2746537721937037188}
+    - target: {fileID: 7360086648717536020, guid: 9ea6c099d52f1074099d0216f7238a6c, type: 3}
+      propertyPath: <DirtType>k__BackingField
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8710713267849424693, guid: 9ea6c099d52f1074099d0216f7238a6c, type: 3}
       propertyPath: m_Name
       value: Dirt (18)
@@ -4222,6 +4330,10 @@ PrefabInstance:
       propertyPath: _groundElement
       value: 
       objectReference: {fileID: 3230198779168588976}
+    - target: {fileID: 7360086648717536020, guid: 9ea6c099d52f1074099d0216f7238a6c, type: 3}
+      propertyPath: <SoilStrength>k__BackingField
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8710713267849424693, guid: 9ea6c099d52f1074099d0216f7238a6c, type: 3}
       propertyPath: m_Name
       value: Dirt (42)
@@ -4322,6 +4434,10 @@ PrefabInstance:
       propertyPath: _groundElement
       value: 
       objectReference: {fileID: 7797235737056837912}
+    - target: {fileID: 7360086648717536020, guid: 9ea6c099d52f1074099d0216f7238a6c, type: 3}
+      propertyPath: <SoilStrength>k__BackingField
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8710713267849424693, guid: 9ea6c099d52f1074099d0216f7238a6c, type: 3}
       propertyPath: m_Name
       value: Dirt (9)
@@ -4418,6 +4534,10 @@ PrefabInstance:
       propertyPath: _groundElement
       value: 
       objectReference: {fileID: 6420188585948312800}
+    - target: {fileID: 7360086648717536020, guid: 9ea6c099d52f1074099d0216f7238a6c, type: 3}
+      propertyPath: <SoilStrength>k__BackingField
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8710713267849424693, guid: 9ea6c099d52f1074099d0216f7238a6c, type: 3}
       propertyPath: m_Name
       value: Dirt (19)
@@ -4518,6 +4638,14 @@ PrefabInstance:
       propertyPath: _groundElement
       value: 
       objectReference: {fileID: 9083689032803878473}
+    - target: {fileID: 7360086648717536020, guid: 9ea6c099d52f1074099d0216f7238a6c, type: 3}
+      propertyPath: <DirtType>k__BackingField
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7360086648717536020, guid: 9ea6c099d52f1074099d0216f7238a6c, type: 3}
+      propertyPath: <SoilStrength>k__BackingField
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8710713267849424693, guid: 9ea6c099d52f1074099d0216f7238a6c, type: 3}
       propertyPath: m_Name
       value: Dirt (44)
@@ -4680,6 +4808,14 @@ PrefabInstance:
       propertyPath: _groundElement
       value: 
       objectReference: {fileID: 5065471734286841335}
+    - target: {fileID: 7360086648717536020, guid: 9ea6c099d52f1074099d0216f7238a6c, type: 3}
+      propertyPath: <DirtType>k__BackingField
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7360086648717536020, guid: 9ea6c099d52f1074099d0216f7238a6c, type: 3}
+      propertyPath: <SoilStrength>k__BackingField
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8710713267849424693, guid: 9ea6c099d52f1074099d0216f7238a6c, type: 3}
       propertyPath: m_Name
       value: Dirt (37)
@@ -4865,6 +5001,10 @@ PrefabInstance:
       propertyPath: _groundElement
       value: 
       objectReference: {fileID: 6308734533465696512}
+    - target: {fileID: 7360086648717536020, guid: 9ea6c099d52f1074099d0216f7238a6c, type: 3}
+      propertyPath: <SoilStrength>k__BackingField
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8710713267849424693, guid: 9ea6c099d52f1074099d0216f7238a6c, type: 3}
       propertyPath: m_Name
       value: Dirt (5)
@@ -5336,6 +5476,10 @@ PrefabInstance:
       propertyPath: _groundElement
       value: 
       objectReference: {fileID: 2214083629963469476}
+    - target: {fileID: 7360086648717536020, guid: 9ea6c099d52f1074099d0216f7238a6c, type: 3}
+      propertyPath: <DirtType>k__BackingField
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8710713267849424693, guid: 9ea6c099d52f1074099d0216f7238a6c, type: 3}
       propertyPath: m_Name
       value: Dirt (35)
@@ -5436,6 +5580,10 @@ PrefabInstance:
       propertyPath: _groundElement
       value: 
       objectReference: {fileID: 2819303506929323449}
+    - target: {fileID: 7360086648717536020, guid: 9ea6c099d52f1074099d0216f7238a6c, type: 3}
+      propertyPath: <SoilStrength>k__BackingField
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8710713267849424693, guid: 9ea6c099d52f1074099d0216f7238a6c, type: 3}
       propertyPath: m_Name
       value: Dirt (12)
@@ -5752,6 +5900,14 @@ PrefabInstance:
       propertyPath: _groundElement
       value: 
       objectReference: {fileID: 1559691151692393962}
+    - target: {fileID: 7360086648717536020, guid: 9ea6c099d52f1074099d0216f7238a6c, type: 3}
+      propertyPath: <DirtType>k__BackingField
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7360086648717536020, guid: 9ea6c099d52f1074099d0216f7238a6c, type: 3}
+      propertyPath: <SoilStrength>k__BackingField
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8710713267849424693, guid: 9ea6c099d52f1074099d0216f7238a6c, type: 3}
       propertyPath: m_Name
       value: Dirt (22)
@@ -5848,6 +6004,14 @@ PrefabInstance:
       propertyPath: _groundElement
       value: 
       objectReference: {fileID: 6374224905526928228}
+    - target: {fileID: 7360086648717536020, guid: 9ea6c099d52f1074099d0216f7238a6c, type: 3}
+      propertyPath: <DirtType>k__BackingField
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7360086648717536020, guid: 9ea6c099d52f1074099d0216f7238a6c, type: 3}
+      propertyPath: <SoilStrength>k__BackingField
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8710713267849424693, guid: 9ea6c099d52f1074099d0216f7238a6c, type: 3}
       propertyPath: m_Name
       value: Dirt (33)
@@ -6172,6 +6336,10 @@ PrefabInstance:
       propertyPath: _groundElement
       value: 
       objectReference: {fileID: 1382114832400811120}
+    - target: {fileID: 7360086648717536020, guid: 9ea6c099d52f1074099d0216f7238a6c, type: 3}
+      propertyPath: <DirtType>k__BackingField
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8710713267849424693, guid: 9ea6c099d52f1074099d0216f7238a6c, type: 3}
       propertyPath: m_Name
       value: Dirt (41)
@@ -6523,6 +6691,10 @@ PrefabInstance:
       propertyPath: _groundElement
       value: 
       objectReference: {fileID: 6407916081384392963}
+    - target: {fileID: 7360086648717536020, guid: 9ea6c099d52f1074099d0216f7238a6c, type: 3}
+      propertyPath: <DirtType>k__BackingField
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8710713267849424693, guid: 9ea6c099d52f1074099d0216f7238a6c, type: 3}
       propertyPath: m_Name
       value: Dirt (21)
@@ -6700,6 +6872,14 @@ PrefabInstance:
       propertyPath: _groundElement
       value: 
       objectReference: {fileID: 81808393759805072}
+    - target: {fileID: 7360086648717536020, guid: 9ea6c099d52f1074099d0216f7238a6c, type: 3}
+      propertyPath: <DirtType>k__BackingField
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7360086648717536020, guid: 9ea6c099d52f1074099d0216f7238a6c, type: 3}
+      propertyPath: <SoilStrength>k__BackingField
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8710713267849424693, guid: 9ea6c099d52f1074099d0216f7238a6c, type: 3}
       propertyPath: m_Name
       value: Dirt (31)
@@ -7020,6 +7200,10 @@ PrefabInstance:
       propertyPath: _groundElement
       value: 
       objectReference: {fileID: 6653971792332302234}
+    - target: {fileID: 7360086648717536020, guid: 9ea6c099d52f1074099d0216f7238a6c, type: 3}
+      propertyPath: <SoilStrength>k__BackingField
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8710713267849424693, guid: 9ea6c099d52f1074099d0216f7238a6c, type: 3}
       propertyPath: m_Name
       value: Dirt (23)
@@ -7274,6 +7458,10 @@ PrefabInstance:
       propertyPath: _groundElement
       value: 
       objectReference: {fileID: 6260492170983167538}
+    - target: {fileID: 7360086648717536020, guid: 9ea6c099d52f1074099d0216f7238a6c, type: 3}
+      propertyPath: <SoilStrength>k__BackingField
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8710713267849424693, guid: 9ea6c099d52f1074099d0216f7238a6c, type: 3}
       propertyPath: m_Name
       value: Dirt (7)
@@ -7370,6 +7558,14 @@ PrefabInstance:
       propertyPath: _groundElement
       value: 
       objectReference: {fileID: 4955082516128519048}
+    - target: {fileID: 7360086648717536020, guid: 9ea6c099d52f1074099d0216f7238a6c, type: 3}
+      propertyPath: <DirtType>k__BackingField
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7360086648717536020, guid: 9ea6c099d52f1074099d0216f7238a6c, type: 3}
+      propertyPath: <SoilStrength>k__BackingField
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8710713267849424693, guid: 9ea6c099d52f1074099d0216f7238a6c, type: 3}
       propertyPath: m_Name
       value: Dirt (25)
@@ -7617,6 +7813,14 @@ PrefabInstance:
       propertyPath: _groundElement
       value: 
       objectReference: {fileID: 9036613347028376650}
+    - target: {fileID: 7360086648717536020, guid: 9ea6c099d52f1074099d0216f7238a6c, type: 3}
+      propertyPath: <DirtType>k__BackingField
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7360086648717536020, guid: 9ea6c099d52f1074099d0216f7238a6c, type: 3}
+      propertyPath: <SoilStrength>k__BackingField
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8710713267849424693, guid: 9ea6c099d52f1074099d0216f7238a6c, type: 3}
       propertyPath: m_Name
       value: Dirt (10)
@@ -7778,6 +7982,10 @@ PrefabInstance:
     - target: {fileID: 7360086648717536020, guid: 9ea6c099d52f1074099d0216f7238a6c, type: 3}
       propertyPath: _soilsStrength.Array.size
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7360086648717536020, guid: 9ea6c099d52f1074099d0216f7238a6c, type: 3}
+      propertyPath: <SoilStrength>k__BackingField
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8710713267849424693, guid: 9ea6c099d52f1074099d0216f7238a6c, type: 3}
       propertyPath: m_Name
@@ -8065,6 +8273,10 @@ PrefabInstance:
       propertyPath: _groundElement
       value: 
       objectReference: {fileID: 8736331182940712766}
+    - target: {fileID: 7360086648717536020, guid: 9ea6c099d52f1074099d0216f7238a6c, type: 3}
+      propertyPath: <SoilStrength>k__BackingField
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8710713267849424693, guid: 9ea6c099d52f1074099d0216f7238a6c, type: 3}
       propertyPath: m_Name
       value: Dirt (45)
@@ -8223,6 +8435,14 @@ PrefabInstance:
       propertyPath: _groundElement
       value: 
       objectReference: {fileID: 5439854707589561262}
+    - target: {fileID: 7360086648717536020, guid: 9ea6c099d52f1074099d0216f7238a6c, type: 3}
+      propertyPath: <DirtType>k__BackingField
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7360086648717536020, guid: 9ea6c099d52f1074099d0216f7238a6c, type: 3}
+      propertyPath: <SoilStrength>k__BackingField
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8710713267849424693, guid: 9ea6c099d52f1074099d0216f7238a6c, type: 3}
       propertyPath: m_Name
       value: Dirt (20)
@@ -8323,6 +8543,10 @@ PrefabInstance:
       propertyPath: _groundElement
       value: 
       objectReference: {fileID: 612125242073478678}
+    - target: {fileID: 7360086648717536020, guid: 9ea6c099d52f1074099d0216f7238a6c, type: 3}
+      propertyPath: <SoilStrength>k__BackingField
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8710713267849424693, guid: 9ea6c099d52f1074099d0216f7238a6c, type: 3}
       propertyPath: m_Name
       value: Dirt (13)
@@ -8508,6 +8732,10 @@ PrefabInstance:
       propertyPath: _groundElement
       value: 
       objectReference: {fileID: 5348421230451772988}
+    - target: {fileID: 7360086648717536020, guid: 9ea6c099d52f1074099d0216f7238a6c, type: 3}
+      propertyPath: <DirtType>k__BackingField
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8710713267849424693, guid: 9ea6c099d52f1074099d0216f7238a6c, type: 3}
       propertyPath: m_Name
       value: Dirt (16)
@@ -8693,6 +8921,14 @@ PrefabInstance:
       propertyPath: _groundElement
       value: 
       objectReference: {fileID: 1030852711814564711}
+    - target: {fileID: 7360086648717536020, guid: 9ea6c099d52f1074099d0216f7238a6c, type: 3}
+      propertyPath: <DirtType>k__BackingField
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7360086648717536020, guid: 9ea6c099d52f1074099d0216f7238a6c, type: 3}
+      propertyPath: <SoilStrength>k__BackingField
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8710713267849424693, guid: 9ea6c099d52f1074099d0216f7238a6c, type: 3}
       propertyPath: m_Name
       value: Dirt (4)
@@ -8963,6 +9199,14 @@ PrefabInstance:
       propertyPath: _groundElement
       value: 
       objectReference: {fileID: 306639983214201777}
+    - target: {fileID: 7360086648717536020, guid: 9ea6c099d52f1074099d0216f7238a6c, type: 3}
+      propertyPath: <DirtType>k__BackingField
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7360086648717536020, guid: 9ea6c099d52f1074099d0216f7238a6c, type: 3}
+      propertyPath: <SoilStrength>k__BackingField
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8710713267849424693, guid: 9ea6c099d52f1074099d0216f7238a6c, type: 3}
       propertyPath: m_Name
       value: Dirt

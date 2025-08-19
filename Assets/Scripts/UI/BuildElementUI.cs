@@ -32,6 +32,7 @@ public class BuildElementUI : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
+        Debug.Log(eventData.button);
         if (eventData.button == PointerEventData.InputButton.Right)
         {
             ShowDetails();

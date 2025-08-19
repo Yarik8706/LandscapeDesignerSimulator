@@ -6,7 +6,7 @@ namespace DefaultNamespace
 {
     public class CellContextMenuUI : MonoBehaviour
     {
-        [SerializeField] private GameObject _menu;
+        [SerializeField] private ElementTransition _menu;
 
         [SerializeField] private TMP_Text _cellInfo;
         
@@ -18,19 +18,34 @@ namespace DefaultNamespace
 
         public void Show(Cell cell)
         {
-            _menu.SetActive(true);
+            _menu.ChangeActive(true);
+            _cellInfo.text = 
+                "Твердость почвы: " + (cell.SoilStrength == SoilStrength.Strong 
+                    ? "<color=green>сильная</color>" 
+                    : "<color=red>слабая</color>") + "\n" + 
+                "Пригодна для растений: " + (cell.DirtType == DirtType.Bad 
+                    ? "<color=red>непригодна</color>" 
+                    : "<color=green>пригодна</color>");
             _icons[0].sprite = cell.data.ground.icon;
-            _labels[0].text = cell.data.ground.name;
-            for (int i = 1; i-1 < cell.data.decorations.Length; i++)
+            _labels[0].text = cell.data.ground.displayName;
+            if (cell.data.decorations[0] == null && cell.data.decorations[1] != null)
             {
-                if (cell.data.decorations[i] == null)
+                _icons[2].gameObject.SetActive(false);
+                _labels[2].gameObject.SetActive(false);
+                _icons[1].sprite = cell.data.decorations[1]?.icon;
+                _labels[1].text = cell.data.decorations[1]?.displayName;
+                return;
+            }
+            for (int i = 1; i-1 < 2; i++)
+            {
+                if (cell.data.decorations[i-1] == null)
                 {
                     _icons[i].gameObject.SetActive(false);
                     _labels[i].gameObject.SetActive(false);
                     continue;
                 }
-                _icons[i].sprite = cell.data.decorations[i]?.icon;
-                _labels[i].text = cell.data.decorations[i]?.name;
+                _icons[i].sprite = cell.data.decorations[i-1]?.icon;
+                _labels[i].text = cell.data.decorations[i-1]?.displayName;
             }
         }
     }

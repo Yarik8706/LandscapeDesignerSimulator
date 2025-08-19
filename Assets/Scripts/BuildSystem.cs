@@ -33,12 +33,10 @@ public class BuildSystem : MonoBehaviour
 
     private void Update()
     {
+        
+        _selectPoint.SetActive(false);
+        if(LevelSelector.Instance.CurrentLevel == null) return;
         var cursorPos = _camera.ScreenToWorldPoint(Input.mousePosition);
-        if (Mathf.Abs(cursorPos.x) > 5 || Mathf.Abs(cursorPos.y) > 5)
-        {
-            _selectPoint.SetActive(false);
-            return;
-        }
         var pos = new Vector3(Mathf.RoundToInt(cursorPos.x), 
             Mathf.RoundToInt(cursorPos.y), 0);
         for (var i = 0; i < LevelSelector.Instance.CurrentLevel.Cells.Length; i++)
@@ -47,6 +45,7 @@ public class BuildSystem : MonoBehaviour
             {
                 _selectPoint.SetActive(true);
                 _selectPoint.transform.position = pos;
+                return;
             }
         }
     }
@@ -66,8 +65,15 @@ public class BuildSystem : MonoBehaviour
     public void ClickOnCell(Cell cell)
     {
         Debug.Log("ClickOnCell");
-        if (GameDataManager.Instance.gameData.stage != 
-            GameStage.Creating && GameDataManager.Instance.gameData.stage != GameStage.FixMistakes) return;
+
+        if (GameDataManager.Instance.gameData.stage !=
+            GameStage.Creating 
+            && GameDataManager.Instance.gameData.stage != GameStage.Building
+            && GameDataManager.Instance.gameData.stage != GameStage.FixMistakes)
+        {
+            CellContextMenuUI.Instance.Show(cell);
+            return;
+        };
         Debug.Log("ClickOnCell 1");
         if (_isResetCellMode)
         {

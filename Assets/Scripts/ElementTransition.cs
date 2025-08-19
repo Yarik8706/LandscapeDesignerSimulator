@@ -16,17 +16,20 @@ public class ElementTransition : MonoBehaviour
 
 #if UNITY_EDITOR
     [ContextMenu("ShowElement")]
-    public void ShowElement()
+    public void ShowElementInstantly()
     {
         ChangeActiveInstantly(true);
     }
     
     [ContextMenu("HideElement")]
-    public void HideElement()
+    public void HideElementInstantly()
     {
         ChangeActiveInstantly(false);
     }
 #endif
+    
+    public void ShowElement() => ChangeActive(true);
+    public void HideElement() => ChangeActive(false);
     
     public Tween ChangeActive(bool isActive)
     {

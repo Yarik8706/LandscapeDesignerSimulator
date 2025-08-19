@@ -12,6 +12,7 @@ public class BuildElementData : ScriptableObject
     [TextArea]
     public string description;                 // описание
     public Category category = Category.Decoration;
+    public ElementType elementType = ElementType.Structure;
     public BuildElement prefab;
     
     [Header("Visuals")]
@@ -52,7 +53,10 @@ public enum TerrainType {
     None
 }
 public enum AuraShape { None, Circle, Square }
-
+public enum ElementType { 
+    Plants,
+    Structure,
+}
 /* ==== DATA BLOCKS ==== */
 
 [Serializable]

@@ -19,7 +19,6 @@ public class FirebaseInitializer : MonoBehaviour {
             Debug.LogError($"Could not sign in: {task.Exception}");
           }
         });
-        FirebaseFunctions.DefaultInstance.UseFunctionsEmulator("http://localhost:5001");
         OnInitialized.Invoke();
       }
     });

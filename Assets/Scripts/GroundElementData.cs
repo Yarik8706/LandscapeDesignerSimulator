@@ -18,10 +18,12 @@ namespace DefaultNamespace
 
 public enum SoilStrength
 {
-    Clayey,
-    Loamy,
-    Sandy,
-    Lime,
-    Peat,
-    Chernozem
+    Weak,
+    Strong,
+}
+
+public enum DirtType
+{
+    Bad,
+    Good
 }

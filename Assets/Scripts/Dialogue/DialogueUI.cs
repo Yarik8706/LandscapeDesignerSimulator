@@ -1,4 +1,5 @@
 using DefaultNamespace;
+using Firebase.Functions;
 using Infra;
 using TMPro;
 using UI;
@@ -13,7 +14,6 @@ public class DialogueUI : MonoBehaviour {
   [SerializeField] private Sprite[] loadSprites;
   [SerializeField] private Image loadImage;
   
-  [SerializeField] private Button _endProjectButton;
   [SerializeField] private TMP_Text clientName;
   [SerializeField] private Image clientImage;
   [SerializeField] private TMP_Text tracker;
@@ -37,16 +37,17 @@ public class DialogueUI : MonoBehaviour {
 
   private void Awake()
   {
-    _endProjectButton.onClick.AddListener(PlayerEndProject);
     GameDataManager.OnGameStageChanged.AddListener(OnGameStageChanged);
+    // FirebaseFunctions.DefaultInstance.UseFunctionsEmulator("http://localhost:5001");
     FirebaseInitializer.OnInitialized.AddListener(() =>
     {
       _clientChatService = new ChatService<ChatResponse>("clientCall");
       _clientChatService.testData = new ChatResponse() { reply = "Test reply message from server response", learnedSummary = "0/0", learnedText = "Test reply message from server response" };
       _simpleChatService = new ChatService<string>("aiCall");
       _simpleChatService.testData = "Test reply message from server response";
-      ChatService<ChatResponse>.isDebug = true;
-      ChatService<string>.isDebug = true;
+      
+      // ChatService<ChatResponse>.isDebug = true;
+      // ChatService<string>.isDebug = true;
     });
   }
 
@@ -261,6 +262,7 @@ public class DialogueUI : MonoBehaviour {
       result += cellData + "\n";
     }
 
+    Debug.Log(result);
     return result;
   }
 }
