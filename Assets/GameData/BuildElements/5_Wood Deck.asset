@@ -14,9 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 5
   displayName: "\u0414\u0435\u0440\u0435\u0432\u044F\u043D\u043D\u044B\u0439 \u043D\u0430\u0441\u0442\u0438\u043B"
-  description: "\u0421\u0442\u043E\u0438\u043C\u043E\u0441\u0442\u044C 10, \u0432\u0440\u0435\u043C\u044F
-    \u0441\u0442\u0440\u043E\u0438\u0442\u0435\u043B\u044C\u0441\u0442\u0432\u0430
-    0.6, \u0432\u043A\u043B\u0430\u0434: \u04241/\u042D1/\u04230"
+  description: "Стоимость 10, время строительства 0.6, функциональность 1 (добавляет к общей функциональности), эстетика 1 (добавляет к общей эстетике)"
   category: 1
   prefab: {fileID: 35977512467835031, guid: c832acdeabc74044d9f481df7f2a2e49, type: 3}
   icon: {fileID: 1506352080, guid: f14bcdc4621956d4aab5fa2ff003de05, type: 3}

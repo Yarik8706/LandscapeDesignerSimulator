@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 15
   displayName: Урна
-  description: "Стоимость 5, время строительства 0.1, вклад: Ф1/Э0/У0"
+  description: "Стоимость 5, время строительства 0.1, функциональность 1 (добавляет к общей функциональности), эстетика 0 (добавляет к общей эстетике)"
   category: 1
   prefab: {fileID: 6045757440126743824, guid: 6bcc8dca23a058340814e860663c4322, type: 3}
   icon: {fileID: -225350661, guid: f14bcdc4621956d4aab5fa2ff003de05, type: 3}

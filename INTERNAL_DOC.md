@@ -7,6 +7,7 @@
 - `loadSession` / `saveSession`: manage session summaries and recent turns in Firestore.
 - `rateLimit`: simple per-user hourly quota using Firestore.
 - `BuildElementsGenerator.Generate`: editor menu that creates or updates `BuildElementData` assets in `Assets/GameData/BuildElements` and автоматом формирует поле описания.
+- `BuildElementsGenerator.BuildDescription`: формирует текст описания без показателя устойчивости, раскрывая вклад в функциональность и эстетику.
 
 ## Types
 - `Turn`: `{ role: "user" | "assistant"; text: string }` stored in session documents.

@@ -96,7 +96,7 @@ public static class BuildElementsGenerator
 
     private static string BuildDescription(ElementSpec spec)
     {
-        return $"Стоимость {spec.cost}, время строительства {spec.buildTime}, вклад: Ф{spec.delta.F}/Э{spec.delta.A}/У{spec.delta.S}";
+        return $"Стоимость {spec.cost}, время строительства {spec.buildTime}, функциональность {spec.delta.F} (добавляет к общей функциональности), эстетика {spec.delta.A} (добавляет к общей эстетике)";
     }
 
     private static List<ElementSpec> GetSpecs()

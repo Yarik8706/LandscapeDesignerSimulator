@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 13
   displayName: Каменная композиция
-  description: "Стоимость 14, время строительства 0.4, вклад: Ф0/Э1/У1"
+  description: "Стоимость 14, время строительства 0.4, функциональность 0 (добавляет к общей функциональности), эстетика 1 (добавляет к общей эстетике)"
   category: 1
   prefab: {fileID: 9198876466048800162, guid: 5148a67deb1018f41b6ce92eab430b51, type: 3}
   icon: {fileID: -2024361055, guid: f14bcdc4621956d4aab5fa2ff003de05, type: 3}

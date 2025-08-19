@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 10
   displayName: Саженец дерева
-  description: "Стоимость 12, время строительства 0.3, вклад: Ф0/Э1/У2"
+  description: "Стоимость 12, время строительства 0.3, функциональность 0 (добавляет к общей функциональности), эстетика 1 (добавляет к общей эстетике)"
   category: 1
   prefab: {fileID: 8079014812256451504, guid: 547139592f678d54f9a35a6a4c3cd66a, type: 3}
   icon: {fileID: 2004169644, guid: f14bcdc4621956d4aab5fa2ff003de05, type: 3}

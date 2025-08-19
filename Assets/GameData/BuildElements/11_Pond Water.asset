@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 11
   displayName: Пруд
-  description: "Стоимость 20, время строительства 0.8, вклад: Ф0/Э2/У0"
+  description: "Стоимость 20, время строительства 0.8, функциональность 0 (добавляет к общей функциональности), эстетика 2 (добавляет к общей эстетике)"
   category: 1
   prefab: {fileID: 5713047908113762038, guid: 5fe8089b06eabf14bb21e794d204a7d0, type: 3}
   icon: {fileID: 697941671, guid: f14bcdc4621956d4aab5fa2ff003de05, type: 3}
