@@ -72,9 +72,6 @@ public class Stability
     [Range(0.1f, 2f)]
     [Tooltip("Множитель к шансам дефекта при стройке (<1 лучше)")]
     public float failMod = 1f;
-
-    [Tooltip("Аура устойчивости/микроклимата")]
-    public Aura aura = new Aura();
 }
 
 [Serializable]
@@ -83,22 +80,6 @@ public class Tolerance
     public float temp; // °C
     public float wind; // м/с
     public float hum;  // %
-}
-
-[Serializable]
-public class Aura
-{
-    public int radius;                 // радиус в тайлах
-    public AuraShape shape = AuraShape.None;
-    [Tooltip("Эффекты ауры (например, heat:-3, wind:-2, s_local:+5)")]
-    public List<EffectEntry> effects = new List<EffectEntry>();
-}
-
-[Serializable]
-public class EffectEntry
-{
-    public string key; // "heat","wind","hum","s_local" и т.п.
-    public float value;
 }
 
 [Serializable]
@@ -117,9 +98,6 @@ public class Constraints
 
     [Tooltip("Требуемая близость к объектам и запрещённые соседства")]
     public Proximity proximity = new Proximity();
-    
-    [Tooltip("Допустимые объекты поверх которых разметить этот объект")]
-    public List<BuildElementData> allowedBase = new List<BuildElementData> {  };
 }
 
 [Serializable]
@@ -157,25 +135,10 @@ public class Proximity
 }
 
 [Serializable]
-public class ProximityNeed
-{
-    public int id;   // например, "path"
-    public int radius = 1;
-}
-
-[Serializable]
-public class ProximityAvoid
-{
-    public int id;   // например, "bbq"
-    public int radius = 2;
-}
-
-[Serializable]
 public class AdjacencyRule
 {
     [Tooltip("Требуемый объект по соседству для бонуса (например, path)")]
     public string needId;
-    public int radius = 1;
     public DeltaScore bonus; // прибавки к F/A/S при выполнении условия
 }
 

@@ -10,6 +10,9 @@ namespace Infra
         [TextArea] public string generalContext;
         [TextArea] public string[] personas;
         [TextArea] public string[] clientsBriefs;
+        [TextArea] public string secondAITask;
+        [TextArea] public string finalAITask;
+        [TextArea] public string setResultAITask;
         public string[] clientsNames;
         public Sprite[] clientsAvatars;
 

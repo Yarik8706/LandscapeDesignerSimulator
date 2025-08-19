@@ -1,17 +1,23 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace DefaultNamespace
 {
     public class BuildElement : MonoBehaviour
     {
-        [SerializeField] private SpriteRenderer _spriteRenderer;
-        
+        private SpriteRenderer _spriteRenderer;
+
+        private void Awake()
+        {
+            _spriteRenderer = GetComponent<SpriteRenderer>();
+        }
+
         public BuildElementData BuildElementData { get; set; }
         
         public void SetData(BuildElementData buildElementData, int layerIndex = -1)
         {
-            this.BuildElementData = buildElementData;
-            _spriteRenderer.sortingOrder = layerIndex;
+            BuildElementData = buildElementData;
+            _spriteRenderer.sortingOrder += layerIndex;
         }
     }
 }

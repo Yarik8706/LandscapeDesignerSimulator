@@ -26,7 +26,6 @@ public static class BuildElementsGenerator
     {
         public int radius;
         public AuraShape shape;
-        public List<EffectEntry> effects = new();
     }
 
     private class AdjacencySpec
@@ -65,12 +64,8 @@ public static class BuildElementsGenerator
 
             data.stability.tolerance = spec.tolerance;
             data.stability.failMod = spec.failMod;
-            data.stability.aura.radius = spec.aura.radius;
-            data.stability.aura.shape = spec.aura.shape;
-            data.stability.aura.effects = new List<EffectEntry>(spec.aura.effects);
 
             data.constraints.terrainAllowed = new List<TerrainType>(spec.terrainAllowed);
-            data.constraints.allowedBase.Clear();
 
             data.adjacency.Clear();
             if (spec.adjacency != null)
@@ -78,7 +73,6 @@ public static class BuildElementsGenerator
                 data.adjacency.Add(new AdjacencyRule
                 {
                     needId = spec.adjacency.needId,
-                    radius = spec.adjacency.radius,
                     bonus = spec.adjacency.bonus
                 });
             }
@@ -92,14 +86,7 @@ public static class BuildElementsGenerator
         foreach (var spec in specs)
         {
             var data = map[spec.id];
-            data.constraints.allowedBase.Clear();
-            foreach (var id in spec.allowedBase)
-            {
-                if (map.TryGetValue(id, out var baseAsset))
-                {
-                    data.constraints.allowedBase.Add(baseAsset);
-                }
-            }
+            
             EditorUtility.SetDirty(data);
         }
 
@@ -130,7 +117,6 @@ public static class BuildElementsGenerator
                 {
                     radius = 0,
                     shape = AuraShape.Square,
-                    effects = new List<EffectEntry>{ new EffectEntry{ key = "s_local", value = 2 } }
                 },
                 terrainAllowed = new List<TerrainType>{ TerrainType.All },
                 overlayOn = new List<TerrainType>()
@@ -149,7 +135,6 @@ public static class BuildElementsGenerator
                 {
                     radius = 0,
                     shape = AuraShape.Square,
-                    effects = new List<EffectEntry>{ new EffectEntry{ key = "s_local", value = 3 } }
                 },
                 terrainAllowed = new List<TerrainType>{ TerrainType.All },
                 overlayOn = new List<TerrainType>()
@@ -273,7 +258,6 @@ public static class BuildElementsGenerator
                 {
                     radius = 1,
                     shape = AuraShape.Circle,
-                    effects = new List<EffectEntry>{ new EffectEntry{ key = "wind", value = -1 } }
                 },
                 terrainAllowed = new List<TerrainType>{ TerrainType.All },
                 allowedBase = new List<int>{1},
@@ -373,7 +357,6 @@ public static class BuildElementsGenerator
                 {
                     radius = 2,
                     shape = AuraShape.Square,
-                    effects = new List<EffectEntry>{ new EffectEntry{ key = "s_local", value = 2 } }
                 },
                 terrainAllowed = new List<TerrainType>{ TerrainType.All },
                 allowedBase = new List<int>{3,5,6},

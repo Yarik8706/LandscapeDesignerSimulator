@@ -20,9 +20,6 @@ namespace DefaultNamespace
         private void Start()
         {
             gameData.stage = GameStage.FirstDialog;
-            FirebaseInitializer.OnInitialized.AddListener(() =>
-                OnGameStageChanged.Invoke());
-
         }
     }
 }

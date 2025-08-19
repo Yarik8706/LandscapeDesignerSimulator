@@ -1,20 +1,23 @@
 using System;
+using System.Linq;
 using DefaultNamespace;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using Random = UnityEngine.Random;
 
 public class Cell : MonoBehaviour
 {
     public CellData data = new CellData();
 
     [SerializeField] private GroundElement _groundElement;
-    [SerializeField] private BuildElement[] _buildElements;
-
+    
     [SerializeField] private SoilStrength[] _soilsStrength;
     [SerializeField] private TerrainType _terrainType;
     [SerializeField] private ObjectContext _objectContext;
     [SerializeField] private GroundElement _groundElementPrefab;
+    
+    private BuildElement[] _buildElements = new BuildElement[2];
 
     private void Start()
     {
@@ -43,16 +46,32 @@ public class Cell : MonoBehaviour
     public void AddBuildElement(BuildElementData buildElementData)
     {
         var oppositeIndex = OppositeIndex((int)buildElementData.category);
+        if(data.decorations[(int)buildElementData.category] != null
+           || !buildElementData.terraform.overlayOn.Contains(TerrainType.All)
+           && buildElementData.terraform.overlayOn.Count != 0
+           && !buildElementData.terraform.overlayOn.Contains(data.ground.id)
+           ) return;
+        Debug.Log("AddBuildElement " + buildElementData.name);
+        // logs need and avoid
+       Debug.Log(data.decorations[oppositeIndex] != null &&
+                  (data.decorations[oppositeIndex].constraints.proximity.avoid.Contains(buildElementData)
+                   || buildElementData.constraints.proximity.avoid.Contains(data.decorations[oppositeIndex])));
+        Debug.Log(data.decorations[oppositeIndex] != null && 
+                  (!data.decorations[oppositeIndex].constraints.proximity.need.Contains(buildElementData)
+                   || !buildElementData.constraints.proximity.need.Contains(data.decorations[oppositeIndex])));
         if (data.decorations[oppositeIndex] != null && 
             (data.decorations[oppositeIndex].constraints.proximity.avoid.Contains(buildElementData)
              || buildElementData.constraints.proximity.avoid.Contains(data.decorations[oppositeIndex])))
             return;
         if (data.decorations[oppositeIndex] != null && 
+            data.decorations[oppositeIndex].constraints.proximity.need.Count != 0 &&
+            buildElementData.constraints.proximity.need.Count != 0 &&
             (!data.decorations[oppositeIndex].constraints.proximity.need.Contains(buildElementData)
              || !buildElementData.constraints.proximity.need.Contains(data.decorations[oppositeIndex])))
             return;
         var newElement = Instantiate(buildElementData.prefab, transform.position, Quaternion.identity, transform);
         newElement.SetData(buildElementData, -(int)transform.position.y);
+        Debug.Log("AddBuildElement " + buildElementData.name);
         LandscapeProjectDetailsUI.Instance.AddValues(
             buildElementData.delta.A,
             buildElementData.delta.F,
@@ -160,6 +179,13 @@ public class Cell : MonoBehaviour
     {
         _groundElement.gameObject.SetActive(state);
     }
+    
+    [ContextMenu(nameof(SetRandomGroundElement))]
+    public void SetRandomGroundElement()
+    {
+        _terrainType = (TerrainType)Random.Range(0, _objectContext.groundElements.Length);
+        UpdateGroundElement();
+    }
         
     [ContextMenu(nameof(UpdateGroundElement))]
     public void UpdateGroundElement()
@@ -173,7 +199,6 @@ public class Cell : MonoBehaviour
 
     private void OnMouseUp()
     {
-        Debug.Log("Click on cell");
         BuildSystem.Instance.ClickOnCell(this);
     }
 }

@@ -13,11 +13,13 @@ public class BuildSystem : MonoBehaviour
         
     private BuildElementData _buildElementData;
     private bool _isResetCellMode;
+    private Camera _camera;
         
     public static BuildSystem Instance { get; private set; }
 
     private void Awake()
     {
+        _camera = Camera.main;
         Instance = this;
         _resetCellButton.onClick.AddListener(() =>
             {
@@ -31,15 +33,22 @@ public class BuildSystem : MonoBehaviour
 
     private void Update()
     {
-        var cursorPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        var cursorPos = _camera.ScreenToWorldPoint(Input.mousePosition);
         if (Mathf.Abs(cursorPos.x) > 5 || Mathf.Abs(cursorPos.y) > 5)
         {
             _selectPoint.SetActive(false);
             return;
         }
-        _selectPoint.SetActive(true);
-        _selectPoint.transform.position = new Vector3(Mathf.RoundToInt(cursorPos.x), 
+        var pos = new Vector3(Mathf.RoundToInt(cursorPos.x), 
             Mathf.RoundToInt(cursorPos.y), 0);
+        for (var i = 0; i < LevelSelector.Instance.CurrentLevel.Cells.Length; i++)
+        {
+            if (LevelSelector.Instance.CurrentLevel.Cells[i].transform.position == pos)
+            {
+                _selectPoint.SetActive(true);
+                _selectPoint.transform.position = pos;
+            }
+        }
     }
 
     public void SelectObject(BuildElementData buildElementData)
@@ -56,8 +65,10 @@ public class BuildSystem : MonoBehaviour
         
     public void ClickOnCell(Cell cell)
     {
+        Debug.Log("ClickOnCell");
         if (GameDataManager.Instance.gameData.stage != 
-            GameStage.Building && GameDataManager.Instance.gameData.stage != GameStage.FixMistakes) return;
+            GameStage.Creating && GameDataManager.Instance.gameData.stage != GameStage.FixMistakes) return;
+        Debug.Log("ClickOnCell 1");
         if (_isResetCellMode)
         {
             ResetCell(cell);
@@ -68,9 +79,7 @@ public class BuildSystem : MonoBehaviour
             CellContextMenuUI.Instance.Show(cell);
             return;
         }
-        if(cell.data.decorations[(int)_buildElementData.category] != null
-           || !_buildElementData.terraform.overlayOn.Contains(cell.data.ground.id)
-           ) return;
+        Debug.Log("ClickOnCell 1");
         CreateElement(_buildElementData, cell);
     }
     

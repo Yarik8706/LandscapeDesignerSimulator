@@ -4,7 +4,7 @@
     {
         Player,
         Client,
-        System
+        System32
     }
     
     public class DialogueData

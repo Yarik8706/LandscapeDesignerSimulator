@@ -13,8 +13,10 @@ MonoBehaviour:
   m_Name: 5_Wood Deck 1
   m_EditorClassIdentifier: 
   id: 16
-  displayName: Деревянный настил
-  description: "Стоимость 10, время строительства 0.6, вклад: Ф1/Э1/У0"
+  displayName: "\u0414\u0435\u0440\u0435\u0432\u044F\u043D\u043D\u044B\u0439 \u043D\u0430\u0441\u0442\u0438\u043B"
+  description: "\u0421\u0442\u043E\u0438\u043C\u043E\u0441\u0442\u044C 10, \u0432\u0440\u0435\u043C\u044F
+    \u0441\u0442\u0440\u043E\u0438\u0442\u0435\u043B\u044C\u0441\u0442\u0432\u0430
+    0.6, \u0432\u043A\u043B\u0430\u0434: \u04241/\u042D1/\u04230"
   category: 1
   prefab: {fileID: 4368826985524514308, guid: 4b505dbac0381404b9653608debf6a2d, type: 3}
   icon: {fileID: -1767770732, guid: f14bcdc4621956d4aab5fa2ff003de05, type: 3}
@@ -30,10 +32,6 @@ MonoBehaviour:
       wind: 0
       hum: 0
     failMod: 0.95
-    aura:
-      radius: 0
-      shape: 0
-      effects: []
   constraints:
     terrainAllowed: 05000000
     climate:
@@ -47,9 +45,6 @@ MonoBehaviour:
     proximity:
       need: []
       avoid: []
-    allowedBase:
-    - {fileID: 11400000, guid: d65a5e4785156ef4f858662800e12847, type: 2}
   adjacency: []
   terraform:
-    overlayOn: 01000000
-
+    overlayOn: 0000000001000000

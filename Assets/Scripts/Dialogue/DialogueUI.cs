@@ -1,6 +1,7 @@
 using DefaultNamespace;
 using Infra;
 using TMPro;
+using UI;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,6 +13,7 @@ public class DialogueUI : MonoBehaviour {
   [SerializeField] private Sprite[] loadSprites;
   [SerializeField] private Image loadImage;
   
+  [SerializeField] private Button _endProjectButton;
   [SerializeField] private TMP_Text clientName;
   [SerializeField] private Image clientImage;
   [SerializeField] private TMP_Text tracker;
@@ -35,6 +37,7 @@ public class DialogueUI : MonoBehaviour {
 
   private void Awake()
   {
+    _endProjectButton.onClick.AddListener(PlayerEndProject);
     GameDataManager.OnGameStageChanged.AddListener(OnGameStageChanged);
     FirebaseInitializer.OnInitialized.AddListener(() =>
     {
@@ -59,7 +62,7 @@ public class DialogueUI : MonoBehaviour {
     var stage = GameDataManager.Instance.gameData.stage;
 
     tracker.gameObject.SetActive(true);
-    gottenPlayerTasks.gameObject.SetActive(true);
+    canAskCountText.gameObject.SetActive(true);
     if (stage == GameStage.FirstDialog)
     {
       _currentAskCount = _gameData.firstDialogQuestionCount;
@@ -73,16 +76,33 @@ public class DialogueUI : MonoBehaviour {
     }
     else if (stage == GameStage.SecondDialog)
     {
-      
+      _currentAskCount = _gameData.firstDialogQuestionCount;
+      SystemSendMessage(clientsData.secondAITask + "/" + GetPlayerProjectData());
     }
     else if (stage == GameStage.FinalDialog)
     {
-      
+      _currentAskCount = 4;
+      SystemSendMessage(clientsData.finalAITask + "/" + GetPlayerProjectData());
     }
     else
     {
       tracker.gameObject.SetActive(false);
-      gottenPlayerTasks.gameObject.SetActive(false);
+      canAskCountText.gameObject.SetActive(false);
+    }
+  }
+
+  public async void PlayerEndProject()
+  {
+    if(_isLoading) return;
+    StartLoading();
+    
+    try {
+      var req = new ChatRequest(clientsData.setResultAITask, _currentDialogue, DialogueRole.System32);
+      var resp = await _simpleChatService.Send(req.message);
+      ResultWindow.Instance.Show(resp);
+    }
+    finally {
+      StopLoading();
     }
   }
 
@@ -134,11 +154,16 @@ public class DialogueUI : MonoBehaviour {
       AppendBubble(assistantBubblePrefab, resp.reply);
       RecheckTracker(resp.learnedSummary);
       RecheckGottenTasks(resp.learnedText);
-      canAskCountText.text = "Вопросов еще можно спросить: " + _currentAskCount;
+      canAskCountText.text = "Сообщение еще можно отправить: " + _currentAskCount;
     }
     finally 
     {
       StopLoading();
+    }
+
+    if (_gameData.stage == GameStage.FinalDialog && _currentAskCount <= 0)
+    {
+      PlayerEndProject();
     }
     
     if (inputField != null) {
@@ -149,14 +174,14 @@ public class DialogueUI : MonoBehaviour {
 
   public void SetClientContext(string context)
   {
-    _currentDialogue.AppendMessage(DialogueRole.Client, context.Trim() + "\n");
+    _currentDialogue.AppendMessage(DialogueRole.System32, context.Trim() + "\n");
   }
   
   public async void SystemSendMessage(string message) {
     StartLoading();
     
     try {
-      var req = new ChatRequest(message, _currentDialogue, DialogueRole.System);
+      var req = new ChatRequest(message, _currentDialogue, DialogueRole.System32);
       var resp = await _clientChatService.Send(req.message);
       AppendBubble(assistantBubblePrefab, resp.reply);
       RecheckTracker(resp.learnedSummary);
@@ -211,6 +236,32 @@ public class DialogueUI : MonoBehaviour {
     {
       loadImage.gameObject.SetActive(false);
     }
+  }
+
+  private string GetPlayerProjectData()
+  {
+    var data = LevelSelector.Instance.CurrentLevel.Cells;
+    var result = "";
+    var details = LandscapeProjectDetailsUI.Instance.GetValues();
+    result += "Детали проекта игрока. Бюджет " + details.cost + ". Время постройки " + details.time + ".\n"; 
+    result += "\nПоказатель эстетики - " + details.aesthetics + ", функциональности - " + details.functionality + " (максимум 80).\n"; 
+    foreach (var cell in data)
+    {
+      var cellData = "Клетка. Позиция: " + cell.data.x + " " + cell.data.y;
+      if (cell.data.decorations[0] == null
+          && cell.data.decorations[1] == null)
+      {
+        cellData += "\n. Ландшафт: " + cell.data.ground.displayName + ". Игрок ничего не построил.";
+      }
+      else
+      {
+        cellData += "\n. Игрок " + (cell.data.decorations[1] ? "построил: " + cell.data.decorations[1].displayName 
+                      : " засыпал клетку: " + cell.data.decorations[0].displayName);
+      }
+      result += cellData + "\n";
+    }
+
+    return result;
   }
 }
 

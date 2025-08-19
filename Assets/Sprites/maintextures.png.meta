@@ -1853,7 +1853,7 @@ TextureImporter:
         width: 18
         height: 18
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1874,7 +1874,7 @@ TextureImporter:
         width: 18
         height: 18
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1882,6 +1882,27 @@ TextureImporter:
       bones: []
       spriteID: 89b097ed6c722444d9bc2aa3dad3c7ce
       internalID: 1503554962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flowers1
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 960
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37e2509364e171549b054b96163ffd03
+      internalID: 1339120373
       vertices: []
       indices: 
       edges: []
@@ -1919,6 +1940,7 @@ TextureImporter:
       c_panel_select: 1134223869
       cancel: 1382806724
       flowers: -1988888114
+      flowers1: 1339120373
       grass: -272679171
       ground: 1810619432
       h1: -501844274

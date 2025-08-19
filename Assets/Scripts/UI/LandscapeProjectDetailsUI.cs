@@ -5,6 +5,14 @@ using UnityEngine.UI;
 
 namespace DefaultNamespace
 {
+    public class Details
+    {
+        public int aesthetics;
+        public int functionality;
+        public int cost;
+        public float time;
+    }
+    
     public class LandscapeProjectDetailsUI : MonoBehaviour
     {
         // Текстовые поля с значениями эстетики, функциональности, стоимости и срокам
@@ -25,7 +33,13 @@ namespace DefaultNamespace
         private void Awake()
         {
             Instance = this;
+            GameDataManager.OnGameStageChanged.AddListener(() =>
+            {
+                if (GameDataManager.Instance.gameData.stage == GameStage.FirstDialog) ClearValues();
+            });
         }
+        
+        public Details GetValues() => new Details { aesthetics = aesthetics, functionality = functionality, cost = cost, time = time };
         
         public void AddValues(int aesthetics, int functionality, int cost, float time)
         {
@@ -34,11 +48,16 @@ namespace DefaultNamespace
             this.cost += cost;
             this.time += time;
             
+            this.aesthetics = Mathf.Clamp(this.aesthetics, 0, 80);
+            this.functionality = Mathf.Clamp(this.functionality, 0, 80);
+            this.cost = this.cost < 0 ? 0 : this.cost;
+            this.time = this.time < 0 ? 0 : this.time;
+            
             aestheticsSlider.value = this.aesthetics/80f*100f;
             functionalitySlider.value = this.functionality/80f*100f;
             
-            costText.text = "Бюджет проекта: " + cost.ToString();
-            timeText.text = "Срок постройки: " + time.ToString(CultureInfo.InvariantCulture);
+            costText.text = "Бюджет проекта: " + this.cost.ToString();
+            timeText.text = "Срок постройки: " + this.time.ToString(CultureInfo.InvariantCulture);
         }
         
         public void ClearValues()
