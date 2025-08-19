@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 5_Wood Deck 1
   m_EditorClassIdentifier: 
   id: 16
-  displayName: Wood Deck
+  displayName: Деревянный настил
   description: "Стоимость 10, время строительства 0.6, вклад: Ф1/Э1/У0"
   category: 1
   prefab: {fileID: 4368826985524514308, guid: 4b505dbac0381404b9653608debf6a2d, type: 3}

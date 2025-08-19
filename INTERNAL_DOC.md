@@ -27,6 +27,8 @@
 - Rate limiter allows 120 calls per user per hour.
 - Progress flags are derived from summary, recent turns, and the current message each request.
 - Build element assets are idempotently regenerated; rerunning the generator updates existing assets.
+- Все `BuildElementData` ассеты теперь имеют русские названия в поле `displayName`.
+- `GroundElementData` заполнены значениями `replaceCost`, `replaceTime`, `overlayCost`, `overlayTime`.
 
 Ниже — полная задача для Codex по созданию каталога строительных элементов в формате текущего ScriptableObject `BuildElementData` (Unity). Цель — сгенерировать **ассеты** со значениями полей и вспомогательный редакторский код для автоматического создания/связывания. Категория **Embankment** служит для подсыпки (чернозём или гравий+песок), на которой стоят другие объекты для их укрепления.
 

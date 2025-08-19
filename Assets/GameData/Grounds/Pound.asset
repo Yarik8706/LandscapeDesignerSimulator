@@ -11,11 +11,11 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 08942aca75a1469f849ef5317700773f, type: 3}
   m_Name: Pound
-  m_EditorClassIdentifier: 
-  displayName: 
+  m_EditorClassIdentifier:
+  displayName: Пруд
   icon: {fileID: -16511627, guid: f14bcdc4621956d4aab5fa2ff003de05, type: 3}
   id: 0
-  replaceCost: 0
-  replaceTime: 0
-  overlayCost: 0
-  overlayTime: 0
+  replaceCost: 25
+  replaceTime: 8
+  overlayCost: 10
+  overlayTime: 4

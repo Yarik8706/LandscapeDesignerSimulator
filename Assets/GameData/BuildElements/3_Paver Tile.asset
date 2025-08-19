@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 3_Paver Tile
   m_EditorClassIdentifier: 
   id: 3
-  displayName: Paver Tile
+  displayName: Плитка
   description: "Стоимость 12, время строительства 0.4, вклад: Ф1/Э1/У1"
   category: 1
   prefab: {fileID: 6945748028387086665, guid: 0b77b2502ea5bf849aae8068839c6be0, type: 3}

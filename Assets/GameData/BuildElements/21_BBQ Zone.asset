@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 21_BBQ Zone
   m_EditorClassIdentifier: 
   id: 21
-  displayName: BBQ Zone
+  displayName: Зона барбекю
   description: "Стоимость 25, время строительства 0.5, вклад: Ф2/Э0/У0"
   category: 1
   prefab: {fileID: 3097208850939031735, guid: e6c2ccecc6efbc04397b028a93955d4f, type: 3}
