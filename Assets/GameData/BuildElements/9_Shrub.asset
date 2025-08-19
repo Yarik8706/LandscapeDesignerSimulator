@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 9_Shrub
   m_EditorClassIdentifier: 
   id: 9
-  displayName: Shrub
+  displayName: Кустарник
   description: "Стоимость 10, время строительства 0.3, вклад: Ф0/Э1/У1"
   category: 1
   prefab: {fileID: 3361637721242735780, guid: 993197abe20b16e48ba505bea4291c36, type: 3}

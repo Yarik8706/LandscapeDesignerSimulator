@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 8_Flowerbed
   m_EditorClassIdentifier: 
   id: 8
-  displayName: Flowerbed
+  displayName: Клумба
   description: "Стоимость 8, время строительства 0.2, вклад: Ф0/Э2/У0"
   category: 1
   prefab: {fileID: 7139589034567307363, guid: ccee3822093c3e44dbba7697166604d5, type: 3}

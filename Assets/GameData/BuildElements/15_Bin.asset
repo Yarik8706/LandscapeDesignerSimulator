@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 15_Bin
   m_EditorClassIdentifier: 
   id: 15
-  displayName: Bin
+  displayName: Урна
   description: "Стоимость 5, время строительства 0.1, вклад: Ф1/Э0/У0"
   category: 1
   prefab: {fileID: 6045757440126743824, guid: 6bcc8dca23a058340814e860663c4322, type: 3}

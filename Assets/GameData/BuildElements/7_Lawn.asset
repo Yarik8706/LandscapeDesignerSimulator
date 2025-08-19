@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 7_Lawn
   m_EditorClassIdentifier: 
   id: 7
-  displayName: Lawn
+  displayName: Газон
   description: "Стоимость 4, время строительства 0.1, вклад: Ф0/Э1/У0"
   category: 1
   prefab: {fileID: 1220869818331261271, guid: b5030d45cc76f1841b7a22bb3daa9480, type: 3}

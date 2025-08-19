@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 2_Gravel-Sand Fill
   m_EditorClassIdentifier: 
   id: 2
-  displayName: Gravel-Sand Fill
+  displayName: Гравий+Песок
   description: "Стоимость 10, время строительства 0.25, вклад: Ф0/Э0/У2"
   category: 0
   prefab: {fileID: 2411561901339605259, guid: ec6d983d84a48614a860177e363eb81c, type: 3}

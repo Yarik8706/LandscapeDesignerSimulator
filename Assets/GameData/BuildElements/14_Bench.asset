@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 14_Bench
   m_EditorClassIdentifier: 
   id: 14
-  displayName: Bench
+  displayName: Лавка
   description: "Стоимость 6, время строительства 0.1, вклад: Ф1/Э0/У0"
   category: 1
   prefab: {fileID: 1145563076886501965, guid: 63b3dd4e68380e14ea2a909471eca420, type: 3}
