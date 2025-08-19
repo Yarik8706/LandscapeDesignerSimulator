@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 19
   displayName: Парковка
-  description: "Стоимость 60, время строительства 1.5, вклад: Ф3/Э0/У1"
+  description: "Стоимость 60, время строительства 1.5, функциональность 3 (добавляет к общей функциональности), эстетика 0 (добавляет к общей эстетике)"
   category: 1
   prefab: {fileID: 2072768849482020965, guid: 89e395d1686d5104a8d4d750fda15e42, type: 3}
   icon: {fileID: 1272169088, guid: f14bcdc4621956d4aab5fa2ff003de05, type: 3}

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 9
   displayName: Кустарник
-  description: "Стоимость 10, время строительства 0.3, вклад: Ф0/Э1/У1"
+  description: "Стоимость 10, время строительства 0.3, функциональность 0 (добавляет к общей функциональности), эстетика 1 (добавляет к общей эстетике)"
   category: 1
   prefab: {fileID: 3361637721242735780, guid: 993197abe20b16e48ba505bea4291c36, type: 3}
   icon: {fileID: 49780972, guid: f14bcdc4621956d4aab5fa2ff003de05, type: 3}

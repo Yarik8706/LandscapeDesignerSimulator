@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 17
   displayName: Детская площадка
-  description: "Стоимость 80, время строительства 2, вклад: Ф3/Э1/У1"
+  description: "Стоимость 80, время строительства 2, функциональность 3 (добавляет к общей функциональности), эстетика 1 (добавляет к общей эстетике)"
   category: 1
   prefab: {fileID: 3484506051159402401, guid: 9ca23e7be2f96c64497f946430f193b3, type: 3}
   icon: {fileID: 1878108290, guid: f14bcdc4621956d4aab5fa2ff003de05, type: 3}

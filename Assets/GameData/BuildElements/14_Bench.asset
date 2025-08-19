@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 14
   displayName: Лавка
-  description: "Стоимость 6, время строительства 0.1, вклад: Ф1/Э0/У0"
+  description: "Стоимость 6, время строительства 0.1, функциональность 1 (добавляет к общей функциональности), эстетика 0 (добавляет к общей эстетике)"
   category: 1
   prefab: {fileID: 1145563076886501965, guid: 63b3dd4e68380e14ea2a909471eca420, type: 3}
   icon: {fileID: 986027610, guid: f14bcdc4621956d4aab5fa2ff003de05, type: 3}
