@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 18_Sports Ground
   m_EditorClassIdentifier: 
   id: 18
-  displayName: Sports Ground
+  displayName: Спортплощадка
   description: "Стоимость 90, время строительства 2.2, вклад: Ф3/Э0/У1"
   category: 1
   prefab: {fileID: 6849591507299213814, guid: 87b8b5e2d519fe94db7508a7e100e675, type: 3}

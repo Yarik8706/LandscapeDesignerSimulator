@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 4_Gravel Path
   m_EditorClassIdentifier: 
   id: 4
-  displayName: Gravel Path
+  displayName: Гравийная дорожка
   description: "Стоимость 6, время строительства 0.2, вклад: Ф1/Э0/У1"
   category: 1
   prefab: {fileID: 3641692421218156242, guid: 37799aef7ef8cdd42907f395823b2c1d, type: 3}

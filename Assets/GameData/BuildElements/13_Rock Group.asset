@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 13_Rock Group
   m_EditorClassIdentifier: 
   id: 13
-  displayName: Rock Group
+  displayName: Каменная композиция
   description: "Стоимость 14, время строительства 0.4, вклад: Ф0/Э1/У1"
   category: 1
   prefab: {fileID: 9198876466048800162, guid: 5148a67deb1018f41b6ce92eab430b51, type: 3}

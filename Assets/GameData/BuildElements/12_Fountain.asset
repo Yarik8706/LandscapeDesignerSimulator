@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 12_Fountain
   m_EditorClassIdentifier: 
   id: 12
-  displayName: Fountain
+  displayName: Фонтан
   description: "Стоимость 40, время строительства 1.2, вклад: Ф0/Э3/У0"
   category: 1
   prefab: {fileID: 4531318787144342346, guid: f4c0955fef6051f4885d1543acbf380c, type: 3}
