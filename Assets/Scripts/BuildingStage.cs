@@ -73,6 +73,7 @@ public class BuildingStage : MonoBehaviour
         foreach (var c in broken)
         {
             c.BreakDecoration();
+            AudioManager.Instance?.PlayBreakSound();
             if (_breakEffectPrefab != null)
             {
                 var fx = Instantiate(_breakEffectPrefab, c.transform.position, Quaternion.identity);
