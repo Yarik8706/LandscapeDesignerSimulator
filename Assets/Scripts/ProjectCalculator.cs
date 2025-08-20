@@ -9,7 +9,35 @@ namespace DefaultNamespace
         public float Time { get; private set; }
         public int Aesthetics { get; private set; }
         public int Functionality { get; private set; }
+        
+        public int extraCost { get; private set; }
+        public float extraTime { get; private set; }
+        
+        public void Clear()
+        {
+            Budget = 0;
+            Time = 0f;
+            Aesthetics = 0;
+            Functionality = 0;
+            LandscapeProjectDetailsUI.Instance.ClearValues();
+        }
+        
+        public static ProjectCalculator Instance { get; private set; }
+        
+        private void Awake()
+        {
+            Instance = this;
+        }
+        
+        public Details GetValues() => new Details { aesthetics = Aesthetics, functionality = Functionality, cost = Budget, time = Time };
 
+        public void AddValues(int cost, float time)
+        {
+            extraCost += cost;
+            extraTime += time;
+            LandscapeProjectDetailsUI.Instance.SetValues(Aesthetics, Functionality, Budget+extraCost, extraTime+Time);
+        }
+        
         public void CalculateCurrentTerritory()
         {
             Budget = 0;
@@ -56,6 +84,7 @@ namespace DefaultNamespace
                     Time += ground.replaceTime;
                 }
             }
+            LandscapeProjectDetailsUI.Instance.SetValues(Aesthetics, Functionality, Budget+extraCost, extraTime+Time);
         }
     }
 }

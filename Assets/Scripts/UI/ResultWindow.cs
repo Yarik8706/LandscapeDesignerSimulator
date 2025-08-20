@@ -18,7 +18,8 @@ namespace UI
         
         public void Show(string resultText)
         {
-            
+            _resultText.text = resultText;
+            winPanel.SetActive(true);
         }
     }
 }

@@ -19,13 +19,17 @@ public class DialogueUI : MonoBehaviour {
   [SerializeField] private TMP_Text tracker;
   [SerializeField] private TMP_Text gottenPlayerTasks;
   [SerializeField] private TMP_Text canAskCountText;
+  [SerializeField] private bool isDebugMode = false;
+  
+  public static DialogueUI Instance { get; private set; }
   
   private int _currentSpriteIndex = 0;
   private float _animationTimer = 0f;
   private const float FRAME_RATE = 0.1f;
   private bool _isLoading = false;
-  
+
   private int _currentAskCount = 0;
+  private int _incorrectMessageCount = 0;
   
   private string _currentMessage;
   private ChatService<ChatResponse> _clientChatService;
@@ -37,6 +41,7 @@ public class DialogueUI : MonoBehaviour {
 
   private void Awake()
   {
+    Instance = this;
     GameDataManager.OnGameStageChanged.AddListener(OnGameStageChanged);
     // FirebaseFunctions.DefaultInstance.UseFunctionsEmulator("http://localhost:5001");
     FirebaseInitializer.OnInitialized.AddListener(() =>
@@ -45,9 +50,12 @@ public class DialogueUI : MonoBehaviour {
       _clientChatService.testData = new ChatResponse() { reply = "Test reply message from server response", learnedSummary = "0/0", learnedText = "Test reply message from server response" };
       _simpleChatService = new ChatService<string>("aiCall");
       _simpleChatService.testData = "Test reply message from server response";
-      
-      // ChatService<ChatResponse>.isDebug = true;
-      // ChatService<string>.isDebug = true;
+
+#if UNITY_EDITOR
+      ChatService<ChatResponse>.isDebug = isDebugMode;
+      ChatService<string>.isDebug = isDebugMode;
+#endif
+     
     });
   }
 
@@ -66,6 +74,7 @@ public class DialogueUI : MonoBehaviour {
     canAskCountText.gameObject.SetActive(true);
     if (stage == GameStage.FirstDialog)
     {
+      ClearMessages();
       _currentAskCount = _gameData.firstDialogQuestionCount;
       _currentDialogue = new DialogueData();
       clientName.text = clientsData.clientsNames[_gameData.activeClientIndex]; 
@@ -78,12 +87,12 @@ public class DialogueUI : MonoBehaviour {
     else if (stage == GameStage.SecondDialog)
     {
       _currentAskCount = _gameData.firstDialogQuestionCount;
-      SystemSendMessage(clientsData.secondAITask + "/" + GetPlayerProjectData());
+      SystemSendMessage(clientsData.secondAITask + "\n" + GetPlayerProjectData());
     }
     else if (stage == GameStage.FinalDialog)
     {
       _currentAskCount = 4;
-      SystemSendMessage(clientsData.finalAITask + "/" + GetPlayerProjectData());
+      SystemSendMessage(clientsData.finalAITask + "\n" + GetPlayerProjectData());
     }
     else
     {
@@ -110,6 +119,7 @@ public class DialogueUI : MonoBehaviour {
   private void Update()
   {
     if(GameDataManager.Instance.gameData.stage != GameStage.FinalDialog
+       && GameDataManager.Instance.gameData.stage != GameStage.SecondDialog
        && GameDataManager.Instance.gameData.stage != GameStage.FirstDialog) return;
     if ((Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter)
         ) && _currentMessage.Length > 0)
@@ -142,6 +152,7 @@ public class DialogueUI : MonoBehaviour {
   
   public async void PlayerSendMessage() {
     if (string.IsNullOrEmpty(_currentMessage) || _currentAskCount <= 0) return;
+    if(_isLoading) return;
     
     StartLoading();
     
@@ -156,6 +167,19 @@ public class DialogueUI : MonoBehaviour {
       RecheckTracker(resp.learnedSummary);
       RecheckGottenTasks(resp.learnedText);
       canAskCountText.text = "Сообщение еще можно отправить: " + _currentAskCount;
+      if (resp.incorrectMessages >= 3)
+      {
+        ResultWindow.Instance.Show("Клиент прервал разговор! Итоговая оценка: 0/10");
+        return;
+      }
+      
+      if (_incorrectMessageCount != resp.incorrectMessages)
+      {
+        _incorrectMessageCount = resp.incorrectMessages;
+        NotificationMessageUI.Instance.ShowMessage(
+          "Общайтесь с клиентом только по теме, иначе клиент может прервать разговор и сделку!", 7f);
+      }
+      
     }
     finally 
     {
@@ -238,12 +262,18 @@ public class DialogueUI : MonoBehaviour {
       loadImage.gameObject.SetActive(false);
     }
   }
+  
+  private void ClearMessages() {
+    foreach (Transform child in _messageContainer) {
+      Destroy(child.gameObject);
+    }
+  }
 
   private string GetPlayerProjectData()
   {
     var data = LevelSelector.Instance.CurrentLevel.Cells;
     var result = "";
-    var details = LandscapeProjectDetailsUI.Instance.GetValues();
+    var details = ProjectCalculator.Instance.GetValues();
     result += "Детали проекта игрока. Бюджет " + details.cost + ". Время постройки " + details.time + ".\n"; 
     result += "\nПоказатель эстетики - " + details.aesthetics + ", функциональности - " + details.functionality + " (максимум 80).\n"; 
     foreach (var cell in data)

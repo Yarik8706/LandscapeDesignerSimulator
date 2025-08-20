@@ -43,3 +43,13 @@ public class ElementTransition : MonoBehaviour
         movingTransform.position = isActive ? activePosition.position : hidePosition.position;
     }
 }
+
+public static class ElementTransitionExtensions
+{
+    public static Tween ChangeActive(this Transform movingTransform, Vector3 newPosition)
+    {
+        return movingTransform.DOMove(newPosition, 0.7f)
+            .SetLink(movingTransform.gameObject)
+            .SetEase(Ease.InOutExpo).Play();
+    }
+}

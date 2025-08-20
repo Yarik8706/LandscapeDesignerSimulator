@@ -22,12 +22,6 @@ namespace DefaultNamespace
         [SerializeField] private Slider aestheticsSlider;
         [SerializeField] private Slider functionalitySlider;
         
-        // числа, которые нужно вставить в текст
-        private int aesthetics;
-        private int functionality;
-        private int cost;
-        private float time;
-        
         public static LandscapeProjectDetailsUI Instance { get; private set; }
         
         private void Awake()
@@ -39,39 +33,27 @@ namespace DefaultNamespace
             });
         }
         
-        public Details GetValues() => new Details { aesthetics = aesthetics, functionality = functionality, cost = cost, time = time };
-        
-        public void AddValues(int aesthetics, int functionality, int cost, float time)
+        public void SetValues(int aesthetics, int functionality, int cost, float time)
         {
-            this.aesthetics += aesthetics;
-            this.functionality += functionality;
-            this.cost += cost;
-            this.time += time;
+            aesthetics = Mathf.Clamp(aesthetics, 0, 80);
+            functionality = Mathf.Clamp(functionality, 0, 80);
+            cost = cost < 0 ? 0 : cost;
+            time = time < 0 ? 0 : time;
             
-            this.aesthetics = Mathf.Clamp(this.aesthetics, 0, 80);
-            this.functionality = Mathf.Clamp(this.functionality, 0, 80);
-            this.cost = this.cost < 0 ? 0 : this.cost;
-            this.time = this.time < 0 ? 0 : this.time;
+            aestheticsSlider.value = aesthetics/30f;
+            functionalitySlider.value = functionality/30f;
             
-            aestheticsSlider.value = this.aesthetics/80f*100f;
-            functionalitySlider.value = this.functionality/80f*100f;
-            
-            costText.text = "Бюджет проекта: " + this.cost.ToString();
-            timeText.text = "Срок постройки: " + this.time.ToString(CultureInfo.InvariantCulture);
+            costText.text = "Бюджет проекта: " + cost.ToString();
+            timeText.text = "Срок постройки: " + time.ToString(CultureInfo.InvariantCulture);
         }
         
         public void ClearValues()
         {
-            aesthetics = 0;
-            functionality = 0;
-            cost = 0;
-            time = 0;
-            
             aestheticsSlider.value = 0;
             functionalitySlider.value = 0;
             
-            costText.text = "Бюджет проекта: " + cost.ToString();
-            timeText.text = "Срок постройки: " + time.ToString(CultureInfo.InvariantCulture);
+            costText.text = "Бюджет проекта: " + 0;
+            timeText.text = "Срок постройки: " + 0;
         }
     }
 }

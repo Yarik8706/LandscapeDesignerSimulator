@@ -74,7 +74,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -1
+  m_SortingOrder: -1000
   m_Sprite: {fileID: 1810619432, guid: f14bcdc4621956d4aab5fa2ff003de05, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -101,16 +101,13 @@ MonoBehaviour:
   data:
     x: 0
     y: 0
-    id: 0
     ground: {fileID: 0}
-    hasGround: 0
     decorations:
     - {fileID: 0}
     - {fileID: 0}
-    soils: 
   _groundElement: {fileID: 0}
-  _buildElements: []
-  _soilsStrength: 
+  <SoilStrength>k__BackingField: 1
+  <DirtType>k__BackingField: 1
   _terrainType: 0
   _objectContext: {fileID: 11400000, guid: 7e2b2e07a3f4d3e4aa619cd99b4578d8, type: 2}
   _groundElementPrefab: {fileID: 6675924654514131816, guid: 851a563b44ae8aa4db466c2f4bf9f452, type: 3}

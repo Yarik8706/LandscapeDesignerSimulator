@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using DefaultNamespace;
+using UI;
 using UnityEngine;
 using UnityEngine.Serialization;
 using Random = System.Random;
@@ -41,10 +42,13 @@ public class LevelSelector : MonoBehaviour
         _currentLevelIndex++;
         if (_currentLevelIndex >= _levels.Length)
         {
+            TrainingControl.Instance.HideTrainingPanel();
             _gameEndWindow.SetActive(true);
             return;
         }
-        if(CurrentLevel != null) Destroy(CurrentLevel);
+        
+        if(CurrentLevel != null) Destroy(CurrentLevel.gameObject);
+        GameDataManager.Instance.gameData.stage = GameStage.FirstDialog;
         CurrentLevel = Instantiate(_levels[_levelsOrder[_currentLevelIndex]].prefab, _levelContainer);
         GameDataManager.Instance.gameData.activeClientBrief = _levelsOrder[_currentLevelIndex];
         GameDataManager.OnGameStageChanged.Invoke();

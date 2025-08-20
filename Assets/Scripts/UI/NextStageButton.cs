@@ -7,11 +7,9 @@ namespace UI
     {
         public void NextStage()
         {
-            
             if (GameDataManager.Instance.gameData.stage == GameStage.FinalDialog)
             {
-                GameDataManager.Instance.gameData.stage = GameStage.FirstDialog;
-                GameDataManager.OnGameStageChanged.Invoke();
+                DialogueUI.Instance.PlayerEndProject();
                 return;
             };
             GameDataManager.Instance.gameData.stage++;
