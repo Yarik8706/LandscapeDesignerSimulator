@@ -14,10 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 18
   displayName: Спортплощадка
-  description: "Стоимость: 90
-Время строительства: 2.2
-Функциональность: 3
-Эстетика: 0"
+  description: "Стоимость: 90/nВремя строительства: 2.2/nФункциональность: 3/nЭстетика: 0"
   category: 1
   prefab: {fileID: 6849591507299213814, guid: 87b8b5e2d519fe94db7508a7e100e675, type: 3}
   icon: {fileID: -699005387, guid: f14bcdc4621956d4aab5fa2ff003de05, type: 3}

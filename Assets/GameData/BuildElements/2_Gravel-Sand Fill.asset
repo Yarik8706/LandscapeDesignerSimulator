@@ -14,10 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 2
   displayName: Гравий+Песок
-  description: "Стоимость: 10
-Время строительства: 0.25
-Функциональность: 0
-Эстетика: 0"
+  description: "Стоимость: 10/nВремя строительства: 0.25/nФункциональность: 0/nЭстетика: 0"
   category: 0
   prefab: {fileID: 2411561901339605259, guid: ec6d983d84a48614a860177e363eb81c, type: 3}
   icon: {fileID: -162905484, guid: f14bcdc4621956d4aab5fa2ff003de05, type: 3}
