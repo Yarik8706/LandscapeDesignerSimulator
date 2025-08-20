@@ -14,7 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 6
   displayName: Асфальт
-  description: "Стоимость 15, время строительства 0.5, функциональность 2 (добавляет к общей функциональности), эстетика 0 (добавляет к общей эстетике)"
+  description: "Стоимость: 15
+Время строительства: 0.5
+Функциональность: 2
+Эстетика: 0"
   category: 1
   prefab: {fileID: 6994710220473768924, guid: 9a7fe255c2f438445954ad8162a1f7c0, type: 3}
   icon: {fileID: -917517015, guid: f14bcdc4621956d4aab5fa2ff003de05, type: 3}
@@ -51,5 +54,4 @@ MonoBehaviour:
     - {fileID: 11400000, guid: d65a5e4785156ef4f858662800e12847, type: 2}
   adjacency: []
   terraform:
-    overlayOn: 
-
+    overlayOn:

@@ -14,7 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 21
   displayName: Зона барбекю
-  description: "Стоимость 25, время строительства 0.5, функциональность 2 (добавляет к общей функциональности), эстетика 0 (добавляет к общей эстетике)"
+  description: "Стоимость: 25
+Время строительства: 0.5
+Функциональность: 2
+Эстетика: 0"
   category: 1
   prefab: {fileID: 3097208850939031735, guid: e6c2ccecc6efbc04397b028a93955d4f, type: 3}
   icon: {fileID: 1316093726, guid: f14bcdc4621956d4aab5fa2ff003de05, type: 3}
@@ -52,5 +55,4 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 845633d9045ba2b46b64c6f5767ee48a, type: 2}
   adjacency: []
   terraform:
-    overlayOn: 
-
+    overlayOn:

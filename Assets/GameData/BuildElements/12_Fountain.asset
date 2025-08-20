@@ -14,7 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 12
   displayName: Фонтан
-  description: "Стоимость 40, время строительства 1.2, функциональность 0 (добавляет к общей функциональности), эстетика 3 (добавляет к общей эстетике)"
+  description: "Стоимость: 40
+Время строительства: 1.2
+Функциональность: 0
+Эстетика: 3"
   category: 1
   prefab: {fileID: 4531318787144342346, guid: f4c0955fef6051f4885d1543acbf380c, type: 3}
   icon: {fileID: -2034510359, guid: f14bcdc4621956d4aab5fa2ff003de05, type: 3}
@@ -51,5 +54,4 @@ MonoBehaviour:
     - {fileID: 11400000, guid: ff7d87177ee46ea4e9b14cbae2bdc149, type: 2}
   adjacency: []
   terraform:
-    overlayOn: 
-
+    overlayOn:

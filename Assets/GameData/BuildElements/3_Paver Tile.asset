@@ -14,7 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 3
   displayName: Плитка
-  description: "Стоимость 12, время строительства 0.4, функциональность 1 (добавляет к общей функциональности), эстетика 1 (добавляет к общей эстетике)"
+  description: "Стоимость: 12
+Время строительства: 0.4
+Функциональность: 1
+Эстетика: 1"
   category: 1
   prefab: {fileID: 6945748028387086665, guid: 0b77b2502ea5bf849aae8068839c6be0, type: 3}
   icon: {fileID: -442253117, guid: f14bcdc4621956d4aab5fa2ff003de05, type: 3}
@@ -52,5 +55,4 @@ MonoBehaviour:
     - {fileID: 11400000, guid: d65a5e4785156ef4f858662800e12847, type: 2}
   adjacency: []
   terraform:
-    overlayOn: 
-
+    overlayOn:

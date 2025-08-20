@@ -14,7 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 19
   displayName: Парковка
-  description: "Стоимость 60, время строительства 1.5, функциональность 3 (добавляет к общей функциональности), эстетика 0 (добавляет к общей эстетике)"
+  description: "Стоимость: 60
+Время строительства: 1.5
+Функциональность: 3
+Эстетика: 0"
   category: 1
   prefab: {fileID: 2072768849482020965, guid: 89e395d1686d5104a8d4d750fda15e42, type: 3}
   icon: {fileID: 1272169088, guid: f14bcdc4621956d4aab5fa2ff003de05, type: 3}
@@ -51,5 +54,4 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 845633d9045ba2b46b64c6f5767ee48a, type: 2}
   adjacency: []
   terraform:
-    overlayOn: 
-
+    overlayOn:

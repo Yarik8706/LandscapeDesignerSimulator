@@ -14,7 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 20
   displayName: Беседка
-  description: "Стоимость 70, время строительства 1.6, функциональность 2 (добавляет к общей функциональности), эстетика 2 (добавляет к общей эстетике)"
+  description: "Стоимость: 70
+Время строительства: 1.6
+Функциональность: 2
+Эстетика: 2"
   category: 1
   prefab: {fileID: 6044950322830626680, guid: e5da707587e2b2d47804356c81a7524e, type: 3}
   icon: {fileID: -792310273, guid: f14bcdc4621956d4aab5fa2ff003de05, type: 3}
@@ -52,5 +55,4 @@ MonoBehaviour:
     - {fileID: 11400000, guid: b6e1e0eb3cd92ed41a98eee7293231e9, type: 2}
   adjacency: []
   terraform:
-    overlayOn: 
-
+    overlayOn:
