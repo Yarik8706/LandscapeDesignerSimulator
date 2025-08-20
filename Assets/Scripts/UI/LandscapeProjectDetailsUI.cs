@@ -43,8 +43,8 @@ namespace DefaultNamespace
             aestheticsSlider.value = aesthetics/30f;
             functionalitySlider.value = functionality/30f;
             
-            costText.text = "Бюджет проекта: " + cost.ToString();
-            timeText.text = "Срок постройки: " + time.ToString(CultureInfo.InvariantCulture);
+            costText.text = "Бюджет проекта: " + cost.ToString() + " $";
+            timeText.text = "Срок постройки (дней): " + time.ToString(CultureInfo.InvariantCulture);
         }
         
         public void ClearValues()

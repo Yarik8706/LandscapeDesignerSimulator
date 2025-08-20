@@ -26,27 +26,37 @@ namespace DefaultNamespace
                 "Пригодна для растений: " + (cell.DirtType == DirtType.Bad 
                     ? "<color=red>непригодна</color>" 
                     : "<color=green>пригодна</color>");
-            _icons[0].sprite = cell.data.ground.icon;
-            _labels[0].text = cell.data.ground.displayName;
+            SetupCellInfo(cell.data.ground.icon, cell.data.ground.displayName, 0);
             if (cell.data.decorations[0] == null && cell.data.decorations[1] != null)
             {
                 _icons[2].gameObject.SetActive(false);
                 _labels[2].gameObject.SetActive(false);
-                _icons[1].sprite = cell.data.decorations[1]?.icon;
-                _labels[1].text = cell.data.decorations[1]?.displayName;
+                SetupCellInfo(cell.data.decorations[1].icon, cell.data.decorations[1].displayName, 1);
                 return;
             }
             for (int i = 1; i-1 < 2; i++)
             {
+                Debug.Log("dsgdsfs");
                 if (cell.data.decorations[i-1] == null)
                 {
                     _icons[i].gameObject.SetActive(false);
                     _labels[i].gameObject.SetActive(false);
                     continue;
                 }
-                _icons[i].sprite = cell.data.decorations[i-1]?.icon;
-                _labels[i].text = cell.data.decorations[i-1]?.displayName;
+                _icons[i].gameObject.SetActive(true);
+                _labels[i].gameObject.SetActive(true);
+                SetupCellInfo(cell.data.decorations[i-1].icon, cell.data.decorations[i-1].displayName, i);
             }
+        }
+
+        public void SetupCellInfo(Sprite sprite, string name, int index)
+        {
+            Debug.Log("dsdssdf");
+            _icons[index].sprite = sprite;
+            // set width and height of image how in icon
+            _icons[index].rectTransform.sizeDelta = sprite.rect.size*6;
+
+            _labels[index].text = name;
         }
     }
 }

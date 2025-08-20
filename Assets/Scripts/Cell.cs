@@ -55,14 +55,6 @@ public class Cell : MonoBehaviour
             && buildElementData.terraform.overlayOn.Count != 0
             && !buildElementData.terraform.overlayOn.Contains(data.ground.id)
            ) return;
-        Debug.Log("AddBuildElement " + buildElementData.name);
-        // logs need and avoid
-        Debug.Log(data.decorations[oppositeIndex] != null &&
-                  (data.decorations[oppositeIndex].constraints.proximity.avoid.Contains(buildElementData)
-                   || buildElementData.constraints.proximity.avoid.Contains(data.decorations[oppositeIndex])));
-        Debug.Log(data.decorations[oppositeIndex] != null &&
-                  (!data.decorations[oppositeIndex].constraints.proximity.need.Contains(buildElementData)
-                   || !buildElementData.constraints.proximity.need.Contains(data.decorations[oppositeIndex])));
         if (data.decorations[oppositeIndex] != null &&
             (data.decorations[oppositeIndex].constraints.proximity.avoid.Contains(buildElementData)
              || buildElementData.constraints.proximity.avoid.Contains(data.decorations[oppositeIndex])))
@@ -158,7 +150,6 @@ public class Cell : MonoBehaviour
     }
 #endif
 
-
     private void SetupGroundElement(GroundElement element, GroundElementData data)
     {
         element.SetData(data, -(int)transform.position.y * 10);
@@ -178,11 +169,10 @@ public class Cell : MonoBehaviour
         DirtType = Random.Range(0, 4) == 0 ? DirtType.Bad : DirtType.Good;
     }
 
-    public void OnMouseUp()
+    public void Click(int button)
     {
-        if (EventSystem.current != null && EventSystem.current.IsPointerOverGameObject())
-            return;
-        BuildSystem.Instance.ClickOnCell(this);
+        if (button == 0) BuildSystem.Instance.ClickOnCell(this);
+        else if (button == 1) BuildSystem.Instance.ResetCell(this);
     }
 }
 

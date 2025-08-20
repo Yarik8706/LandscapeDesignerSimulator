@@ -6,12 +6,10 @@ export const aiCallFlow = ai.defineFlow({
         inputSchema: z.string(),
         outputSchema: z.string(), 
     }, async (message, {sendChunk}) => {
-        const {response: aiResponse} 
-            = ai.generateStream(
+        const {text} 
+            = await ai.generate(
             message);
-        
-        const response = await aiResponse;
 
-        return response.text;
+        return text;
     },
 );

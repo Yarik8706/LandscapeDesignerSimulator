@@ -33,7 +33,14 @@ namespace UI
         {
             GameDataManager.OnGameStageChanged.AddListener( () =>
             {
-                if (GameDataManager.Instance.gameData.stage == GameStage.FirstDialog) return;
+                if (GameDataManager.Instance.gameData.stage == GameStage.FirstDialog)
+                {
+                    foreach (var transition in _startHideTransitions)
+                    {
+                        transition.ChangeActiveInstantly(false);
+                    }
+                    return;
+                };
                 OnStageChanged();
             });
             foreach (var transition in _startHideTransitions)

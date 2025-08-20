@@ -18,6 +18,7 @@ namespace UI
         
         public void Show(string resultText)
         {
+            TrainingControl.Instance.HideTrainingPanel();
             _resultText.text = resultText;
             winPanel.SetActive(true);
         }
