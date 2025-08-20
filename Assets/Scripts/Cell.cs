@@ -72,6 +72,8 @@ public class Cell : MonoBehaviour
 
         ChangeGroundElementState(false);
         ProjectCalculator.Instance.CalculateCurrentTerritory();
+
+        AudioManager.Instance?.PlayPlaceSound();
     }
 
     public void RemoveBuildElement(Category category, bool returnHalfCost = false)
