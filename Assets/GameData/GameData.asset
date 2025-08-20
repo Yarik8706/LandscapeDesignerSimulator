@@ -17,3 +17,7 @@ MonoBehaviour:
   firstDialogQuestionCount: 8
   secondDialogQuestionCount: 5
   stage: 0
+  buildSound: {fileID: 0}
+  breakSound: {fileID: 0}
+  backgroundMusic: {fileID: 0}
+

@@ -70,6 +70,8 @@ public class Cell : MonoBehaviour
         data.decorations[(int)buildElementData.category] = newElement.BuildElementData;
         _buildElements[(int)buildElementData.category] = newElement;
 
+        AudioManager.Instance?.PlayBuildSound();
+
         ChangeGroundElementState(false);
         ProjectCalculator.Instance.CalculateCurrentTerritory();
     }

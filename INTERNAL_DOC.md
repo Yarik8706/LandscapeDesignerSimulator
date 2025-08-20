@@ -9,12 +9,15 @@
 - `BuildElementsGenerator.Generate`: editor menu that creates or updates `BuildElementData` assets in `Assets/GameData/BuildElements` and автоматом формирует поле описания.
 - `BuildElementsGenerator.BuildDescription`: возвращает текст с полями «Стоимость», «Время строительства», «Функциональность», «Эстетика», разделёнными символом `/n`. Если указан `terraform.overlayOn`, добавляет строку об уменьшении стоимости расчистки этих поверхностей.
 - `ProjectCalculator.CalculateCurrentTerritory`: суммирует стоимость, время строительства, эстетику и функциональность по всем ячейкам текущего уровня, сохраняя результаты в свойствах.
+- `AudioManager`: запускает фоновую музыку и предоставляет методы `PlayBuildSound` и `PlayBreakSound`.
 
 ## Types
 - `Turn`: `{ role: "user" | "assistant"; text: string }` stored in session documents.
 - `Progress`: `{budget,deadline,weights,must,bans,climate,risks,bonus}` booleans returned each turn.
 - `BuildElementData`: ScriptableObject defining id, display name, description, category, cost, build time, scoring delta, stability (tolerance, failMod, aura), placement constraints (terrain, climate, proximity, allowedBase), adjacency bonuses, and terraform overlay rules.
 - `ProjectCalculator`: MonoBehaviour, предоставляющий агрегированные параметры проекта (`Budget`, `Time`, `Aesthetics`, `Functionality`).
+- `GameData`: содержит `buildSound`, `breakSound`, `backgroundMusic` для звуков.
+- `AudioManager`: MonoBehaviour с двумя `AudioSource` для музыки и эффектов.
 
 ## Data Flow
 1. Client calls `chatWithClient` with `{sessionId,userId,message,persona,clientBrief}`.
@@ -25,6 +28,8 @@
 6. Session stored back to Firestore: `{summary,lastK,turns,updatedAt}`.
 7. `BuildElementsGenerator.Generate` iterates specs, creates assets, links `allowedBase`, and saves to disk.
 8. `ProjectCalculator.CalculateCurrentTerritory` проходит по всем `Cell` текущего уровня из `LevelSelector.Instance` и аккумулирует метрики проекта.
+9. `Cell.AddBuildElement` вызывает `AudioManager.PlayBuildSound` для озвучивания установки.
+10. `BuildingStage.OnStartBuilding` при разрушении объектов запускает `AudioManager.PlayBreakSound`.
 
 ## Notes
 - History keeps only summary plus last 6 messages; summarization runs every 6 turns.

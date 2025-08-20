@@ -23,5 +23,9 @@ namespace DefaultNamespace
         public int firstDialogQuestionCount = 8;
         public int secondDialogQuestionCount = 5;
         public GameStage stage = GameStage.FirstDialog;
+
+        public AudioClip buildSound;
+        public AudioClip breakSound;
+        public AudioClip backgroundMusic;
     }
 }
