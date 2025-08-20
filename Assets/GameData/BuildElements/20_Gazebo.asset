@@ -13,12 +13,16 @@ MonoBehaviour:
   m_Name: 20_Gazebo
   m_EditorClassIdentifier: 
   id: 20
-  displayName: Беседка
-  description: "Стоимость: 56/nВремя строительства: 1.6/nФункциональность: 2/nЭстетика: 2"
+  displayName: "\u0411\u0435\u0441\u0435\u0434\u043A\u0430"
+  description: "\u0421\u0442\u043E\u0438\u043C\u043E\u0441\u0442\u044C: 56/n\u0412\u0440\u0435\u043C\u044F
+    \u0441\u0442\u0440\u043E\u0438\u0442\u0435\u043B\u044C\u0441\u0442\u0432\u0430:
+    1.6/n\u0424\u0443\u043D\u043A\u0446\u0438\u043E\u043D\u0430\u043B\u044C\u043D\u043E\u0441\u0442\u044C:
+    2/n\u042D\u0441\u0442\u0435\u0442\u0438\u043A\u0430: 2"
   category: 1
+  elementType: 1
   prefab: {fileID: 6044950322830626680, guid: e5da707587e2b2d47804356c81a7524e, type: 3}
   icon: {fileID: -792310273, guid: f14bcdc4621956d4aab5fa2ff003de05, type: 3}
-  cost: 56
+  cost: 40
   buildTime: 1.6
   delta:
     F: 2
@@ -30,10 +34,6 @@ MonoBehaviour:
       wind: 0
       hum: 0
     failMod: 0.9
-    aura:
-      radius: 0
-      shape: 0
-      effects: []
   constraints:
     terrainAllowed: 05000000
     climate:
@@ -47,9 +47,6 @@ MonoBehaviour:
     proximity:
       need: []
       avoid: []
-    allowedBase:
-    - {fileID: 11400000, guid: ff7d87177ee46ea4e9b14cbae2bdc149, type: 2}
-    - {fileID: 11400000, guid: b6e1e0eb3cd92ed41a98eee7293231e9, type: 2}
   adjacency: []
   terraform:
-    overlayOn:
+    overlayOn: 

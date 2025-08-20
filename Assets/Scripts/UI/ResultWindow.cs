@@ -22,5 +22,10 @@ namespace UI
             _resultText.text = resultText;
             winPanel.SetActive(true);
         }
+        
+        public void ReloadScene()
+        {
+            UnityEngine.SceneManagement.SceneManager.LoadScene(0);
+        }
     }
 }

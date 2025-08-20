@@ -11,11 +11,11 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 08942aca75a1469f849ef5317700773f, type: 3}
   m_Name: Mountain
-  m_EditorClassIdentifier:
-  displayName: Горы
+  m_EditorClassIdentifier: 
+  displayName: "\u0413\u043E\u0440\u044B"
   icon: {fileID: 397096931, guid: f14bcdc4621956d4aab5fa2ff003de05, type: 3}
   id: 4
   replaceCost: 20
-  replaceTime: 7
+  replaceTime: 3
   overlayCost: 8
-  overlayTime: 3
+  overlayTime: 1

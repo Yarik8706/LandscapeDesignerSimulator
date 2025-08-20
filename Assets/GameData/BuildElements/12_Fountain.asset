@@ -13,9 +13,13 @@ MonoBehaviour:
   m_Name: 12_Fountain
   m_EditorClassIdentifier: 
   id: 12
-  displayName: Фонтан
-  description: "Стоимость: 32/nВремя строительства: 1.2/nФункциональность: 0/nЭстетика: 3"
+  displayName: "\u0424\u043E\u043D\u0442\u0430\u043D"
+  description: "\u0421\u0442\u043E\u0438\u043C\u043E\u0441\u0442\u044C: 32/n\u0412\u0440\u0435\u043C\u044F
+    \u0441\u0442\u0440\u043E\u0438\u0442\u0435\u043B\u044C\u0441\u0442\u0432\u0430:
+    1.2\\n\u0424\u0443\u043D\u043A\u0446\u0438\u043E\u043D\u0430\u043B\u044C\u043D\u043E\u0441\u0442\u044C:
+    0/n\u042D\u0441\u0442\u0435\u0442\u0438\u043A\u0430: 3"
   category: 1
+  elementType: 1
   prefab: {fileID: 4531318787144342346, guid: f4c0955fef6051f4885d1543acbf380c, type: 3}
   icon: {fileID: -2034510359, guid: f14bcdc4621956d4aab5fa2ff003de05, type: 3}
   cost: 32
@@ -30,10 +34,6 @@ MonoBehaviour:
       wind: 0
       hum: 0
     failMod: 0.95
-    aura:
-      radius: 0
-      shape: 0
-      effects: []
   constraints:
     terrainAllowed: 05000000
     climate:
@@ -47,8 +47,6 @@ MonoBehaviour:
     proximity:
       need: []
       avoid: []
-    allowedBase:
-    - {fileID: 11400000, guid: ff7d87177ee46ea4e9b14cbae2bdc149, type: 2}
   adjacency: []
   terraform:
-    overlayOn:
+    overlayOn: 
