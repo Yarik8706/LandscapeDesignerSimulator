@@ -49,8 +49,6 @@ public enum TerrainType {
     Forest, 
     Steppe, 
     Mountain,
-    All,
-    None
 }
 public enum AuraShape { None, Circle, Square }
 public enum ElementType { 
@@ -150,6 +148,6 @@ public class AdjacencyRule
 public class Terraform
 {
     [Tooltip("Поверхности, поверх которых можно класть объект без удаления (Overlay)")]
-    public List<TerrainType> overlayOn = new List<TerrainType>(){TerrainType.All};
+    public List<TerrainType> overlayOn = new List<TerrainType>(){};
 }
 

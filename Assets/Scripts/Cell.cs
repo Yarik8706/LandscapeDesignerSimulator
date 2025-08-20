@@ -51,7 +51,6 @@ public class Cell : MonoBehaviour
     {
         var oppositeIndex = OppositeIndex((int)buildElementData.category);
         if (data.decorations[(int)buildElementData.category] != null
-            || !buildElementData.terraform.overlayOn.Contains(TerrainType.All)
             && buildElementData.terraform.overlayOn.Count != 0
             && !buildElementData.terraform.overlayOn.Contains(data.ground.id)
            ) return;
