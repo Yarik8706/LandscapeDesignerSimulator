@@ -14,7 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 7
   displayName: "\u0413\u0430\u0437\u043E\u043D"
-  description: "Стоимость: 4/nВремя строительства: 0.1/nФункциональность: 0/nЭстетика: 1"
+  description: "Стоимость: 4
+Время строительства: 0.1
+Функциональность: 0
+Эстетика: 1"
   category: 1
   elementType: 0
   prefab: {fileID: 1220869818331261271, guid: b5030d45cc76f1841b7a22bb3daa9480, type: 3}

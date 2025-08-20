@@ -14,7 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 19
   displayName: Парковка
-  description: "Стоимость: 48/nВремя строительства: 1.5/nФункциональность: 3/nЭстетика: 0"
+  description: "Стоимость: 48
+Время строительства: 1.5
+Функциональность: 3
+Эстетика: 0"
   category: 1
   prefab: {fileID: 2072768849482020965, guid: 89e395d1686d5104a8d4d750fda15e42, type: 3}
   icon: {fileID: 1272169088, guid: f14bcdc4621956d4aab5fa2ff003de05, type: 3}

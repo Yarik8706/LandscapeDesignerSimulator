@@ -14,7 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 6
   displayName: Асфальт
-  description: "Стоимость: 15/nВремя строительства: 0.5/nФункциональность: 2/nЭстетика: 0"
+  description: "Стоимость: 15
+Время строительства: 0.5
+Функциональность: 2
+Эстетика: 0"
   category: 1
   prefab: {fileID: 6994710220473768924, guid: 9a7fe255c2f438445954ad8162a1f7c0, type: 3}
   icon: {fileID: -917517015, guid: f14bcdc4621956d4aab5fa2ff003de05, type: 3}
