@@ -7,7 +7,7 @@
 - `loadSession` / `saveSession`: manage session summaries and recent turns in Firestore.
 - `rateLimit`: simple per-user hourly quota using Firestore.
 - `BuildElementsGenerator.Generate`: editor menu that creates or updates `BuildElementData` assets in `Assets/GameData/BuildElements` and автоматом формирует поле описания.
-- `BuildElementsGenerator.BuildDescription`: возвращает текст с полями «Стоимость», «Время строительства», «Функциональность», «Эстетика», разделёнными символом `/n`.
+- `BuildElementsGenerator.BuildDescription`: возвращает текст с полями «Стоимость», «Время строительства», «Функциональность», «Эстетика», разделёнными символом `/n`. Если указан `terraform.overlayOn`, добавляет строку об уменьшении стоимости расчистки этих поверхностей.
 - `ProjectCalculator.CalculateCurrentTerritory`: суммирует стоимость, время строительства, эстетику и функциональность по всем ячейкам текущего уровня, сохраняя результаты в свойствах.
 
 ## Types
@@ -34,6 +34,8 @@
 - Все `BuildElementData` ассеты теперь имеют русские названия в поле `displayName`.
 - `GroundElementData` заполнены значениями `replaceCost`, `replaceTime`, `overlayCost`, `overlayTime`.
 
+- Стоимость дорогих BuildElementData (>=40) снижена на 20%.
+- Описание дополнено перечнем поверхностей из `terraform.overlayOn` с фразой «Уменьшает стоимость расчистки клетки таких объектов».
 Ниже — полная задача для Codex по созданию каталога строительных элементов в формате текущего ScriptableObject `BuildElementData` (Unity). Цель — сгенерировать **ассеты** со значениями полей и вспомогательный редакторский код для автоматического создания/связывания. Категория **Embankment** служит для подсыпки (чернозём или гравий+песок), на которой стоят другие объекты для их укрепления.
 
 ---

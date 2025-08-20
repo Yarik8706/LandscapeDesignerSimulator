@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 12
   displayName: Фонтан
-  description: "Стоимость: 40/nВремя строительства: 1.2/nФункциональность: 0/nЭстетика: 3"
+  description: "Стоимость: 32/nВремя строительства: 1.2/nФункциональность: 0/nЭстетика: 3"
   category: 1
   prefab: {fileID: 4531318787144342346, guid: f4c0955fef6051f4885d1543acbf380c, type: 3}
   icon: {fileID: -2034510359, guid: f14bcdc4621956d4aab5fa2ff003de05, type: 3}
-  cost: 40
+  cost: 32
   buildTime: 1.2
   delta:
     F: 0
