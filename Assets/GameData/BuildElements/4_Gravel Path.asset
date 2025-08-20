@@ -14,10 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 4
   displayName: Гравийная дорожка
-  description: "Стоимость: 6
-Время строительства: 0.2
-Функциональность: 1
-Эстетика: 0"
+  description: "Стоимость: 6/nВремя строительства: 0.2/nФункциональность: 1/nЭстетика: 0"
   category: 1
   prefab: {fileID: 3641692421218156242, guid: 37799aef7ef8cdd42907f395823b2c1d, type: 3}
   icon: {fileID: 1320248032, guid: f14bcdc4621956d4aab5fa2ff003de05, type: 3}
