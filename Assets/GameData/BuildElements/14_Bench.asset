@@ -14,13 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 14
   displayName: "\u041B\u0430\u0432\u043A\u0430 \u0438 \u0444\u043E\u043D\u0430\u0440\u044C"
-  description: "\u0421\u0442\u043E\u0438\u043C\u043E\u0441\u0442\u044C 6, \u0432\u0440\u0435\u043C\u044F
-    \u0441\u0442\u0440\u043E\u0438\u0442\u0435\u043B\u044C\u0441\u0442\u0432\u0430
-    0.1, \u0444\u0443\u043D\u043A\u0446\u0438\u043E\u043D\u0430\u043B\u044C\u043D\u043E\u0441\u0442\u044C
-    1 (\u0434\u043E\u0431\u0430\u0432\u043B\u044F\u0435\u0442 \u043A \u043E\u0431\u0449\u0435\u0439
-    \u0444\u0443\u043D\u043A\u0446\u0438\u043E\u043D\u0430\u043B\u044C\u043D\u043E\u0441\u0442\u0438),
-    \u044D\u0441\u0442\u0435\u0442\u0438\u043A\u0430 0 (\u0434\u043E\u0431\u0430\u0432\u043B\u044F\u0435\u0442
-    \u043A \u043E\u0431\u0449\u0435\u0439 \u044D\u0441\u0442\u0435\u0442\u0438\u043A\u0435)"
+  description: "Стоимость: 6
+Время строительства: 0.1
+Функциональность: 1
+Эстетика: 0"
   category: 1
   elementType: 1
   prefab: {fileID: 1145563076886501965, guid: 63b3dd4e68380e14ea2a909471eca420, type: 3}
@@ -57,4 +54,4 @@ MonoBehaviour:
       A: 0
       S: 0
   terraform:
-    overlayOn: 
+    overlayOn:

@@ -14,7 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 15
   displayName: Урна
-  description: "Стоимость 5, время строительства 0.1, функциональность 1 (добавляет к общей функциональности), эстетика 0 (добавляет к общей эстетике)"
+  description: "Стоимость: 5
+Время строительства: 0.1
+Функциональность: 1
+Эстетика: 0"
   category: 1
   prefab: {fileID: 6045757440126743824, guid: 6bcc8dca23a058340814e860663c4322, type: 3}
   icon: {fileID: -225350661, guid: f14bcdc4621956d4aab5fa2ff003de05, type: 3}
@@ -53,5 +56,4 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 845633d9045ba2b46b64c6f5767ee48a, type: 2}
   adjacency: []
   terraform:
-    overlayOn: 
-
+    overlayOn:

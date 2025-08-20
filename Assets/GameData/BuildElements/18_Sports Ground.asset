@@ -14,7 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 18
   displayName: Спортплощадка
-  description: "Стоимость 90, время строительства 2.2, функциональность 3 (добавляет к общей функциональности), эстетика 0 (добавляет к общей эстетике)"
+  description: "Стоимость: 90
+Время строительства: 2.2
+Функциональность: 3
+Эстетика: 0"
   category: 1
   prefab: {fileID: 6849591507299213814, guid: 87b8b5e2d519fe94db7508a7e100e675, type: 3}
   icon: {fileID: -699005387, guid: f14bcdc4621956d4aab5fa2ff003de05, type: 3}
@@ -52,5 +55,4 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 845633d9045ba2b46b64c6f5767ee48a, type: 2}
   adjacency: []
   terraform:
-    overlayOn: 
-
+    overlayOn:
