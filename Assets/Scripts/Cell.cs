@@ -50,10 +50,11 @@ public class Cell : MonoBehaviour
     public void AddBuildElement(BuildElementData buildElementData)
     {
         var oppositeIndex = OppositeIndex((int)buildElementData.category);
-        if (data.decorations[(int)buildElementData.category] != null
-            && buildElementData.terraform.overlayOn.Count != 0
-            && !buildElementData.terraform.overlayOn.Contains(data.ground.id)
-           ) return;
+        if (_buildElements[oppositeIndex] != null)
+        {
+            Destroy(_buildElements[oppositeIndex].gameObject);
+            data.decorations[oppositeIndex] = null;
+        }
         if (data.decorations[oppositeIndex] != null &&
             (data.decorations[oppositeIndex].constraints.proximity.avoid.Contains(buildElementData)
              || buildElementData.constraints.proximity.avoid.Contains(data.decorations[oppositeIndex])))

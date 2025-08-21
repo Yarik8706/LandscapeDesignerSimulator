@@ -23,6 +23,7 @@ namespace DefaultNamespace
         {
             _detailsPanel.SetActive(true);
             _icon.sprite = buildElementData.icon;
+            _icon.rectTransform.sizeDelta = buildElementData.icon.rect.size * 6;
             _name.text = buildElementData.displayName;
             _description.text = buildElementData.description;
         }

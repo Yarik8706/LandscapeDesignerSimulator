@@ -29,6 +29,7 @@ public class BuildSystem : MonoBehaviour
                     : _resetCellButtonSprites[0];
             });
         _unselectButton.onClick.AddListener(DeselectObject);
+        DeselectObject();
     }
 
     private void Update()
@@ -53,19 +54,19 @@ public class BuildSystem : MonoBehaviour
     public void SelectObject(BuildElementData buildElementData)
     {
         _selectedElementImage.sprite = buildElementData.icon;
+        _selectedElementImage.rectTransform.sizeDelta = buildElementData.icon.rect.size * 6;
         _buildElementData = buildElementData;
     }
     
     public void DeselectObject()
     {
         _selectedElementImage.sprite = _defaultElementImage;
+        _selectedElementImage.rectTransform.sizeDelta = _defaultElementImage.rect.size * 6;
         _buildElementData = null;
     }
         
     public void ClickOnCell(Cell cell)
     {
-        Debug.Log("ClickOnCell");
-
         if (GameDataManager.Instance.gameData.stage !=
             GameStage.Creating 
             && GameDataManager.Instance.gameData.stage != GameStage.Building
@@ -91,6 +92,10 @@ public class BuildSystem : MonoBehaviour
     
     public void ResetCell(Cell cell)
     {
+        for (int i = transform.childCount - 1; i >= 0; i--)
+        {
+            Destroy(cell.transform.GetChild(i).gameObject);
+        }
         cell.RemoveBuildElement(Category.Decoration);
         cell.RemoveBuildElement(Category.Embankment);
     }

@@ -17,7 +17,6 @@ MonoBehaviour:
   firstDialogQuestionCount: 8
   secondDialogQuestionCount: 5
   stage: 0
-  placeSound: {fileID: 0}
-  destroySound: {fileID: 0}
-  backgroundMusic: {fileID: 0}
-
+  placeSound: {fileID: 8300000, guid: 672bd6412d53dbb49b0e5dedf68af725, type: 3}
+  destroySound: {fileID: 8300000, guid: aabd688882cf5854b847e1b3e0d5549a, type: 3}
+  backgroundMusic: {fileID: 8300000, guid: a41a00cd8e4b49643a43f39defb06861, type: 3}

@@ -16,6 +16,6 @@ MonoBehaviour:
   icon: {fileID: -16511627, guid: f14bcdc4621956d4aab5fa2ff003de05, type: 3}
   id: 0
   replaceCost: 25
-  replaceTime: 4
+  replaceTime: 2
   overlayCost: 10
   overlayTime: 1

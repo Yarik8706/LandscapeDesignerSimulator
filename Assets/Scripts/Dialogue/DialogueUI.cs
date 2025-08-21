@@ -77,9 +77,9 @@ public class DialogueUI : MonoBehaviour {
       ClearMessages();
       _currentAskCount = _gameData.firstDialogQuestionCount;
       _currentDialogue = new DialogueData();
-      clientName.text = clientsData.clientsNames[_gameData.activeClientIndex]; 
-      clientImage.sprite = clientsData.clientsAvatars[_gameData.activeClientIndex];
-      SetClientContext(clientsData.personas[_gameData.activeClientIndex]);
+      clientName.text = clientsData.clientsNames[_gameData.activeClientBrief]; 
+      clientImage.sprite = clientsData.clientsAvatars[_gameData.activeClientBrief];
+      SetClientContext(clientsData.personas[_gameData.activeClientBrief]);
       SetClientContext(clientsData.clientsBriefs[_gameData.activeClientBrief]);
       SetClientContext(clientsData.generalContext);
       SystemSendMessage(clientsData.firstSystemMessage);
@@ -108,8 +108,8 @@ public class DialogueUI : MonoBehaviour {
     
     try {
       var req = new ChatRequest(clientsData.setResultAITask, _currentDialogue, DialogueRole.System32);
-      var resp = await _simpleChatService.Send(req.message);
-      ResultWindow.Instance.Show(resp);
+      var resp = await _clientChatService.Send(req.message);
+      ResultWindow.Instance.Show(resp.reply);
     }
     finally {
       StopLoading();
