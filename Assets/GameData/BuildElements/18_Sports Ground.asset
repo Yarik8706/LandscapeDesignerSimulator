@@ -13,9 +13,13 @@ MonoBehaviour:
   m_Name: 18_Sports Ground
   m_EditorClassIdentifier: 
   id: 18
-  displayName: Спортплощадка
-  description: "Стоимость: 72/nВремя строительства: 2.2/nФункциональность: 3/nЭстетика: 0"
+  displayName: "\u0421\u043F\u043E\u0440\u0442\u043F\u043B\u043E\u0449\u0430\u0434\u043A\u0430"
+  description: "\u0421\u0442\u043E\u0438\u043C\u043E\u0441\u0442\u044C: 72\n\u0412\u0440\u0435\u043C\u044F
+    \u0441\u0442\u0440\u043E\u0438\u0442\u0435\u043B\u044C\u0441\u0442\u0432\u0430:
+    2.2\n\u0424\u0443\u043D\u043A\u0446\u0438\u043E\u043D\u0430\u043B\u044C\u043D\u043E\u0441\u0442\u044C:
+    3\n\u042D\u0441\u0442\u0435\u0442\u0438\u043A\u0430: 0"
   category: 1
+  elementType: 1
   prefab: {fileID: 6849591507299213814, guid: 87b8b5e2d519fe94db7508a7e100e675, type: 3}
   icon: {fileID: -699005387, guid: f14bcdc4621956d4aab5fa2ff003de05, type: 3}
   cost: 72
@@ -30,10 +34,6 @@ MonoBehaviour:
       wind: 0
       hum: 0
     failMod: 0.9
-    aura:
-      radius: 0
-      shape: 0
-      effects: []
   constraints:
     terrainAllowed: 05000000
     climate:
@@ -47,9 +47,6 @@ MonoBehaviour:
     proximity:
       need: []
       avoid: []
-    allowedBase:
-    - {fileID: 11400000, guid: ff7d87177ee46ea4e9b14cbae2bdc149, type: 2}
-    - {fileID: 11400000, guid: 845633d9045ba2b46b64c6f5767ee48a, type: 2}
   adjacency: []
   terraform:
-    overlayOn:
+    overlayOn: 

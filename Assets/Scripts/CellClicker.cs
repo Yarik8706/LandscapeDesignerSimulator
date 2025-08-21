@@ -7,6 +7,9 @@ namespace DefaultNamespace
     public class CellClicker : MonoBehaviour
     {
         private Camera _camera;
+        
+        private float _clickDelay = 0.2f;
+        private float _activeClickDelay = 0f;
 
         private void Start()
         {
@@ -15,6 +18,10 @@ namespace DefaultNamespace
 
         void Update()
         {
+            _activeClickDelay += Time.deltaTime;
+            
+            if (_activeClickDelay < _clickDelay) return;
+            
             // ЛКМ
             if (Input.GetMouseButtonUp(0))
                 HandleClick(0);
@@ -27,6 +34,7 @@ namespace DefaultNamespace
         void HandleClick(int button)
         {
             Debug.Log("dafsdfa");
+            _activeClickDelay = 0f;
             // Если клик попал на UI – выходим
             if (EventSystem.current != null && EventSystem.current.IsPointerOverGameObject())
                 return;

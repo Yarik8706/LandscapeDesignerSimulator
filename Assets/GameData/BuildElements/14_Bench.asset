@@ -14,7 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 14
   displayName: "\u041B\u0430\u0432\u043A\u0430 \u0438 \u0444\u043E\u043D\u0430\u0440\u044C"
-  description: "Стоимость: 6/nВремя строительства: 0.1/nФункциональность: 1/nЭстетика: 0"
+  description: "\u0421\u0442\u043E\u0438\u043C\u043E\u0441\u0442\u044C: 6\n\u0412\u0440\u0435\u043C\u044F
+    \u0441\u0442\u0440\u043E\u0438\u0442\u0435\u043B\u044C\u0441\u0442\u0432\u0430:
+    0.1\n\u0424\u0443\u043D\u043A\u0446\u0438\u043E\u043D\u0430\u043B\u044C\u043D\u043E\u0441\u0442\u044C:
+    1\n\u042D\u0441\u0442\u0435\u0442\u0438\u043A\u0430: 0"
   category: 1
   elementType: 1
   prefab: {fileID: 1145563076886501965, guid: 63b3dd4e68380e14ea2a909471eca420, type: 3}
@@ -51,4 +54,4 @@ MonoBehaviour:
       A: 0
       S: 0
   terraform:
-    overlayOn:
+    overlayOn: 

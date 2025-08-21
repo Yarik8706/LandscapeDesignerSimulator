@@ -13,9 +13,13 @@ MonoBehaviour:
   m_Name: 2_Gravel-Sand Fill
   m_EditorClassIdentifier: 
   id: 2
-  displayName: Гравий+Песок
-  description: "Стоимость: 10/nВремя строительства: 0.25/nФункциональность: 0/nЭстетика: 0"
+  displayName: "\u0413\u0440\u0430\u0432\u0438\u0439+\u041F\u0435\u0441\u043E\u043A"
+  description: "\u0421\u0442\u043E\u0438\u043C\u043E\u0441\u0442\u044C: 10\n\u0412\u0440\u0435\u043C\u044F
+    \u0441\u0442\u0440\u043E\u0438\u0442\u0435\u043B\u044C\u0441\u0442\u0432\u0430:
+    0.25\n\u0424\u0443\u043D\u043A\u0446\u0438\u043E\u043D\u0430\u043B\u044C\u043D\u043E\u0441\u0442\u044C:
+    0\n\u042D\u0441\u0442\u0435\u0442\u0438\u043A\u0430: 0"
   category: 0
+  elementType: 1
   prefab: {fileID: 2411561901339605259, guid: ec6d983d84a48614a860177e363eb81c, type: 3}
   icon: {fileID: -162905484, guid: f14bcdc4621956d4aab5fa2ff003de05, type: 3}
   cost: 10
@@ -30,12 +34,6 @@ MonoBehaviour:
       wind: 1
       hum: 1
     failMod: 0.9
-    aura:
-      radius: 0
-      shape: 2
-      effects:
-      - key: s_local
-        value: 3
   constraints:
     terrainAllowed: 05000000
     climate:
@@ -49,7 +47,6 @@ MonoBehaviour:
     proximity:
       need: []
       avoid: []
-    allowedBase: []
   adjacency: []
   terraform:
-    overlayOn:
+    overlayOn: 

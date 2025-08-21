@@ -92,10 +92,6 @@ public class BuildSystem : MonoBehaviour
     
     public void ResetCell(Cell cell)
     {
-        for (int i = transform.childCount - 1; i >= 0; i--)
-        {
-            Destroy(cell.transform.GetChild(i).gameObject);
-        }
         cell.RemoveBuildElement(Category.Decoration);
         cell.RemoveBuildElement(Category.Embankment);
     }

@@ -49,12 +49,17 @@ public class Cell : MonoBehaviour
 
     public void AddBuildElement(BuildElementData buildElementData)
     {
-        var oppositeIndex = OppositeIndex((int)buildElementData.category);
-        if (_buildElements[oppositeIndex] != null)
+        if (_buildElements[(int)buildElementData.category] != null 
+            && data.decorations[(int)buildElementData.category].id == buildElementData.id)
         {
-            Destroy(_buildElements[oppositeIndex].gameObject);
-            data.decorations[oppositeIndex] = null;
+            return;
         }
+        if (_buildElements[(int)buildElementData.category] != null)
+        {
+            Destroy(_buildElements[(int)buildElementData.category].gameObject);
+            data.decorations[(int)buildElementData.category] = null;
+        }
+        var oppositeIndex = OppositeIndex((int)buildElementData.category);
         if (data.decorations[oppositeIndex] != null &&
             (data.decorations[oppositeIndex].constraints.proximity.avoid.Contains(buildElementData)
              || buildElementData.constraints.proximity.avoid.Contains(data.decorations[oppositeIndex])))

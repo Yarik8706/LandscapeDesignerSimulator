@@ -13,9 +13,13 @@ MonoBehaviour:
   m_Name: 21_BBQ Zone
   m_EditorClassIdentifier: 
   id: 21
-  displayName: Зона барбекю
-  description: "Стоимость: 25/nВремя строительства: 0.5/nФункциональность: 2/nЭстетика: 0"
+  displayName: "\u0417\u043E\u043D\u0430 \u0431\u0430\u0440\u0431\u0435\u043A\u044E"
+  description: "\u0421\u0442\u043E\u0438\u043C\u043E\u0441\u0442\u044C: 25\n\u0412\u0440\u0435\u043C\u044F
+    \u0441\u0442\u0440\u043E\u0438\u0442\u0435\u043B\u044C\u0441\u0442\u0432\u0430:
+    0.5\n\u0424\u0443\u043D\u043A\u0446\u0438\u043E\u043D\u0430\u043B\u044C\u043D\u043E\u0441\u0442\u044C:
+    2\n\u042D\u0441\u0442\u0435\u0442\u0438\u043A\u0430: 0"
   category: 1
+  elementType: 1
   prefab: {fileID: 3097208850939031735, guid: e6c2ccecc6efbc04397b028a93955d4f, type: 3}
   icon: {fileID: 1316093726, guid: f14bcdc4621956d4aab5fa2ff003de05, type: 3}
   cost: 25
@@ -30,10 +34,6 @@ MonoBehaviour:
       wind: 0
       hum: 0
     failMod: 0.9
-    aura:
-      radius: 0
-      shape: 0
-      effects: []
   constraints:
     terrainAllowed: 05000000
     climate:
@@ -47,9 +47,6 @@ MonoBehaviour:
     proximity:
       need: []
       avoid: []
-    allowedBase:
-    - {fileID: 11400000, guid: ff7d87177ee46ea4e9b14cbae2bdc149, type: 2}
-    - {fileID: 11400000, guid: 845633d9045ba2b46b64c6f5767ee48a, type: 2}
   adjacency: []
   terraform:
-    overlayOn:
+    overlayOn: 

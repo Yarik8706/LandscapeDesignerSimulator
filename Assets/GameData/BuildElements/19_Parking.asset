@@ -13,9 +13,13 @@ MonoBehaviour:
   m_Name: 19_Parking
   m_EditorClassIdentifier: 
   id: 19
-  displayName: Парковка
-  description: "Стоимость: 48/nВремя строительства: 1.5/nФункциональность: 3/nЭстетика: 0"
+  displayName: "\u041F\u0430\u0440\u043A\u043E\u0432\u043A\u0430"
+  description: "\u0421\u0442\u043E\u0438\u043C\u043E\u0441\u0442\u044C: 48\n\u0412\u0440\u0435\u043C\u044F
+    \u0441\u0442\u0440\u043E\u0438\u0442\u0435\u043B\u044C\u0441\u0442\u0432\u0430:
+    1.5\n\u0424\u0443\u043D\u043A\u0446\u0438\u043E\u043D\u0430\u043B\u044C\u043D\u043E\u0441\u0442\u044C:
+    3\n\u042D\u0441\u0442\u0435\u0442\u0438\u043A\u0430: 0"
   category: 1
+  elementType: 1
   prefab: {fileID: 2072768849482020965, guid: 89e395d1686d5104a8d4d750fda15e42, type: 3}
   icon: {fileID: 1272169088, guid: f14bcdc4621956d4aab5fa2ff003de05, type: 3}
   cost: 48
@@ -30,10 +34,6 @@ MonoBehaviour:
       wind: 0
       hum: 0
     failMod: 0.9
-    aura:
-      radius: 0
-      shape: 0
-      effects: []
   constraints:
     terrainAllowed: 05000000
     climate:
@@ -47,8 +47,6 @@ MonoBehaviour:
     proximity:
       need: []
       avoid: []
-    allowedBase:
-    - {fileID: 11400000, guid: 845633d9045ba2b46b64c6f5767ee48a, type: 2}
   adjacency: []
   terraform:
-    overlayOn:
+    overlayOn: 
