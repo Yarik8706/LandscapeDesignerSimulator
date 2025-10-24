@@ -10,6 +10,11 @@
 - `BuildElementsGenerator.BuildDescription`: возвращает текст с полями «Стоимость», «Время строительства», «Функциональность», «Эстетика», разделёнными символом `/n`. Если указан `terraform.overlayOn`, добавляет строку об уменьшении стоимости расчистки этих поверхностей.
 - `ProjectCalculator.CalculateCurrentTerritory`: суммирует стоимость, время строительства, эстетику и функциональность по всем ячейкам текущего уровня, сохраняя результаты в свойствах.
 - `AudioManager.PlayPlaceSound` / `PlayDestroySound`: воспроизводят звуки установки и разрушения; `Start` запускает фоновую музыку из `GameData`.
+- `BackendClient.Send`: отправляет POST-запрос на Next.js backend (по умолчанию `https://landscape-designer-simulator-nextjs.vercel.app`) и возвращает JSON-ответ, десериализованный через `JsonUtility`.
+- `ChatService.Send`: использует `BackendClient` для доступа к `/api/client-call` или `/api/ai-call`, поддерживает режим отладки и повторные попытки.
+- `DialogueUI.Awake`: инициализирует `ChatService` напрямую, без ожидания Firebase-событий, и включает режим отладки в редакторе.
+- `LevelSelector.Start`: формирует порядок уровней и сразу вызывает `NextLevel`, так как больше нет ожидания инициализации Firebase.
+- `FirebaseInitializer.Awake`: по желанию уведомляет слушателей через `OnInitialized`, не выполняя проверок зависимостей Firebase.
 
 ## Types
 - `Turn`: `{ role: "user" | "assistant"; text: string }` stored in session documents.
@@ -28,6 +33,7 @@
 7. `BuildElementsGenerator.Generate` iterates specs, creates assets, links `allowedBase`, and saves to disk.
 8. `ProjectCalculator.CalculateCurrentTerritory` проходит по всем `Cell` текущего уровня из `LevelSelector.Instance` и аккумулирует метрики проекта.
 9. `Cell.AddBuildElement` после установки объекта вызывает `AudioManager` для воспроизведения звука, а `BuildingStage` при поломке элемента проигрывает звук разрушения.
+10. Диалоги в Unity обращаются к Next.js backend через `BackendClient`, отправляя `{"message":...}` на `/api/client-call` или `/api/ai-call` и обрабатывая JSON-ответы без Firebase Cloud Functions.
 
 ## Notes
 - History keeps only summary plus last 6 messages; summarization runs every 6 turns.
@@ -39,6 +45,7 @@
 
 - Стоимость дорогих BuildElementData (>=40) снижена на 20%.
 - Описание дополнено перечнем поверхностей из `terraform.overlayOn` с фразой «Уменьшает стоимость расчистки клетки таких объектов».
+- Firebase Cloud Functions и анонимная аутентификация больше не используются в клиенте; сетевые запросы выполняются напрямую к Next.js серверу.
 Ниже — полная задача для Codex по созданию каталога строительных элементов в формате текущего ScriptableObject `BuildElementData` (Unity). Цель — сгенерировать **ассеты** со значениями полей и вспомогательный редакторский код для автоматического создания/связывания. Категория **Embankment** служит для подсыпки (чернозём или гравий+песок), на которой стоят другие объекты для их укрепления.
 
 ---

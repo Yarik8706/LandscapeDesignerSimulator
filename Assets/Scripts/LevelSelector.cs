@@ -34,7 +34,7 @@ public class LevelSelector : MonoBehaviour
     private void Start()
     {
         _levelsOrder = Enumerable.Range(0, _levels.Length).ToArray();
-        FirebaseInitializer.OnInitialized.AddListener(NextLevel);
+        NextLevel();
     }
 
     public void ResetLevel()

@@ -1,5 +1,4 @@
 using DefaultNamespace;
-using Firebase.Functions;
 using Infra;
 using TMPro;
 using UI;
@@ -46,20 +45,16 @@ public class DialogueUI : MonoBehaviour {
   {
     Instance = this;
     GameDataManager.OnGameStageChanged.AddListener(OnGameStageChanged);
-    // FirebaseFunctions.DefaultInstance.UseFunctionsEmulator("http://localhost:5001");
-    FirebaseInitializer.OnInitialized.AddListener(() =>
-    {
-      _clientChatService = new ChatService<ChatResponse>("clientCall");
-      _clientChatService.testData = new ChatResponse() { reply = "Test reply message from server response", learnedSummary = "0/0", learnedText = "Test reply message from server response" };
-      _simpleChatService = new ChatService<string>("aiCall");
-      _simpleChatService.testData = "Test reply message from server response";
+
+    _clientChatService = new ChatService<ChatResponse>("clientCall");
+    _clientChatService.testData = new ChatResponse() { reply = "Test reply message from server response", learnedSummary = "0/0", learnedText = "Test reply message from server response" };
+    _simpleChatService = new ChatService<string>("aiCall");
+    _simpleChatService.testData = "Test reply message from server response";
 
 #if UNITY_EDITOR
-      ChatService<ChatResponse>.isDebug = isDebugMode;
-      ChatService<string>.isDebug = isDebugMode;
+    ChatService<ChatResponse>.isDebug = isDebugMode;
+    ChatService<string>.isDebug = isDebugMode;
 #endif
-     
-    });
   }
 
   private void Start()
