@@ -1,6 +1,7 @@
 # Использование backend'a в Unity
 
 Этот документ описывает, как Unity‑клиенту взаимодействовать с backend'ом ландшафтного симулятора. Backend построен на Next.js и предоставляет REST API поверх cloud‑функций, которые вызывают модели Google Gemini через [Genkit](https://github.com/google/genkit). Ниже приведены шаги по локальному запуску, настройке окружения и интеграции с игрой.
+URL Сервера: https://landscape-designer-simulator-nextjs.vercel.app/
 
 ## 1. Общая архитектура
 
