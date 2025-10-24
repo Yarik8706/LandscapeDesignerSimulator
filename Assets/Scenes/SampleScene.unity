@@ -991,7 +991,7 @@ MonoBehaviour:
   tracker: {fileID: 895296966}
   gottenPlayerTasks: {fileID: 773675707}
   canAskCountText: {fileID: 584840566}
-  isDebugMode: 1
+  isDebugMode: 0
 --- !u!114 &82799073
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2787,6 +2787,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: caae38180b9a85f4489211b3c49133b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  initializeOnAwake: 1
 --- !u!114 &476843517
 MonoBehaviour:
   m_ObjectHideFlags: 0
