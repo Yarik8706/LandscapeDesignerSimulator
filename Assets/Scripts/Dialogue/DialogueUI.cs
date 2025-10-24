@@ -4,15 +4,18 @@ using Infra;
 using TMPro;
 using UI;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class DialogueUI : MonoBehaviour {
   [SerializeField] private ClientsData clientsData;
-  [SerializeField] private TMP_Text assistantBubblePrefab;
+  [SerializeField] private TMP_Text gameMessagePrefab;
+  [SerializeField] private TMP_Text playerMessagePrefab;
   [SerializeField] private TMP_InputField inputField;
   [SerializeField] private Transform _messageContainer;
   [SerializeField] private Sprite[] loadSprites;
   [SerializeField] private Image loadImage;
+  [SerializeField] private ScrollRect scrollRect; 
   
   [SerializeField] private TMP_Text clientName;
   [SerializeField] private Image clientImage;
@@ -80,13 +83,14 @@ public class DialogueUI : MonoBehaviour {
       clientName.text = clientsData.clientsNames[_gameData.activeClientBrief]; 
       clientImage.sprite = clientsData.clientsAvatars[_gameData.activeClientBrief];
       SetClientContext(clientsData.personas[_gameData.activeClientBrief]);
+      SetClientContext("Твое имя: " + clientsData.clientsNames[_gameData.activeClientBrief]);
       SetClientContext(clientsData.clientsBriefs[_gameData.activeClientBrief]);
       SetClientContext(clientsData.generalContext);
       SystemSendMessage(clientsData.firstSystemMessage);
     }
     else if (stage == GameStage.SecondDialog)
     {
-      _currentAskCount = _gameData.firstDialogQuestionCount;
+      _currentAskCount = _gameData.secondDialogQuestionCount;
       SystemSendMessage(clientsData.secondAITask + "\n" + GetPlayerProjectData());
     }
     else if (stage == GameStage.FinalDialog)
@@ -156,14 +160,14 @@ public class DialogueUI : MonoBehaviour {
     
     StartLoading();
     
-    AppendBubble(assistantBubblePrefab, _currentMessage, true);
+    AppendBubble(_currentMessage, true);
     
     try
     {
       _currentAskCount--;
       var req = new ChatRequest(_currentMessage, _currentDialogue);
       var resp = await _clientChatService.Send(req.message);
-      AppendBubble(assistantBubblePrefab, resp.reply);
+      AppendBubble(resp.reply);
       RecheckTracker(resp.learnedSummary);
       RecheckGottenTasks(resp.learnedText);
       canAskCountText.text = "Сообщение еще можно отправить: " + _currentAskCount;
@@ -208,7 +212,7 @@ public class DialogueUI : MonoBehaviour {
     try {
       var req = new ChatRequest(message, _currentDialogue, DialogueRole.System32);
       var resp = await _clientChatService.Send(req.message);
-      AppendBubble(assistantBubblePrefab, resp.reply);
+      AppendBubble(resp.reply);
       RecheckTracker(resp.learnedSummary);
       RecheckGottenTasks(resp.learnedText);
     }
@@ -227,14 +231,12 @@ public class DialogueUI : MonoBehaviour {
   }
   
 
-  private void AppendBubble(TMP_Text prefab, string text, bool isPlayer = false)
+  private void AppendBubble(string text, bool isPlayer = false)
   {
     _currentDialogue.AppendMessage(isPlayer ? DialogueRole.Player : DialogueRole.Client, text);
     
-    var bubble = Instantiate(prefab, _messageContainer);
+    var bubble = Instantiate(isPlayer ? playerMessagePrefab : gameMessagePrefab, _messageContainer);
     bubble.text = text;
-    bubble.color = isPlayer ? new Color(0.4f, 0.8f, 1f) : Color.white;
-    bubble.alignment = isPlayer ? TextAlignmentOptions.Right : TextAlignmentOptions.Left;
   }
   
   private void StartLoading()
@@ -267,6 +269,10 @@ public class DialogueUI : MonoBehaviour {
     foreach (Transform child in _messageContainer) {
       Destroy(child.gameObject);
     }
+    
+    Canvas.ForceUpdateCanvases();
+    
+    scrollRect.verticalNormalizedPosition = 1f; 
   }
 
   private string GetPlayerProjectData()
@@ -275,7 +281,7 @@ public class DialogueUI : MonoBehaviour {
     var result = "";
     var details = ProjectCalculator.Instance.GetValues();
     result += "Детали проекта игрока. Бюджет " + details.cost + ". Время постройки " + details.time + ".\n"; 
-    result += "\nПоказатель эстетики - " + details.aesthetics + ", функциональности - " + details.functionality + " (максимум 80).\n"; 
+    result += "\nПоказатели (максимальное значение - 40): эстетика - " + details.aesthetics + ", функциональность - " + details.functionality + ".\n"; 
     foreach (var cell in data)
     {
       var cellData = "Клетка. Позиция: " + cell.data.x + " " + cell.data.y;
@@ -291,8 +297,7 @@ public class DialogueUI : MonoBehaviour {
       }
       result += cellData + "\n";
     }
-
-    Debug.Log(result);
+    
     return result;
   }
 }

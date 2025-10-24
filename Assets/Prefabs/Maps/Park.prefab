@@ -218,6 +218,7 @@ MonoBehaviour:
     \u0434\u043E\u043C\u0430, \u0441\u043F\u0440\u0430\u0432\u0430 \u0438 \u0441\u043B\u0435\u0432\u0430
     \u0441 \u0442\u0435\u0440\u0440\u0438\u0442\u043E\u0440\u0438\u0435\u0439 \u0433\u0440\u0430\u043D\u0438\u0447\u0438\u0442
     \u0434\u043E\u0440\u043E\u0433\u0430."
+  <MapCenter>k__BackingField: {fileID: 0}
 --- !u!1001 &68132393511941362
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -875,7 +876,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7360086648717536020, guid: 9ea6c099d52f1074099d0216f7238a6c, type: 3}
       propertyPath: <SoilStrength>k__BackingField
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8710713267849424693, guid: 9ea6c099d52f1074099d0216f7238a6c, type: 3}
       propertyPath: m_Name
@@ -1264,7 +1265,7 @@ PrefabInstance:
       objectReference: {fileID: 2235788181367680873}
     - target: {fileID: 7360086648717536020, guid: 9ea6c099d52f1074099d0216f7238a6c, type: 3}
       propertyPath: <SoilStrength>k__BackingField
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8710713267849424693, guid: 9ea6c099d52f1074099d0216f7238a6c, type: 3}
       propertyPath: m_Name
@@ -1472,7 +1473,7 @@ PrefabInstance:
       objectReference: {fileID: 7397926101279327602}
     - target: {fileID: 7360086648717536020, guid: 9ea6c099d52f1074099d0216f7238a6c, type: 3}
       propertyPath: <DirtType>k__BackingField
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7360086648717536020, guid: 9ea6c099d52f1074099d0216f7238a6c, type: 3}
       propertyPath: <SoilStrength>k__BackingField
@@ -2035,7 +2036,7 @@ PrefabInstance:
       objectReference: {fileID: 1190569237223930522}
     - target: {fileID: 7360086648717536020, guid: 9ea6c099d52f1074099d0216f7238a6c, type: 3}
       propertyPath: <DirtType>k__BackingField
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7360086648717536020, guid: 9ea6c099d52f1074099d0216f7238a6c, type: 3}
       propertyPath: <SoilStrength>k__BackingField
@@ -4331,6 +4332,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3230198779168588976}
     - target: {fileID: 7360086648717536020, guid: 9ea6c099d52f1074099d0216f7238a6c, type: 3}
+      propertyPath: <DirtType>k__BackingField
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7360086648717536020, guid: 9ea6c099d52f1074099d0216f7238a6c, type: 3}
       propertyPath: <SoilStrength>k__BackingField
       value: 1
       objectReference: {fileID: 0}
@@ -5582,7 +5587,7 @@ PrefabInstance:
       objectReference: {fileID: 2819303506929323449}
     - target: {fileID: 7360086648717536020, guid: 9ea6c099d52f1074099d0216f7238a6c, type: 3}
       propertyPath: <SoilStrength>k__BackingField
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8710713267849424693, guid: 9ea6c099d52f1074099d0216f7238a6c, type: 3}
       propertyPath: m_Name
@@ -7200,6 +7205,10 @@ PrefabInstance:
       propertyPath: _groundElement
       value: 
       objectReference: {fileID: 6653971792332302234}
+    - target: {fileID: 7360086648717536020, guid: 9ea6c099d52f1074099d0216f7238a6c, type: 3}
+      propertyPath: <DirtType>k__BackingField
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7360086648717536020, guid: 9ea6c099d52f1074099d0216f7238a6c, type: 3}
       propertyPath: <SoilStrength>k__BackingField
       value: 1
@@ -8927,7 +8936,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7360086648717536020, guid: 9ea6c099d52f1074099d0216f7238a6c, type: 3}
       propertyPath: <SoilStrength>k__BackingField
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8710713267849424693, guid: 9ea6c099d52f1074099d0216f7238a6c, type: 3}
       propertyPath: m_Name

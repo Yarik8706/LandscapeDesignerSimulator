@@ -8,6 +8,8 @@ namespace DefaultNamespace
         [TextArea]
         [SerializeField] private string _mapContext;
         
+        [field: SerializeField] public Transform MapCenter { get; private set; }
+        
         public Cell[] Cells => _cells;
     }
 }

@@ -10,6 +10,7 @@ public class BuildSystem : MonoBehaviour
     [SerializeField] private Sprite[] _resetCellButtonSprites;
     [SerializeField] private Image _selectedElementImage;
     [SerializeField] private Sprite _defaultElementImage;
+    [SerializeField] private GameObject _createEffect;
         
     private BuildElementData _buildElementData;
     private bool _isResetCellMode;
@@ -92,12 +93,14 @@ public class BuildSystem : MonoBehaviour
     
     public void ResetCell(Cell cell)
     {
+        Instantiate(_createEffect, cell.transform.position, Quaternion.identity);
         cell.RemoveBuildElement(Category.Decoration);
         cell.RemoveBuildElement(Category.Embankment);
     }
         
     public void CreateElement(BuildElementData buildElementData, Cell cell)
     {
+        Instantiate(_createEffect, cell.transform.position, Quaternion.identity);
         cell.AddBuildElement(buildElementData);
     }
 }

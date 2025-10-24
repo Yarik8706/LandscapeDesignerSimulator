@@ -17,7 +17,5 @@ namespace Infra
         public Sprite[] clientsAvatars;
 
         [TextArea] public string firstSystemMessage = "Поприветствуй игрока и изложи, что ты хочешь заказать для своей территории (по профилю клиента и варианту требований).";
-        [TextArea] public string playerProgressQuestion = "Выведи игроку, сколько пунктов он уже узнал из требований и сколько всего нужно выяснить. Формат: «X / Y».";
-        [TextArea] public string gottenPlayerTasks = "Перечисли пункты, которые игрок уже выяснил на данный момент (бюджет, срок, обязательные элементы, дополнительные пожелания, приоритет).";
     }
 }

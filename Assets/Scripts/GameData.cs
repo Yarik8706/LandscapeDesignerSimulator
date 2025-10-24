@@ -21,8 +21,9 @@ namespace DefaultNamespace
         public int activeClientIndex = 0;
         public int activeClientBrief = 0;
         public int firstDialogQuestionCount = 8;
-        public int secondDialogQuestionCount = 5;
+        public int secondDialogQuestionCount = 8;
         public GameStage stage = GameStage.FirstDialog;
+        public string costTypeText = "валюта"; 
 
         public AudioClip placeSound;
         public AudioClip destroySound;

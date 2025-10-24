@@ -42,8 +42,8 @@ namespace DefaultNamespace
             
             aestheticsSlider.value = aesthetics/30f;
             functionalitySlider.value = functionality/30f;
-            
-            costText.text = "Бюджет проекта: " + cost.ToString() + " $";
+
+            costText.text = $"Бюджет проекта ({GameDataManager.Instance.gameData.costTypeText}): " + cost.ToString() + " $";
             timeText.text = "Срок постройки (дней): " + time.ToString(CultureInfo.InvariantCulture);
         }
         
@@ -52,8 +52,8 @@ namespace DefaultNamespace
             aestheticsSlider.value = 0;
             functionalitySlider.value = 0;
             
-            costText.text = "Бюджет проекта: " + 0;
-            timeText.text = "Срок постройки: " + 0;
+            costText.text = $"Бюджет проекта ({GameDataManager.Instance.gameData.costTypeText}): " + 0;
+            timeText.text = "Срок постройки (дней): " + 0;
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using DefaultNamespace;
 using UnityEngine;
 
@@ -10,7 +11,7 @@ public class BuildElementData : ScriptableObject
     public int id;
     public string displayName;                 // имя для UI
     [TextArea]
-    public string description;                 // описание
+    public string additionalDescription;                 // описание
     public Category category = Category.Decoration;
     public ElementType elementType = ElementType.Structure;
     public BuildElement prefab;
@@ -23,19 +24,38 @@ public class BuildElementData : ScriptableObject
     public float buildTime = 1f;              // базовое время постройки (игровые единицы)
 
     [Header("Scoring Delta")]
-    public DeltaScore delta = new DeltaScore { F = 0, A = 0, S = 0 };
+    public DeltaScore delta = new () { F = 0, A = 0, S = 0 };
 
     [Header("Stability")]
-    public Stability stability = new Stability();
+    public Stability stability = new ();
 
     [Header("Constraints")]
-    public Constraints constraints = new Constraints();
+    public Constraints constraints = new ();
 
     [Header("Adjacency (bonuses)")]
-    public List<AdjacencyRule> adjacency = new List<AdjacencyRule>();
+    public List<AdjacencyRule> adjacency = new ();
 
     [Header("Terraform Policy")]
-    public Terraform terraform = new Terraform();
+    public Terraform terraform = new ();
+    
+    public static string GetDescription(BuildElementData buildElementData)
+    {
+        var text = $"Стоимость ({GameDataManager.Instance.gameData.costTypeText}): {buildElementData.cost}\n";
+        text += $"Время постройки (дней): {buildElementData.buildTime}\n";
+        text += $"Функциональность: {buildElementData.delta.F}\n";
+        text += $"Эстетика: {buildElementData.delta.A}\n";
+        if (buildElementData.terraform.overlayOn.Count > 0)
+        {
+            text += $"Уменьшает стоимость терраформирования следующих клеток: ";
+            foreach (var t in buildElementData.terraform.overlayOn)
+            {
+                text += $"{ObjectManager.Instance.objectContext.groundElements.First(x => x.id == t).displayName}, ";
+            }
+            text = text.Remove(text.Length - 2);
+        }
+        
+        return text;
+    }
 }
 
 /* ==== ENUMS ==== */

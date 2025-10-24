@@ -1,5 +1,6 @@
 ﻿using DefaultNamespace;
 using TMPro;
+using UI;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -16,6 +17,7 @@ public class BuildElementUI : MonoBehaviour, IPointerClickHandler
         _name.text = buildElementData.displayName;
         _buildElementData = buildElementData;
         _icon.sprite = buildElementData.icon;
+        _icon.rectTransform.sizeDelta = buildElementData.icon.rect.size * 6;
     }
         
     private void ShowDetails()

@@ -7,6 +7,7 @@ public class ElementTransition : MonoBehaviour
     [SerializeField] private Transform movingTransform;
     [SerializeField] private Transform activePosition;
     [SerializeField] private Transform hidePosition;
+    [SerializeField] private float duration = 0.7f;
 
     private void Start()
     {
@@ -33,7 +34,7 @@ public class ElementTransition : MonoBehaviour
     
     public Tween ChangeActive(bool isActive)
     {
-        return movingTransform.DOMove(isActive ? activePosition.position : hidePosition.position, 0.7f)
+        return movingTransform.DOMove(isActive ? activePosition.position : hidePosition.position, duration)
             .SetLink(gameObject)
             .SetEase(Ease.InOutExpo).Play();
     }
@@ -46,9 +47,9 @@ public class ElementTransition : MonoBehaviour
 
 public static class ElementTransitionExtensions
 {
-    public static Tween ChangeActive(this Transform movingTransform, Vector3 newPosition)
+    public static Tween ChangeActive(this Transform movingTransform, Vector3 newPosition, float duration = 0.7f)
     {
-        return movingTransform.DOMove(newPosition, 0.7f)
+        return movingTransform.DOMove(newPosition, duration)
             .SetLink(movingTransform.gameObject)
             .SetEase(Ease.InOutExpo).Play();
     }

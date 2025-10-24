@@ -1,13 +1,12 @@
-﻿using System;
-using TMPro;
+﻿using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace DefaultNamespace
+namespace UI
 {
     public class BuildElementDetailsUI : MonoBehaviour
     {
-        [SerializeField] private GameObject _detailsPanel;
+        [SerializeField] private ElementTransition _detailsPanel;
         [SerializeField] private Image _icon;
         [SerializeField] private TextMeshProUGUI _name;
         [SerializeField] private TextMeshProUGUI _description;
@@ -21,11 +20,17 @@ namespace DefaultNamespace
 
         public void Show(BuildElementData buildElementData)
         {
-            _detailsPanel.SetActive(true);
+            _detailsPanel.ChangeActive(true);
             _icon.sprite = buildElementData.icon;
             _icon.rectTransform.sizeDelta = buildElementData.icon.rect.size * 6;
             _name.text = buildElementData.displayName;
-            _description.text = buildElementData.description;
+            _description.text = BuildElementData.GetDescription(buildElementData) 
+                                + buildElementData.additionalDescription;
+        }
+        
+        public void Hide()
+        {
+            _detailsPanel.ChangeActive(false);
         }
     }
 }

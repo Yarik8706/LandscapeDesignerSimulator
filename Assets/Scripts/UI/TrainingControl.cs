@@ -14,6 +14,7 @@ namespace UI
         public int clientIndex;
         public Transform position;
         [TextArea] public string description;
+        public float showDelay;
     }
     
     public class TrainingControl : MonoBehaviour
@@ -21,6 +22,7 @@ namespace UI
         [SerializeField] private TrainingBlock[] trainingBlocks;
         [SerializeField] private Button _hideTrainingButton;
         [SerializeField] private Button _showTrainingButton;
+        [SerializeField] private ElementTransition _showTrainingButtonTransition;
         [SerializeField] private Transform _trainingPanel;
         [SerializeField] private Transform _hidePosition;
         [SerializeField] private TMP_Text _description;
@@ -49,7 +51,8 @@ namespace UI
                 return;
             }
             _currentBlockIndex = Array.IndexOf(trainingBlocks, trainingBlock);
-            ShowTrainingPanel();
+            if (trainingBlock.showDelay > 0) Invoke(nameof(ShowTrainingPanel), trainingBlock.showDelay); 
+            else ShowTrainingPanel();
         }
         
         public void HideTrainingPanel()
@@ -59,14 +62,14 @@ namespace UI
                 GameStageTransitionsUI.Instance.OnStageChanged();
             };
             _trainingPanel.ChangeActive(_hidePosition.position);
-            _showTrainingButton.gameObject.SetActive(true);
+            _showTrainingButtonTransition.ChangeActive(true);
         }
 
         public void ShowTrainingPanel()
         {
             _trainingPanel.ChangeActive(trainingBlocks[_currentBlockIndex].position.position);
             _description.text = trainingBlocks[_currentBlockIndex].description;
-            _showTrainingButton.gameObject.SetActive(false);
+            _showTrainingButtonTransition.ChangeActive(false);
         }
     }
 }
