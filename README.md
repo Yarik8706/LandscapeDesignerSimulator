@@ -52,18 +52,13 @@
 
 #### Game Engine & Framework
 - **Unity 2022.3.47f1** — игровой движок
-- **C# (.NET)** — основной язык программирования
-- **Universal Render Pipeline (URP) 14.0.11** — современный рендер-пайплайн Unity
 - **TextMeshPro 3.0.7** — продвинутая система рендеринга текста
 - **Git** — система контроля версий
 
 #### Backend & Networking
-- **Next.js Backend** — серверная часть на базе Next.js (развёрнута на Vercel)
+- **Backend**: Next.js, TypeScript, Genkit + @genkit-ai/googleai для работы с Google Gemini 2.0/2.5 Flash, Zod для валидации.
 - **HTTP/REST API** — прямое взаимодействие с бэкендом через UnityWebRequest
 - **JSON сериализация** — использование JsonUtility для обмена данными
-
-#### Development Tools
-- **Rider IDE 3.0.31** — интеграция с JetBrains Rider
 
 #### Architecture Patterns
 - **ScriptableObject Pattern** — для хранения данных игровых элементов
